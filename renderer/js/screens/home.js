@@ -26,6 +26,13 @@ export function render(root) {
     progressFill.style.setProperty('--p', progress != null ? String(progress) : '0');
   };
   const paintLogs = () => { logBox.textContent = state.logs.slice(-400).join('\n'); logBox.scrollTop = logBox.scrollHeight; };
+  // el juego escribe muchas líneas seguidas: se redibuja como mucho una vez por fotograma
+  let logsQueued = false;
+  const queueLogs = () => {
+    if (logsQueued) return;
+    logsQueued = true;
+    requestAnimationFrame(() => { logsQueued = false; paintLogs(); });
+  };
 
   function paint() {
     const inst = selectedInstance();
@@ -98,7 +105,7 @@ export function render(root) {
   }
 
   offs.push(on('status', paintProgress));
-  offs.push(on('log', () => { if (logsOpen) paintLogs(); }));
+  offs.push(on('log', () => { if (logsOpen) queueLogs(); }));
   offs.push(on('game-closed', paint));
   offs.push(on('game-state', paint));
   offs.push(on('instances', paint));
