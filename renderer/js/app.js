@@ -98,7 +98,7 @@ on('accounts', renderSideAccount);
   buildNav();
   try {
     const d = await api.init();
-    Object.assign(state, { instances: d.instances, settings: d.settings, totalRam: d.totalRam, icons: d.icons, platform: d.platform, version: d.version, dataDir: d.dataDir, appName: d.appName });
+    Object.assign(state, { intro: d.intro, instances: d.instances, settings: d.settings, totalRam: d.totalRam, icons: d.icons, platform: d.platform, version: d.version, dataDir: d.dataDir, appName: d.appName });
     document.getElementById('brand-name').textContent = d.appName || 'Cubic';
     applyAccounts(d.accounts);
     state.horizon = await api.horizon.state();

@@ -4,6 +4,7 @@ import { toast, toastError } from '../lib/toast.js';
 import { openModal, confirmDialog } from '../lib/modal.js';
 import { pageHeader, emptyState, switchEl, fmtSize, skeletons, ic, tileOf } from '../lib/ui.js';
 import { state, refreshInstances, LOADER_NAMES } from '../state.js';
+import { introCard } from '../lib/intro.js';
 import { horizonPanel, HORIZON_VERSION, HORIZON_NOTE, HORIZON_NO_MODS } from '../lib/horizon.js';
 
 const go = (id, params) => window.dispatchEvent(new CustomEvent('sugar:go', { detail: { id, params } }));
@@ -30,7 +31,7 @@ export function openInstanceEditor(inst, onDone) {
   const paintIcons = () => { clear(iconRow).append(...state.icons.map(i => h('button', { type: 'button', class: `icon-opt${i === data.icon ? ' sel' : ''}`, 'aria-label': i, onclick: () => { data.icon = i; paintIcons(); }, html: instIcon(i) }))); };
   paintIcons();
 
-  const verSel = h('select', { class: 'select', 'aria-label': 'Versión de Minecraft', onchange: e => { data.version = e.target.value; clearErr(verErr); syncPlaceholder(); } }, h('option', { value: '' }, 'Cargando versiones…'));
+  const verSel = h('select', { class: 'select', 'aria-label': 'Versión de Minecraft', onchange: e => { data.version = e.target.value; clearErr(verErr); syncPlaceholder(); syncIntroNote(); } }, h('option', { value: '' }, 'Cargando versiones…'));
   const snapSw = switchEl(snapshots, v => { snapshots = v; loadVersions(); }, 'Mostrar snapshots');
   async function loadVersions() {
     verSel.disabled = true;
@@ -46,7 +47,7 @@ export function openInstanceEditor(inst, onDone) {
       if (!data.version) data.version = latest;
       if (!list.some(v => v.id === data.version)) list.unshift({ id: data.version, type: 'release' }); // al editar, la versión actual siempre se puede elegir
       clear(verSel).append(...list.map(v => h('option', { value: v.id, ...(v.id === data.version ? { selected: true } : {}) }, v.type === 'snapshot' ? `${v.id} (snapshot)` : v.id)));
-      verSel.disabled = false; syncPlaceholder();
+      verSel.disabled = false; syncPlaceholder(); syncIntroNote();
     } catch (e) { if (data.loader === 'horizon') return; clear(verSel).append(h('option', { value: '' }, 'Sin conexión')); verErr.textContent = `No pude cargar las versiones: ${e.message}`; }
   }
   loadVersions();
@@ -55,9 +56,16 @@ export function openInstanceEditor(inst, onDone) {
   let otherVersion = data.loader === 'horizon' ? null : data.version; // para volver a ella al salir de Horizon
   let iconField, ramField, snapBox;
   const horizonNote = h('div', { class: 'warn-box small' }, h('span', {}, HORIZON_NOTE), h('span', { class: 'muted' }, HORIZON_NO_MODS));
+  // aviso: con la intro activada, una instancia Vanilla se juega con Fabric Loader
+  const introNote = h('span', { class: 'small muted' }, 'Intro animada activada: esta instancia se jugará con Fabric Loader y los mods de la intro. Puedes desactivarla desde la instancia para volver a Vanilla puro.');
+  const syncIntroNote = () => {
+    const on = data.logo ?? state.settings.animatedLogo;
+    introNote.hidden = !(data.loader === 'vanilla' && on && state.intro.games.includes(data.version));
+  };
   const syncLoader = () => {
     const hz = data.loader === 'horizon';
     horizonNote.hidden = !hz;
+    syncIntroNote();
     iconField.hidden = hz; ramField.hidden = hz; snapBox.hidden = hz;
   };
   const pickLoader = k => {
@@ -91,6 +99,7 @@ export function openInstanceEditor(inst, onDone) {
     h('div', { class: 'field' }, 'Versión de Minecraft', h('div', { class: 'row gap' }, verSel, snapBox), verErr),
     h('div', { class: 'field' }, 'Loader', loaderRow, h('span', { class: 'small' }, 'Fabric y Quilt permiten mods. Forge y NeoForge no están disponibles todavía.')),
     horizonNote,
+    introNote,
     ramField,
     formErr);
 
@@ -167,6 +176,11 @@ function renderDetail(root, id) {
         h('button', { class: 'icon-btn danger', title: 'Borrar', 'aria-label': 'Borrar', onclick: del, html: icons.trash }))));
   }
 
+  async function reloadInst() {
+    await refreshInstances();
+    inst = state.instances.find(i => i.id === inst.id) || inst;
+    paintIntro();
+  }
   async function dup() {
     try { const c = await api.instances.duplicate(inst.id); await refreshInstances(); toast(`Instancia duplicada como “${c.name}”`); go('instances', { open: c.id }); } catch (e) { toastError(e); }
   }
@@ -194,18 +208,24 @@ function renderDetail(root, id) {
     files.forEach((f, n) => {
       listEl.append(h('div', { class: `file-row card stagger${f.enabled ? '' : ' off'}`, style: { '--i': n } },
         h('div', { class: 'file-ic', html: icons[icon] }),
-        h('div', { class: 'grow' }, h('b', {}, f.name), h('small', { class: 'muted' }, `${f.isDir ? 'Carpeta' : fmtSize(f.size)}${f.source ? ` · ${f.source === 'modrinth' ? 'Modrinth' : 'CurseForge'}` : ''}${f.enabled ? '' : ' · desactivado'}`)),
-        switchEl(f.enabled, async () => { try { await api.instances.toggle(inst.id, tab, f.file); paintFiles(); } catch (e) { toastError(e); } }),
+        h('div', { class: 'grow' }, h('b', {}, f.name), h('small', { class: 'muted' }, `${f.isDir ? 'Carpeta' : fmtSize(f.size)}${f.source ? ` · ${f.source === 'modrinth' ? 'Modrinth' : 'CurseForge'}` : ''}${f.bundled ? ' · incluido por Cubic' : ''}${f.enabled ? '' : ' · desactivado'}`)),
+        switchEl(f.enabled, async () => { try { await api.instances.toggle(inst.id, tab, f.file); await reloadInst(); paintFiles(); } catch (e) { toastError(e); } }),
         h('button', { class: 'icon-btn danger', 'aria-label': 'Eliminar', title: 'Eliminar', html: icons.trash, onclick: async () => {
           if (!await confirmDialog({ title: 'Eliminar archivo', message: `¿Eliminar “${f.name}” de esta instancia?`, confirmLabel: 'Eliminar', danger: true })) return;
-          try { await api.instances.removeFile(inst.id, tab, f.file); toast('Eliminado'); paintFiles(); } catch (e) { toastError(e); }
+          try { await api.instances.removeFile(inst.id, tab, f.file); toast('Eliminado'); await reloadInst(); paintFiles(); } catch (e) { toastError(e); }
         } })));
     });
   }
 
   // Horizon no tiene pestañas de contenido: solo su estado de instalación y la explicación
   const horizonEl = h('div', { class: 'hz-detail' });
+  const introEl = h('div');
+  function paintIntro() {
+    clear(introEl);
+    if (inst.loader !== 'horizon') introEl.append(introCard(inst, saved => { inst = saved; paintIntro(); if (tab === 'mods') paintFiles(); }));
+  }
   function paintBody() {
+    paintIntro();
     const hz = inst.loader === 'horizon';
     tabsEl.hidden = listEl.hidden = hz;
     clear(horizonEl);
@@ -215,5 +235,5 @@ function renderDetail(root, id) {
   }
 
   paintHead(); paintBody();
-  root.append(head, tabsEl, listEl, horizonEl);
+  root.append(head, introEl, tabsEl, listEl, horizonEl);
 }

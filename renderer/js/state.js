@@ -7,7 +7,8 @@ export const state = {
   playing: false,   // Minecraft abierto
   progress: { text: 'Listo', progress: null },
   logs: [],
-  horizon: null     // estado de la instalación de Horizon
+  horizon: null,    // estado de la instalación de Horizon
+  intro: { version: null, games: [] } // intro animada incluida
 };
 
 const subs = new Map();

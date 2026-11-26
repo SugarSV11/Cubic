@@ -177,6 +177,10 @@ body:not(.maximized) .app { box-shadow: inset 0 0 0 1px var(--border); }
 .inst-icon { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; font-size: 20px; background: var(--surface-3); border: 1px solid var(--border); color: var(--accent-hi); flex: none; }
 .inst-icon.big { width: 64px; height: 64px; font-size: 30px; border-radius: 14px; }
 .inst-icon.logo { background: none; border: 0; }
+.intro-card { margin-top: 14px; padding: 14px 18px; display: flex; gap: 14px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.intro-card .grow { flex: 1 1 300px; }
+.link-btn { background: none; border: 0; padding: 0; color: var(--accent-hi); font: inherit; font-size: 13px; text-decoration: underline; cursor: pointer; }
+.about-sub { margin-top: 12px; }
 .inst-icon.logo img { width: 100%; height: 100%; display: block; }
 .hz-panel { display: flex; flex-direction: column; gap: 8px; }
 .hz-detail { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
