@@ -4,11 +4,11 @@ const assert = require('node:assert');
 const path = require('path');
 const { setup } = require('./helpers/env');
 
-let launched = null, client = null, failLaunch = false;
+let launched = null, client = null, failLaunch = false, killed = 0;
 class Client {
   constructor() { this.on_ = {}; client = this; }
   on(ev, fn) { this.on_[ev] = fn; }
-  async launch(opts) { launched = opts; return failLaunch ? null : { kill() {} }; }
+  async launch(opts) { launched = opts; return failLaunch ? null : { kill() { killed++; } }; }
 }
 const env = setup({ 'minecraft-launcher-core': { Client } });
 const http = require('../main/http');
@@ -95,6 +95,15 @@ test('los errores liberan el botón Jugar', async () => {
   await assert.rejects(launcher.launch({ instanceId: 'E2', accountId: 'acc' }), /No se pudo lanzar/);
   failLaunch = false;
   assert.ok(!launcher.isBusy());
+});
+
+test('«Detener» cierra el juego y no hace nada si no hay partida', async () => {
+  await play('vanilla', 'S');
+  launcher.stop();
+  assert.strictEqual(killed, 1);
+  finish();
+  launcher.stop();
+  assert.strictEqual(killed, 1);
 });
 
 test('lista de versiones con y sin snapshots', async () => {
