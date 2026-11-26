@@ -1,0 +1,2680 @@
+{
+ "mod": {
+  "version": "2.7",
+  "contributors": [
+   "ilgrandeanonimo",
+   "StarsShine11904"
+  ]
+ },
+ "bundledGames": [
+  "26.3",
+  "26.2",
+  "26.1.2",
+  "26.1.1",
+  "26.1",
+  "1.21.11",
+  "1.21.1",
+  "1.21"
+ ],
+ "games": {
+  "26.3": [
+   "e34c2c1be46219857074d4c8166da2af76e8bb46d35bd493c5abae3d2e904c6257c0bd09fcf08db930f9cbf354a0f97debe651c8b451e4625a8bdf6ea74fb6c5",
+   "fb686a9fa923248328107a12498229d6951e316257f18b7d0e4cbd6885ba447ed50a44076a8a5ba47cfe2043b329db3587ab000aeab1face26b2587a5d4ba6b5",
+   "0511d4b3fd7faca537beb11ed845b1853bd1fa43a4031f5f9cfa182f7c0719f606167add33a89f907fd0874c87345d64452d48b9bfdeaacb79bd9527b95fd596",
+   "f3957028dd31cae78f08aee3e768f61bd12c4c8423257d357bc3c1a2172047c769d37901f99775c7ffff1e5ee794025dc72738b2869cab06f1c2811841d68b24",
+   "d00d52d5342728da13a6237f76c50fc5fd1c62d8112ae4e07726bbc64d2019a76130d6b2968765df81c6499225588eacee6681eebc13c0ada3cad91fc8ab2984",
+   "eb2bb31e51068aad2581b7864ea7b11b1209ba1c2b27551cd5837d9b312b818b73bb47c06374b46b99b73401c62c6b6c115f702c55aed6afd467ad8ad6448de4"
+  ],
+  "26.2": [
+   "b4f1398103479e26d80b99277e379dae91702e3a2eac08a209fd59b7f33ca826e357e07c9d739494991a7fc9c94ddc1979cdb36b8e2cff62f93367c9820ebe6b",
+   "2502fa5ade78e9a120b3747bc1a9a2167d6671743bea45bf115d3174c94121aeda87c549446d1a604a9c11fb828de17a551e3514ce42f3e93069dd14bdaee55b",
+   "f13066524fb1003d19b3a0f99641cf0cfb597f716adc17ce3512227c7ee91e4690ed7856434d31160484e1a1d49ff13d5f59c40bf257aef3dfa99a3eca95f461",
+   "f36d91a9506ad9addbaaeecaea01d2b0cb5b060f52486b17688746cb597f0f3b23a80f8441f7a73a9cb8cde85af8809fe54825984b56345325359d505a80e7f2",
+   "c8224aa7a460d0c56ccb9978a112e4ad0d3eb17e2796e0c468a2392d220749f4f602838a11b3666145462c26078a879ab8a2fc177aa440f58e189c92a0088d6e",
+   "07b6fc802559d54ec6577f6e2788926ef391d755206c2bfb0528280977885cae4bc0c517d8a53eb6f34092015ebe6c41210627d255aa6504662daefa8fb76397"
+  ],
+  "26.1.2": [
+   "022bb2197b5c83a1f99741cc515a45007add65c66e444f25086a36ba0dfe2b152ba625febbb0db2ec4dc65c0d5b5318aa0610644976e7be618f3e9cb9d32481f",
+   "fa0308b42e9cd0dc3ff946f246d199d74547e0c946d7e3c9780a2537155307baf25129f69bd1349273babf879ffb4608b7e4af0740938f9c0f7b371b1c67d6ca",
+   "79ca792d179cb6a556ba3a44eafa660add68d2cab379caef38d3c2022d01e425d949b6c23c570e5af730a3e7097cc0ce445c624494231d442603b2d63cceb11b",
+   "734a2735521940b23b49cc645c49f8ad760212adb315602daf9cfb3c2f401cdd8a07250dc3e0b7429120a641032f6c8be1e5955d7aec3b07547ca34e7bacd4fa",
+   "37393e1d4a23a548463e92eb0687af69034ee7c308bd1d2d27d78df0292f124c4463f19d4b53128b59cda4e02d01d7ae09f06456d10abde19b6e450163e50e97",
+   "b559da0f13fef17967f2aff1d06b00995c7db21d9d5b7b580ab6eafdf2365e4ac86a7d094c2b481160a942f291bc2595f2cb8c91ce5e169f1c2f461782ecd2a8"
+  ],
+  "26.1.1": [
+   "022bb2197b5c83a1f99741cc515a45007add65c66e444f25086a36ba0dfe2b152ba625febbb0db2ec4dc65c0d5b5318aa0610644976e7be618f3e9cb9d32481f",
+   "fa0308b42e9cd0dc3ff946f246d199d74547e0c946d7e3c9780a2537155307baf25129f69bd1349273babf879ffb4608b7e4af0740938f9c0f7b371b1c67d6ca",
+   "79ca792d179cb6a556ba3a44eafa660add68d2cab379caef38d3c2022d01e425d949b6c23c570e5af730a3e7097cc0ce445c624494231d442603b2d63cceb11b",
+   "734a2735521940b23b49cc645c49f8ad760212adb315602daf9cfb3c2f401cdd8a07250dc3e0b7429120a641032f6c8be1e5955d7aec3b07547ca34e7bacd4fa",
+   "37393e1d4a23a548463e92eb0687af69034ee7c308bd1d2d27d78df0292f124c4463f19d4b53128b59cda4e02d01d7ae09f06456d10abde19b6e450163e50e97",
+   "b559da0f13fef17967f2aff1d06b00995c7db21d9d5b7b580ab6eafdf2365e4ac86a7d094c2b481160a942f291bc2595f2cb8c91ce5e169f1c2f461782ecd2a8"
+  ],
+  "26.1": [
+   "022bb2197b5c83a1f99741cc515a45007add65c66e444f25086a36ba0dfe2b152ba625febbb0db2ec4dc65c0d5b5318aa0610644976e7be618f3e9cb9d32481f",
+   "fa0308b42e9cd0dc3ff946f246d199d74547e0c946d7e3c9780a2537155307baf25129f69bd1349273babf879ffb4608b7e4af0740938f9c0f7b371b1c67d6ca",
+   "79ca792d179cb6a556ba3a44eafa660add68d2cab379caef38d3c2022d01e425d949b6c23c570e5af730a3e7097cc0ce445c624494231d442603b2d63cceb11b",
+   "734a2735521940b23b49cc645c49f8ad760212adb315602daf9cfb3c2f401cdd8a07250dc3e0b7429120a641032f6c8be1e5955d7aec3b07547ca34e7bacd4fa",
+   "37393e1d4a23a548463e92eb0687af69034ee7c308bd1d2d27d78df0292f124c4463f19d4b53128b59cda4e02d01d7ae09f06456d10abde19b6e450163e50e97",
+   "b559da0f13fef17967f2aff1d06b00995c7db21d9d5b7b580ab6eafdf2365e4ac86a7d094c2b481160a942f291bc2595f2cb8c91ce5e169f1c2f461782ecd2a8"
+  ],
+  "1.21.11": [
+   "6b12e3474a49be7180043ce14a6b5a9b8797041cbb87643ed786937f2157705563ee00ee7399cfd16aa83c3783c5e805f574c5a7b8038cbd59fb8ca38664c0a0",
+   "852d3682c4f353fd0ca86546af8578513e8bcf628377fa9d49c556bc59c5024c69ab56c92fc6dfba11fed19e4316a3f5636e7e07fd3d96f7043b531aef59b637",
+   "b1f1c20c8fb8545f24a0374301250b972ae9784852da2fc15970043e286faf9300804d0a5b230f48d9a7f4a01ec7757f7d2e9915e33adb1af97d8768543eaf33",
+   "392db7d471030cca27483ecf58c626a14cd73d71a18afe6d4173c6b030948b8a925b36e708d4cc2c897dfa3f20a7f23b999fc18aa6d36c156da29037601153ac",
+   "cb68cc39c8da66d05a1d2054a0e7b62144881e0cdb5fd681bc4f337b1313fafac394246f4e0aa0c4b6343db9e9750250a00c1bb72689b762da685ce1ccfee51f",
+   "507ab10b7938dcd14d33121b8462649bdbe575cef248e917dfdf7566078ab5d0195ca1add95eae4863de3f652eb56db0a8669a67d5b5344e094d086f9dab5a08"
+  ],
+  "1.21.10": [
+   "d329058aaa0f2b5021bb28fbf8abd9b4ae243570ad350aad6df8e0cad81cc1fc420073ebe9ef8581920e3534655bdccc5fe2d79f2651efae41b51a66dd6a8704",
+   "5e64c53391dfd1c059777d671c52be17a4e27a29d9bd7340ea9e3f55ce7a770b38db0a15e0966e981ee8c1b9372fb89543a278521624689268acebb85bd5c6e9",
+   "b1f1c20c8fb8545f24a0374301250b972ae9784852da2fc15970043e286faf9300804d0a5b230f48d9a7f4a01ec7757f7d2e9915e33adb1af97d8768543eaf33",
+   "77dd4dbef6ab2d60863e1ac2f5c4e3eba16b3e6307fba5d9d70c20604e0f72863da20962c2aa99a8ef155debd5e60851c54937311b06e0dd4dbf4edb7a783b01",
+   "be01bb5a80a39fc51223ef142713ba3cbc2c23658f0c8bd36ceed7ecd163684b7dc808f2ef23dce7fb350bdfd010de9787f2177e115cae3ea91b96a83bd6ea16",
+   "507ab10b7938dcd14d33121b8462649bdbe575cef248e917dfdf7566078ab5d0195ca1add95eae4863de3f652eb56db0a8669a67d5b5344e094d086f9dab5a08"
+  ],
+  "1.21.8": [
+   "d329058aaa0f2b5021bb28fbf8abd9b4ae243570ad350aad6df8e0cad81cc1fc420073ebe9ef8581920e3534655bdccc5fe2d79f2651efae41b51a66dd6a8704",
+   "eb1a6b5fc9912c68409493f10f43c3b61adda1d789ede9c83b16d0a95a2eb96bd630472866e163960479eb1b4d1196d09ade5aadc9da62624e800640c706c4a9",
+   "b1f1c20c8fb8545f24a0374301250b972ae9784852da2fc15970043e286faf9300804d0a5b230f48d9a7f4a01ec7757f7d2e9915e33adb1af97d8768543eaf33",
+   "502a278d916580a23bf894bdf187f66b3fcdf541848c045bde581ae2df33c3e79a0d70fc4aacc54c6ed82f7c392c03a0cf2a5f13903f5c5d9b625b4334311080",
+   "e1c81227d64715ba0755a5752730983fa18cd2ee4b2b41a60545ecdf8b0845c977316e781d581e33eb86992b816a6b1fe92a2345edf72c161287a4fa3d40fec2",
+   "66c20678e8329b0129407ab045c171e3e22a5ca13544b1fbcf5adb95f70f6bb6cb9fb4d9a2231cac7b95e32b6b26ae732b616dc437f9c927325bb20c20a55ac1"
+  ],
+  "1.21.7": [
+   "d329058aaa0f2b5021bb28fbf8abd9b4ae243570ad350aad6df8e0cad81cc1fc420073ebe9ef8581920e3534655bdccc5fe2d79f2651efae41b51a66dd6a8704",
+   "43bf6af145a6b450503a6d7e7ec9a34912bd1494969b5d8861067f0f846cf710805415fb0fbc93c9ae9f5164d45c7649342f84b4f34552b2abdd892fd3b9838e",
+   "b1f1c20c8fb8545f24a0374301250b972ae9784852da2fc15970043e286faf9300804d0a5b230f48d9a7f4a01ec7757f7d2e9915e33adb1af97d8768543eaf33",
+   "502a278d916580a23bf894bdf187f66b3fcdf541848c045bde581ae2df33c3e79a0d70fc4aacc54c6ed82f7c392c03a0cf2a5f13903f5c5d9b625b4334311080",
+   "e1c81227d64715ba0755a5752730983fa18cd2ee4b2b41a60545ecdf8b0845c977316e781d581e33eb86992b816a6b1fe92a2345edf72c161287a4fa3d40fec2",
+   "66c20678e8329b0129407ab045c171e3e22a5ca13544b1fbcf5adb95f70f6bb6cb9fb4d9a2231cac7b95e32b6b26ae732b616dc437f9c927325bb20c20a55ac1"
+  ],
+  "1.21.6": [
+   "d329058aaa0f2b5021bb28fbf8abd9b4ae243570ad350aad6df8e0cad81cc1fc420073ebe9ef8581920e3534655bdccc5fe2d79f2651efae41b51a66dd6a8704",
+   "b6d0ec0aec40069cb1fa2159c126d027d7f95e3f6260a3e88ebe9c47f3cb716d1170af8e2e4ff3d4108ce5eeaea70002a889547578374d4d6dfa45755e99431e",
+   "b1f1c20c8fb8545f24a0374301250b972ae9784852da2fc15970043e286faf9300804d0a5b230f48d9a7f4a01ec7757f7d2e9915e33adb1af97d8768543eaf33",
+   "502a278d916580a23bf894bdf187f66b3fcdf541848c045bde581ae2df33c3e79a0d70fc4aacc54c6ed82f7c392c03a0cf2a5f13903f5c5d9b625b4334311080",
+   "e1c81227d64715ba0755a5752730983fa18cd2ee4b2b41a60545ecdf8b0845c977316e781d581e33eb86992b816a6b1fe92a2345edf72c161287a4fa3d40fec2",
+   "66c20678e8329b0129407ab045c171e3e22a5ca13544b1fbcf5adb95f70f6bb6cb9fb4d9a2231cac7b95e32b6b26ae732b616dc437f9c927325bb20c20a55ac1"
+  ],
+  "1.21.5": [
+   "a8d634e548bb1146f72d46ae146dc9b7200fcd168bb8b6782c1d682d2403d3b6e7352420d33fc87ce40789a2a3cabad80fccfb7e909461724f09a8e98eff7901",
+   "0e42b72d1a63a45c1b64cdabafd15f4d236bbda5521964d687afa1f833d4022f96c7ffab5dd4471aba0190be588f092d156bf14a50b794895fb3286ec899bcf7",
+   "b1f1c20c8fb8545f24a0374301250b972ae9784852da2fc15970043e286faf9300804d0a5b230f48d9a7f4a01ec7757f7d2e9915e33adb1af97d8768543eaf33",
+   "9db844d1423734526ff6a723ef9950173d63ee3c15df995bac6b4f4c405bc4bc778a689cf8bc0875c1f22e7d3ef8dd8ac1005146e9b4005ad9d58a83382e083c",
+   "9dc0b7313325641c31f94ad89a8edf7dda6fb0a366271f03734d26c8245a98a788a6f0fe44c51793244abb75e84b8b0ae3320b6a799de6b98c089eb4ac65d4d8",
+   "587e93144be63a7df97e66d745fbbe4597d06cf03b723fe8fb3cf3ee98ca8d1dd155a8ffc09e46b546f1c9eccbbd33473900c5908546405e458945171024b80b"
+  ],
+  "1.21.4": [
+   "3a8adde4c35ab2d781422db870f58893740510cde907f987e085ff648b305aa87471aed10325f67f93046da485393819de7b42371f3e7ff9558fce89298cfe20",
+   "16b679f6a42549ca3b6bc147de710b2c8ba2d5e4661ed88df22782c05a4a5f6c1163d7b13867687ed91acde0fdfe5a5037d05662431c946865b58396284e7ee7",
+   "b1f1c20c8fb8545f24a0374301250b972ae9784852da2fc15970043e286faf9300804d0a5b230f48d9a7f4a01ec7757f7d2e9915e33adb1af97d8768543eaf33",
+   "4c44736033fe6a662155fb46c0e65e1e4d5011d397c671a2ba86ddb8d0cc3e196cd17d01c4270cec465e0d90664b56054f0d6f9cf743a4fa909c984355194df5",
+   "863f7c367898e0fce283b11554d253f05acadf46057ab0d2c14a592582ce35bbd9cf4f4b8cf1e3658a6f7a4bb765f9e49a8a02127edbe017daeea8fb24b0ab4f",
+   "06db18ada7973bd8cbe316faeebd25d89d79820da951208cc2ec69eb4058379d4e0c0233799d7043b5a19b62248f6a4d5f7031c110066fdf5d335e29385e3853"
+  ],
+  "1.21.3": [
+   "3a8adde4c35ab2d781422db870f58893740510cde907f987e085ff648b305aa87471aed10325f67f93046da485393819de7b42371f3e7ff9558fce89298cfe20",
+   "962e64e8418b074ce68809cd38835e99fea3da8dc1b2979a69f10fee047cd3404b2157a8106fa650795d17e0eebfa41a0d21af7ea5a4b9ee3992c57bc3c5d113",
+   "b1f1c20c8fb8545f24a0374301250b972ae9784852da2fc15970043e286faf9300804d0a5b230f48d9a7f4a01ec7757f7d2e9915e33adb1af97d8768543eaf33",
+   "bf83bc7ec27447edc1e6a18aa27c5e79b6c6ec3d3bb06917fc017e59cefbb2bbb36d8760c77901df30c2bab1d182a19a26cb13980c9be728e750b454222542c4",
+   "25a8e1a190e8d69c376f43622fae18d1ff1f8e93547d1b19fb4f3b08bbc635c344308d789d260f2904d33daacf9172c6b1d8466887bfebe83ed92c6b6dff92af",
+   "06db18ada7973bd8cbe316faeebd25d89d79820da951208cc2ec69eb4058379d4e0c0233799d7043b5a19b62248f6a4d5f7031c110066fdf5d335e29385e3853"
+  ],
+  "1.21.1": [
+   "3eb86b20263c50757980500500e3d8bd9e59eedf3998fd1b186b3ca934da83e6a75b61684950b4474bb5155483947d3ec3f944af51ac7f3517ff81ac67683798",
+   "9f721c253ae2e9823cb548e8ec132c9928f80a65184e9b8dcfc489a8d632df20cbfea1e65ff8a4333bdb295c41fbe2228b43e4d41c7355d42ed4637a785840a1",
+   "b1f1c20c8fb8545f24a0374301250b972ae9784852da2fc15970043e286faf9300804d0a5b230f48d9a7f4a01ec7757f7d2e9915e33adb1af97d8768543eaf33",
+   "353169f85fa63e73ce9bdd0d4ddce54e3cbc4d71153a93c982f74c68fd93325986663f94fc2f2b10f4427e8b15a0485c608c5587b3840d933204b50ea4cb6d4c",
+   "92e8e96267ff18d320903090f2ad9b32408a218919f5a0d578e232ad774c89d49a34a8271806652be7d6283f24e98432bc4af7f95855e78b843f9100d68696c7",
+   "fc13d3a5c048dbaab86318edaf8b6c6b46ef9f1d367e8f063d19f5a9b0da66c5ae419d92c8c4608edc89a01eb44d91ffcf017fea73f39b222cbd85e82f70a233"
+  ],
+  "1.21": [
+   "3eb86b20263c50757980500500e3d8bd9e59eedf3998fd1b186b3ca934da83e6a75b61684950b4474bb5155483947d3ec3f944af51ac7f3517ff81ac67683798",
+   "11732c4e36c3909360a24aa42a44da89048706cf10aaafa0404d7153cbc7395ff68a130f7b497828d6932740e004416b692650c3fbcc1f32babd7cb6eb9791d8",
+   "b1f1c20c8fb8545f24a0374301250b972ae9784852da2fc15970043e286faf9300804d0a5b230f48d9a7f4a01ec7757f7d2e9915e33adb1af97d8768543eaf33",
+   "0a52df2fd4126a994a2558d3c9464f886b0cb4bb7cb87cf36a12f87bd885e2525d562ff1d06625b4ff9911b89d31420e5d261ecd07f3b6ab47486543bdd017ad",
+   "92e8e96267ff18d320903090f2ad9b32408a218919f5a0d578e232ad774c89d49a34a8271806652be7d6283f24e98432bc4af7f95855e78b843f9100d68696c7",
+   "fc13d3a5c048dbaab86318edaf8b6c6b46ef9f1d367e8f063d19f5a9b0da66c5ae419d92c8c4608edc89a01eb44d91ffcf017fea73f39b222cbd85e82f70a233"
+  ],
+  "1.20.6": [
+   "2eabc681bbd93c155615d30e4de55360a400b0f472c17ac53fb98ae2e024605f970b5a20c9c0178a766e6cbabbcb816d4819e64b11b7a6af933b7d04a2f5c39d",
+   "414f19f903a093c39006e1919a81bea43c3b6728b88e358dc2611ab44b8087e25abc504c66926f245342fa2a245c07462ed62897f15d6c84006b7acf6214ca46",
+   "b1f1c20c8fb8545f24a0374301250b972ae9784852da2fc15970043e286faf9300804d0a5b230f48d9a7f4a01ec7757f7d2e9915e33adb1af97d8768543eaf33",
+   "8a0a3dd27ef3603472814e243c2f51c1a61e5bb907d07abf18582145a61536ef49119f25f844cd97d9dee93d9079a3f877d27ce80b5fed39f5343f2d41460879",
+   "b18c56321c0dfd404607bd895ef3aa654d390cfb7b96cbf449ecaad4be4fce72d4b20e56bd4b914d9c162dfa9384f55ec238e855b4a1525b12bad3359c8d0534",
+   "f44dcd96c18659d9dea94936f6a46683692f564fe8f2c1d4bc84a74f64df726ad564a93596491c0ed2ff91fc7dd182a0732985a34f6e5c3f21f1b4417b7ebae3"
+  ],
+  "1.20.5": [
+   "2eabc681bbd93c155615d30e4de55360a400b0f472c17ac53fb98ae2e024605f970b5a20c9c0178a766e6cbabbcb816d4819e64b11b7a6af933b7d04a2f5c39d",
+   "4b52fe9bd5bfd50df610f236b6d2fa08985ab5dee51261397c83413cf42cf4bde05190ba851f5100bae3c43a7e2da9e8d0e708477ad8e30d2f00eb1e2af59cb3",
+   "b1f1c20c8fb8545f24a0374301250b972ae9784852da2fc15970043e286faf9300804d0a5b230f48d9a7f4a01ec7757f7d2e9915e33adb1af97d8768543eaf33",
+   "c1291965b77be877704f7049615a6df8f1e64fe01d590bd96f4ff7b69a28b833c470192db1ee1cb6c1b467a69a94f426d573775e600cbf1171d0ffe2a3217439",
+   "b18c56321c0dfd404607bd895ef3aa654d390cfb7b96cbf449ecaad4be4fce72d4b20e56bd4b914d9c162dfa9384f55ec238e855b4a1525b12bad3359c8d0534",
+   "f44dcd96c18659d9dea94936f6a46683692f564fe8f2c1d4bc84a74f64df726ad564a93596491c0ed2ff91fc7dd182a0732985a34f6e5c3f21f1b4417b7ebae3"
+  ],
+  "1.20.4": [
+   "2c68b97ab3ed1cb20b93c7596cd3893d899b8cfc3bb7d14c34f7cc0005df754791c29d04d3baf40e7ba43a5bcd4167c22632f217ad7cd95728fadb74ffacbbd5",
+   "ea1e47672a1e0fef7fa3fd7f7b396b5a8fb2c46e6ce33dbc4cc2b8d320bc7b775a0de42a478302419c8063c47fbc18bb2ad7551772f54af8059132ac2cb4f108",
+   "e25445af531f0194c13786025fe27389991e9450b6201499da97270e41eecf934e7e2abaf4a81526476bc6f30396d9d234e1aadd94665a8f9098dba4115f587c",
+   "ea5af6c6a95a2c62070b87822d87ad835daae655886f8886a20f71e5b838687c56f06df0d9ba6ab3f5c69c2c1699e1a2400bc8079a6d4d37442d2f4daa696eb1",
+   "30e8075a4228ee11eb8b0e85d950a69c8d2df57e05b0da5268e6b0129eea5e69ac30e6eb1b4c93348bb8acfdc53c22b2866288d76f7446b51b79355f4eada87a",
+   "d2044d957b8f07f08ef4bf154c720803a5cac3e9eac504fc127321ea6ca08ed9f06a6bb3e433814b292c8bb6152b513fd6275a81aa168e9185b7c9f167d6d3a5"
+  ],
+  "1.20.3": [
+   "2c68b97ab3ed1cb20b93c7596cd3893d899b8cfc3bb7d14c34f7cc0005df754791c29d04d3baf40e7ba43a5bcd4167c22632f217ad7cd95728fadb74ffacbbd5",
+   "03acb0086fcd89ba1b4f5f069a38318536e0e5aefff9722b0068b0fd09563123bf6493a16f4e6cac2816fccbdfe1c4bdacfe29de5f15603c3b5a15bcc8ef5b6a",
+   "e25445af531f0194c13786025fe27389991e9450b6201499da97270e41eecf934e7e2abaf4a81526476bc6f30396d9d234e1aadd94665a8f9098dba4115f587c",
+   "597073b3835ce1d4c0f9e4ba835bd565871fa49a8feee41b90213480a76d251e2a57a71729f132e4b908ef50a5602cff90c330da229db605014e26e856cfcbc8",
+   "62ae3152d6dfd2745b95a6572f085bf8deb708d183a4234e6f72ae7b07f05a787454d4f289cee96d4e0f7efab026ed6073659d1aebb87530abeb7ddcfc0fe40b"
+  ],
+  "1.20.2": [
+   "2c68b97ab3ed1cb20b93c7596cd3893d899b8cfc3bb7d14c34f7cc0005df754791c29d04d3baf40e7ba43a5bcd4167c22632f217ad7cd95728fadb74ffacbbd5",
+   "bfa5c6f949cb782ce84de24ad3ef324690fa4f84dea57e4d2f311e1b30b9ed1dac2c17aee25f7a26d0312d808f2ed6a8ab81c79d38dda9774c87c324305cec67",
+   "e25445af531f0194c13786025fe27389991e9450b6201499da97270e41eecf934e7e2abaf4a81526476bc6f30396d9d234e1aadd94665a8f9098dba4115f587c",
+   "5830fcd3a750c722665c8a07b933682b31b06563e54530d8621fbbbe29d620f6b681c2af7359307b9741e755ea854f37b294d73c727e5e001e908e6d834db4b5",
+   "b2827f7bf82f2791812c1a1ebdac4a0d62451e040e08eedb6b5dbfc9f3e78711286fc82676f29fec7600fc7058ebd40a627267fc59763b7b21586da582dd8171"
+  ],
+  "1.20.1": [
+   "2c68b97ab3ed1cb20b93c7596cd3893d899b8cfc3bb7d14c34f7cc0005df754791c29d04d3baf40e7ba43a5bcd4167c22632f217ad7cd95728fadb74ffacbbd5",
+   "de9da2344043b3e9ef9fb7dbfff5f2577b06000c4f73f2a37959a80123141169084cece19133bd299b45feaaa4648bdaca2ea085684888cc8c55cc9134a477ca",
+   "e25445af531f0194c13786025fe27389991e9450b6201499da97270e41eecf934e7e2abaf4a81526476bc6f30396d9d234e1aadd94665a8f9098dba4115f587c",
+   "20f282b3cdaec7c83a96840edb756336677c5816ed943145022f1ce1eafac0c9aa7c621939e15abe6f4309626738bc56d3d1b8434f5175d22e7409108630b02b",
+   "9a7837e04bb34376611b207a3b20e5fe1c82a4822b42929d5b410809ec4b88ff3cac8821c4568f880775bafa3c079dfc7800f8471356a4046248b12607e855eb"
+  ],
+  "1.20": [
+   "2c68b97ab3ed1cb20b93c7596cd3893d899b8cfc3bb7d14c34f7cc0005df754791c29d04d3baf40e7ba43a5bcd4167c22632f217ad7cd95728fadb74ffacbbd5",
+   "b121ee00b13804d6850cdf506f9b216348a76ee8c1998492062d1b3d09f7ee921c89153449fd9d8ad907d1b8efb660a9cf4c540c20dc0ae892e0f567ac6541fe",
+   "e25445af531f0194c13786025fe27389991e9450b6201499da97270e41eecf934e7e2abaf4a81526476bc6f30396d9d234e1aadd94665a8f9098dba4115f587c",
+   "dcfedeb671d5afb1b1816f7c42708544a211aa8bc71e0ec33e2e1157fc12f31a13181255ee2551257aba599c102951f74113cb931e440c87386b435753ca021d",
+   "4573f699d177b28a05a5f3f208b264bf985d73042c796c9a08ad4123b78a5d4af7421ce939d0dfb21fee468000b4a6a8968094d44dac4146773b693447bfd055"
+  ],
+  "1.19.2": [
+   "bef58db4f592ff67004a126aae7d6a1c3b042ae983e8248c538d32c613deff8818d683b12c66aa5a9c9f451bfc888ef71a4b898a6fa42f14919eea9387b78d64",
+   "1b8f180fe24a971b1a28758f1fa2cb4afa7f52d8bac6c9e68e6dcf0c4fc6cf2024becb1dabfa17e5a24b7c47aecd945af3531d1b3c72319d986011f1d0067338",
+   "ccad70ca5e754b74032050e9b4950269144c78e0b31191bfb1f98865d0102ba5d419572a3bf074808fff50d40688c23d2330fbcbb03f12ff5e8997c87e30f1a7",
+   "5f68dbbad8149ce4f18c1b10186b881a5149559c23127e16f9075e944e056dd8bf29a88b7f1a24e7e1e35fec4a6fb7084c57118a706d208ccc7d5f37de4424d8",
+   "90e5e427ad719a7c2c2e4e35a79c2d5233a6fa2895437f58db1b25ba645bf5ee6ec78b6c82eb52c49ab3125714ba49c096cf50af399265039a36c85ce3b9add7"
+  ],
+  "1.19.1": [
+   "bef58db4f592ff67004a126aae7d6a1c3b042ae983e8248c538d32c613deff8818d683b12c66aa5a9c9f451bfc888ef71a4b898a6fa42f14919eea9387b78d64",
+   "6916bc50c9bcd225142e4cf8a2d251f57dd89123baff4a8941c46365ba408b5a00484731ec3981935536817e63d2fcf1f916a2ac5975beffc831139cc3b62bd0",
+   "ccad70ca5e754b74032050e9b4950269144c78e0b31191bfb1f98865d0102ba5d419572a3bf074808fff50d40688c23d2330fbcbb03f12ff5e8997c87e30f1a7",
+   "9c71c0b3b1ee8388f6a0fc3f1e07a5bf5fb63ce12c37248385c43a7cc29b8a540f75c25d3e64765f333812f37d47918a68e42b830391dca1e52f6f5f1c7540b4",
+   "71e7b0f80de56be992b4ed7b33f4b5035f7a9de62ea94a979e0ec2ceb599f15c8ac6f72050d0734cf840f0fbd6f6ef6ca30d3aaacb7e9d489dc58c4a416ff2b4"
+  ],
+  "1.19": [
+   "bef58db4f592ff67004a126aae7d6a1c3b042ae983e8248c538d32c613deff8818d683b12c66aa5a9c9f451bfc888ef71a4b898a6fa42f14919eea9387b78d64",
+   "9c948488852e3bcf7a84fef26465bf0bcfbba17fb03e6b56ae11cf82d1ae6abbfb4c569bf3f1d088c6c3c5219d37c2699afc9013926f588263210a19f8d6e235",
+   "ccad70ca5e754b74032050e9b4950269144c78e0b31191bfb1f98865d0102ba5d419572a3bf074808fff50d40688c23d2330fbcbb03f12ff5e8997c87e30f1a7",
+   "9c71c0b3b1ee8388f6a0fc3f1e07a5bf5fb63ce12c37248385c43a7cc29b8a540f75c25d3e64765f333812f37d47918a68e42b830391dca1e52f6f5f1c7540b4",
+   "ec0a3ec44a148c0fed89318ddc3d90121441b1b581affebc92855df81328e0182fd6778d5f52ca96ce8cc0f99a73ed0761abff98facdd74cc96cb1321b886d4f"
+  ]
+ },
+ "files": {
+  "e34c2c1be46219857074d4c8166da2af76e8bb46d35bd493c5abae3d2e904c6257c0bd09fcf08db930f9cbf354a0f97debe651c8b451e4625a8bdf6ea74fb6c5": {
+   "project": "dWUOweyL",
+   "slug": "animated-mojang-logo",
+   "title": "Animated Mojang Logo",
+   "modId": "animated-mojang-logo",
+   "modVersion": "2.3",
+   "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": "26.3",
+    "java": ">=21",
+    "timelesslib": "*",
+    "yet_another_config_lib_v3": ">=3.9.6+26.3-fabric",
+    "fabric-api": "*",
+    "modmenu": "*"
+   },
+   "versionId": "8gsifSNI",
+   "version": "2.7",
+   "filename": "animated-mojang-logo-2.7.jar",
+   "url": "https://cdn.modrinth.com/data/dWUOweyL/versions/8gsifSNI/animated-mojang-logo-2.7.jar",
+   "size": 15083963,
+   "license": "GPL-3.0-or-later",
+   "authors": [
+    "BouncingElf10"
+   ],
+   "source": {
+    "repo": "https://github.com/BouncingElf10/Animated-Mojang-Logo",
+    "ref": "704557ed29069a0f175735ae53d20bf5feff8761",
+    "kind": "commit de la rama 26.3-fabric (por fecha)"
+   }
+  },
+  "fb686a9fa923248328107a12498229d6951e316257f18b7d0e4cbd6885ba447ed50a44076a8a5ba47cfe2043b329db3587ab000aeab1face26b2587a5d4ba6b5": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.166.2+26.3",
+   "depends": {
+    "fabricloader": ">=0.19.3",
+    "java": ">=25",
+    "minecraft": "~26.3-"
+   },
+   "versionId": "Zns5SSRA",
+   "version": "0.166.2+26.3",
+   "filename": "fabric-api-0.166.2+26.3.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/Zns5SSRA/fabric-api-0.166.2%2B26.3.jar",
+   "size": 1797523,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.166.2+26.3",
+    "kind": "tag"
+   }
+  },
+  "0511d4b3fd7faca537beb11ed845b1853bd1fa43a4031f5f9cfa182f7c0719f606167add33a89f907fd0874c87345d64452d48b9bfdeaacb79bd9527b95fd596": {
+   "project": "vKDSSPpv",
+   "slug": "timelesslib",
+   "title": "TimelessLib",
+   "modId": "timelesslib",
+   "modVersion": "2.0.1-fabric-26.3",
+   "depends": {
+    "fabricloader": ">=0.17.3",
+    "minecraft": "26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+   },
+   "versionId": "iGy3cNER",
+   "version": "2.0.1-fabric-26.3",
+   "filename": "timelesslib-2.0.1-fabric-26.3.jar",
+   "url": "https://cdn.modrinth.com/data/vKDSSPpv/versions/iGy3cNER/timelesslib-2.0.1-fabric-26.3.jar",
+   "size": 111045,
+   "license": "Zlib",
+   "authors": [
+    "BouncingElf10"
+   ],
+   "source": {
+    "repo": "https://github.com/BouncingElf10/timelesslib",
+    "ref": "ec694a490a69f6d5c6265a0f35fb40dd31409ea4",
+    "kind": "commit de la rama fabric-26.3 (por fecha)"
+   }
+  },
+  "f3957028dd31cae78f08aee3e768f61bd12c4c8423257d357bc3c1a2172047c769d37901f99775c7ffff1e5ee794025dc72738b2869cab06f1c2811841d68b24": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.9.7+26.3-fabric",
+   "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "~26.3",
+    "fabric-resource-loader-v1": "*"
+   },
+   "versionId": "s9SjoFu1",
+   "version": "3.9.7+26.3-fabric",
+   "filename": "yet_another_config_lib_v3-3.9.7+26.3-fabric.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/s9SjoFu1/yet_another_config_lib_v3-3.9.7%2B26.3-fabric.jar",
+   "size": 1125377,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "84628d403a72afca148b439d64249e20a72bef34",
+    "kind": "commit que declara esa versión"
+   }
+  },
+  "d00d52d5342728da13a6237f76c50fc5fd1c62d8112ae4e07726bbc64d2019a76130d6b2968765df81c6499225588eacee6681eebc13c0ada3cad91fc8ab2984": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "21.0.1",
+   "depends": {
+    "fabric-resource-loader-v1": "*",
+    "fabric-screen-api-v1": "*",
+    "fabric-key-mapping-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.19.2",
+    "minecraft": ">=26.3-"
+   },
+   "versionId": "xckkBHD5",
+   "version": "21.0.1",
+   "filename": "modmenu-21.0.1.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/xckkBHD5/modmenu-21.0.1.jar",
+   "size": 862761,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "haykam821",
+    "gniftygnome",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v21.0.1",
+    "kind": "tag"
+   }
+  },
+  "eb2bb31e51068aad2581b7864ea7b11b1209ba1c2b27551cd5837d9b312b818b73bb47c06374b46b99b73401c62c6b6c115f702c55aed6afd467ad8ad6448de4": {
+   "project": "eXts2L7r",
+   "slug": "placeholder-api",
+   "title": "Text Placeholder API",
+   "modId": "placeholder-api",
+   "modVersion": "3.2.0+26.3",
+   "depends": {
+    "fabricloader": ">=0.18.4",
+    "minecraft": ">=26.2-"
+   },
+   "versionId": "lXytLqWj",
+   "version": "3.2.0+26.3",
+   "filename": "placeholder-api-3.2.0+26.3.jar",
+   "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/lXytLqWj/placeholder-api-3.2.0%2B26.3.jar",
+   "size": 254959,
+   "license": "LGPL-3.0-only",
+   "authors": [
+    "Patbox"
+   ],
+   "source": {
+    "repo": "https://github.com/Patbox/TextPlaceholderAPI",
+    "ref": "3.2.0+26.3",
+    "kind": "tag"
+   }
+  },
+  "b4f1398103479e26d80b99277e379dae91702e3a2eac08a209fd59b7f33ca826e357e07c9d739494991a7fc9c94ddc1979cdb36b8e2cff62f93367c9820ebe6b": {
+   "project": "dWUOweyL",
+   "slug": "animated-mojang-logo",
+   "title": "Animated Mojang Logo",
+   "modId": "animated-mojang-logo",
+   "modVersion": "2.1.1",
+   "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": "26.2",
+    "java": ">=21",
+    "timelesslib": "*",
+    "yet_another_config_lib_v3": ">=3.9.4+26.2-fabric",
+    "fabric-api": "*",
+    "modmenu": "*"
+   },
+   "versionId": "XilFmQzh",
+   "version": "2.7",
+   "filename": "animated-mojang-logo-2.7.jar",
+   "url": "https://cdn.modrinth.com/data/dWUOweyL/versions/XilFmQzh/animated-mojang-logo-2.7.jar",
+   "size": 15083966,
+   "license": "GPL-3.0-or-later",
+   "authors": [
+    "BouncingElf10"
+   ],
+   "source": {
+    "repo": "https://github.com/BouncingElf10/Animated-Mojang-Logo",
+    "ref": "b53fbf22660c7863cd0b360721d2eca8fe9ed31b",
+    "kind": "commit de la rama 26.2-fabric (por fecha)"
+   }
+  },
+  "2502fa5ade78e9a120b3747bc1a9a2167d6671743bea45bf115d3174c94121aeda87c549446d1a604a9c11fb828de17a551e3514ce42f3e93069dd14bdaee55b": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.161.0+26.2",
+   "depends": {
+    "fabricloader": ">=0.18.4",
+    "java": ">=25",
+    "minecraft": "~26.2-"
+   },
+   "versionId": "ewUK83HI",
+   "version": "0.161.0+26.2",
+   "filename": "fabric-api-0.161.0+26.2.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/ewUK83HI/fabric-api-0.161.0%2B26.2.jar",
+   "size": 2566123,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.161.0+26.2",
+    "kind": "tag"
+   }
+  },
+  "f13066524fb1003d19b3a0f99641cf0cfb597f716adc17ce3512227c7ee91e4690ed7856434d31160484e1a1d49ff13d5f59c40bf257aef3dfa99a3eca95f461": {
+   "project": "vKDSSPpv",
+   "slug": "timelesslib",
+   "title": "TimelessLib",
+   "modId": "timelesslib",
+   "modVersion": "2.0.1-fabric-26.2",
+   "depends": {
+    "fabricloader": ">=0.17.3",
+    "minecraft": "26.2",
+    "java": ">=21",
+    "fabric-api": "*"
+   },
+   "versionId": "cXj9DdMv",
+   "version": "2.0.1-fabric-26.2",
+   "filename": "timelesslib-2.0.1-fabric-26.2.jar",
+   "url": "https://cdn.modrinth.com/data/vKDSSPpv/versions/cXj9DdMv/timelesslib-2.0.1-fabric-26.2.jar",
+   "size": 111046,
+   "license": "Zlib",
+   "authors": [
+    "BouncingElf10"
+   ],
+   "source": {
+    "repo": "https://github.com/BouncingElf10/timelesslib",
+    "ref": "5da1471387b09b9a82166b07699616323f16d9e9",
+    "kind": "commit de la rama fabric-26.2 (por fecha)"
+   }
+  },
+  "f36d91a9506ad9addbaaeecaea01d2b0cb5b060f52486b17688746cb597f0f3b23a80f8441f7a73a9cb8cde85af8809fe54825984b56345325359d505a80e7f2": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.9.7+26.2-fabric",
+   "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "~26.2",
+    "fabric-resource-loader-v1": "*"
+   },
+   "versionId": "DoR7RYgi",
+   "version": "3.9.7+26.2-fabric",
+   "filename": "yet_another_config_lib_v3-3.9.7+26.2-fabric.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/DoR7RYgi/yet_another_config_lib_v3-3.9.7%2B26.2-fabric.jar",
+   "size": 1125271,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "84628d403a72afca148b439d64249e20a72bef34",
+    "kind": "commit que declara esa versión"
+   }
+  },
+  "c8224aa7a460d0c56ccb9978a112e4ad0d3eb17e2796e0c468a2392d220749f4f602838a11b3666145462c26078a879ab8a2fc177aa440f58e189c92a0088d6e": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "20.0.3",
+   "depends": {
+    "fabric-resource-loader-v1": "*",
+    "fabric-screen-api-v1": "*",
+    "fabric-key-mapping-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.19.2",
+    "minecraft": ">=26.2 <26.3-alpha.3"
+   },
+   "versionId": "iRo7AZXf",
+   "version": "20.0.3",
+   "filename": "modmenu-20.0.3.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/iRo7AZXf/modmenu-20.0.3.jar",
+   "size": 616919,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "haykam821",
+    "gniftygnome",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v20.0.3",
+    "kind": "tag"
+   }
+  },
+  "07b6fc802559d54ec6577f6e2788926ef391d755206c2bfb0528280977885cae4bc0c517d8a53eb6f34092015ebe6c41210627d255aa6504662daefa8fb76397": {
+   "project": "eXts2L7r",
+   "slug": "placeholder-api",
+   "title": "Text Placeholder API",
+   "modId": "placeholder-api",
+   "modVersion": "3.1.0-beta.1+26.2",
+   "depends": {
+    "fabricloader": ">=0.18.4",
+    "minecraft": ">=26.2-"
+   },
+   "versionId": "NDqH16LT",
+   "version": "3.1.0-beta.1+26.2",
+   "filename": "placeholder-api-3.1.0-beta.1+26.2.jar",
+   "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/NDqH16LT/placeholder-api-3.1.0-beta.1%2B26.2.jar",
+   "size": 254973,
+   "license": "LGPL-3.0-only",
+   "authors": [
+    "Patbox"
+   ],
+   "source": {
+    "repo": "https://github.com/Patbox/TextPlaceholderAPI",
+    "ref": "3.1.0-beta.1+26.2",
+    "kind": "tag"
+   }
+  },
+  "022bb2197b5c83a1f99741cc515a45007add65c66e444f25086a36ba0dfe2b152ba625febbb0db2ec4dc65c0d5b5318aa0610644976e7be618f3e9cb9d32481f": {
+   "project": "dWUOweyL",
+   "slug": "animated-mojang-logo",
+   "title": "Animated Mojang Logo",
+   "modId": "animated-mojang-logo",
+   "modVersion": "2.0",
+   "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": ">=26.1 <=26.1.2",
+    "java": ">=21",
+    "timelesslib": "*",
+    "yet_another_config_lib_v3": ">=3.8.2+1.21.11-fabric",
+    "fabric-api": "*",
+    "modmenu": "*"
+   },
+   "versionId": "WFpDHMmf",
+   "version": "2.7",
+   "filename": "animated-mojang-logo-2.7.jar",
+   "url": "https://cdn.modrinth.com/data/dWUOweyL/versions/WFpDHMmf/animated-mojang-logo-2.7.jar",
+   "size": 15083910,
+   "license": "GPL-3.0-or-later",
+   "authors": [
+    "BouncingElf10"
+   ],
+   "source": {
+    "repo": "https://github.com/BouncingElf10/Animated-Mojang-Logo",
+    "ref": "5c7029e9b82586a405ea5656ce02283df0621c8a",
+    "kind": "commit de la rama 26.1-fabric (por fecha)"
+   }
+  },
+  "fa0308b42e9cd0dc3ff946f246d199d74547e0c946d7e3c9780a2537155307baf25129f69bd1349273babf879ffb4608b7e4af0740938f9c0f7b371b1c67d6ca": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.155.3+26.1.2",
+   "depends": {
+    "fabricloader": ">=0.18.4",
+    "java": ">=25",
+    "minecraft": "~26.1-"
+   },
+   "versionId": "3dM0X6ou",
+   "version": "0.155.3+26.1.2",
+   "filename": "fabric-api-0.155.3+26.1.2.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/3dM0X6ou/fabric-api-0.155.3%2B26.1.2.jar",
+   "size": 2521340,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.155.3+26.1.2",
+    "kind": "tag"
+   }
+  },
+  "79ca792d179cb6a556ba3a44eafa660add68d2cab379caef38d3c2022d01e425d949b6c23c570e5af730a3e7097cc0ce445c624494231d442603b2d63cceb11b": {
+   "project": "vKDSSPpv",
+   "slug": "timelesslib",
+   "title": "TimelessLib",
+   "modId": "timelesslib",
+   "modVersion": "2.0.1-fabric-26.1",
+   "depends": {
+    "fabricloader": ">=0.17.3",
+    "minecraft": ">=26.1 <=26.1.2",
+    "java": ">=21",
+    "fabric-api": "*"
+   },
+   "versionId": "tW9CLZBY",
+   "version": "2.0.1-fabric-26.1",
+   "filename": "timelesslib-2.0.1-fabric-26.1.jar",
+   "url": "https://cdn.modrinth.com/data/vKDSSPpv/versions/tW9CLZBY/timelesslib-2.0.1-fabric-26.1.jar",
+   "size": 111051,
+   "license": "Zlib",
+   "authors": [
+    "BouncingElf10"
+   ],
+   "source": {
+    "repo": "https://github.com/BouncingElf10/timelesslib",
+    "ref": "9c8d14246a77d2c66de645bd9add6d92afdda347",
+    "kind": "commit de la rama fabric-26.1 (por fecha)"
+   }
+  },
+  "734a2735521940b23b49cc645c49f8ad760212adb315602daf9cfb3c2f401cdd8a07250dc3e0b7429120a641032f6c8be1e5955d7aec3b07547ca34e7bacd4fa": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.9.7+26.1-fabric",
+   "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "~26.1",
+    "fabric-resource-loader-v1": "*"
+   },
+   "versionId": "IODousKT",
+   "version": "3.9.7+26.1-fabric",
+   "filename": "yet_another_config_lib_v3-3.9.7+26.1-fabric.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/IODousKT/yet_another_config_lib_v3-3.9.7%2B26.1-fabric.jar",
+   "size": 1124837,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "84628d403a72afca148b439d64249e20a72bef34",
+    "kind": "commit que declara esa versión"
+   }
+  },
+  "37393e1d4a23a548463e92eb0687af69034ee7c308bd1d2d27d78df0292f124c4463f19d4b53128b59cda4e02d01d7ae09f06456d10abde19b6e450163e50e97": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "18.0.2",
+   "depends": {
+    "fabric-resource-loader-v1": "*",
+    "fabric-screen-api-v1": "*",
+    "fabric-key-mapping-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.17.2",
+    "minecraft": ">1.26-"
+   },
+   "versionId": "ZJ6YTrMY",
+   "version": "18.0.2",
+   "filename": "modmenu-18.0.2.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/ZJ6YTrMY/modmenu-18.0.2.jar",
+   "size": 859999,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "haykam821",
+    "gniftygnome",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v18.0.2",
+    "kind": "tag"
+   }
+  },
+  "b559da0f13fef17967f2aff1d06b00995c7db21d9d5b7b580ab6eafdf2365e4ac86a7d094c2b481160a942f291bc2595f2cb8c91ce5e169f1c2f461782ecd2a8": {
+   "project": "eXts2L7r",
+   "slug": "placeholder-api",
+   "title": "Text Placeholder API",
+   "modId": "placeholder-api",
+   "modVersion": "3.0.0+26.1",
+   "depends": {
+    "fabricloader": ">=0.18.4",
+    "minecraft": ">=26.1-"
+   },
+   "versionId": "b3IPAHgB",
+   "version": "3.0.0+26.1",
+   "filename": "placeholder-api-3.0.0+26.1.jar",
+   "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/b3IPAHgB/placeholder-api-3.0.0%2B26.1.jar",
+   "size": 254376,
+   "license": "LGPL-3.0-only",
+   "authors": [
+    "Patbox"
+   ],
+   "source": {
+    "repo": "https://github.com/Patbox/TextPlaceholderAPI",
+    "ref": "3.0.0+26.1",
+    "kind": "tag"
+   }
+  },
+  "6b12e3474a49be7180043ce14a6b5a9b8797041cbb87643ed786937f2157705563ee00ee7399cfd16aa83c3783c5e805f574c5a7b8038cbd59fb8ca38664c0a0": {
+   "project": "dWUOweyL",
+   "slug": "animated-mojang-logo",
+   "title": "Animated Mojang Logo",
+   "modId": "animated-mojang-logo",
+   "modVersion": "2.0",
+   "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": "*",
+    "java": ">=21",
+    "timelesslib": "*",
+    "yet_another_config_lib_v3": ">=3.8.2+1.21.11-fabric",
+    "fabric-api": "*",
+    "modmenu": "*"
+   },
+   "versionId": "Jb1NWxlU",
+   "version": "2.7",
+   "filename": "animated-mojang-logo-2.7.jar",
+   "url": "https://cdn.modrinth.com/data/dWUOweyL/versions/Jb1NWxlU/animated-mojang-logo-2.7.jar",
+   "size": 15080594,
+   "license": "GPL-3.0-or-later",
+   "authors": [
+    "BouncingElf10"
+   ],
+   "source": {
+    "repo": "https://github.com/BouncingElf10/Animated-Mojang-Logo",
+    "ref": "f52f53b673b7312ddc8dd836cff8d25302430995",
+    "kind": "commit de la rama 1.21.11-fabric (por fecha)"
+   }
+  },
+  "852d3682c4f353fd0ca86546af8578513e8bcf628377fa9d49c556bc59c5024c69ab56c92fc6dfba11fed19e4316a3f5636e7e07fd3d96f7043b531aef59b637": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.141.6+1.21.11",
+   "depends": {
+    "fabricloader": ">=0.17.3",
+    "java": ">=21",
+    "minecraft": ">=1.21.11- <1.21.12-"
+   },
+   "versionId": "6qAuTtLR",
+   "version": "0.141.6+1.21.11",
+   "filename": "fabric-api-0.141.6+1.21.11.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/6qAuTtLR/fabric-api-0.141.6%2B1.21.11.jar",
+   "size": 2426039,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.141.6+1.21.11",
+    "kind": "tag"
+   }
+  },
+  "b1f1c20c8fb8545f24a0374301250b972ae9784852da2fc15970043e286faf9300804d0a5b230f48d9a7f4a01ec7757f7d2e9915e33adb1af97d8768543eaf33": {
+   "project": "vKDSSPpv",
+   "slug": "timelesslib",
+   "title": "TimelessLib",
+   "modId": "timelesslib",
+   "modVersion": "2.0.1-fabric-1.20.5-1.21.11",
+   "depends": {
+    "fabricloader": ">=0.17.3",
+    "minecraft": ">=1.20.5 <1.22",
+    "java": ">=21",
+    "fabric-api": "*"
+   },
+   "versionId": "1Mve2ToA",
+   "version": "2.0.1-fabric-1.20.5-1.21.11",
+   "filename": "timelesslib-2.0.1-fabric-1.20.5-1.21.11.jar",
+   "url": "https://cdn.modrinth.com/data/vKDSSPpv/versions/1Mve2ToA/timelesslib-2.0.1-fabric-1.20.5-1.21.11.jar",
+   "size": 110760,
+   "license": "Zlib",
+   "authors": [
+    "BouncingElf10"
+   ],
+   "source": {
+    "repo": "https://github.com/BouncingElf10/timelesslib",
+    "ref": "1fbe21fa47330643006f48510dec56f8f88938b8",
+    "kind": "commit de la rama fabric-1.20.5+ (por fecha)"
+   }
+  },
+  "392db7d471030cca27483ecf58c626a14cd73d71a18afe6d4173c6b030948b8a925b36e708d4cc2c897dfa3f20a7f23b999fc18aa6d36c156da29037601153ac": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.8.2+1.21.11-fabric",
+   "depends": {
+    "fabricloader": ">=0.17.0",
+    "minecraft": "~1.21.11",
+    "java": ">=17",
+    "fabric-api": ">=0.140.0+1.21.11"
+   },
+   "versionId": "pHWDw3Vc",
+   "version": "3.8.2+1.21.11-fabric",
+   "filename": "yet_another_config_lib_v3-3.8.2+1.21.11-fabric.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/pHWDw3Vc/yet_another_config_lib_v3-3.8.2%2B1.21.11-fabric.jar",
+   "size": 1126948,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "e0c9a70ff09ae14605f7d6ad3578cc3675ac9959",
+    "kind": "commit que declara esa versión"
+   }
+  },
+  "cb68cc39c8da66d05a1d2054a0e7b62144881e0cdb5fd681bc4f337b1313fafac394246f4e0aa0c4b6343db9e9750250a00c1bb72689b762da685ce1ccfee51f": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "17.0.1",
+   "depends": {
+    "fabric-resource-loader-v1": "*",
+    "fabric-screen-api-v1": "*",
+    "fabric-key-binding-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.17.2",
+    "minecraft": ">=1.21.11 <26"
+   },
+   "versionId": "cLkYaVuL",
+   "version": "17.0.1",
+   "filename": "modmenu-17.0.1.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/cLkYaVuL/modmenu-17.0.1.jar",
+   "size": 960882,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "haykam821",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v17.0.1",
+    "kind": "tag"
+   }
+  },
+  "507ab10b7938dcd14d33121b8462649bdbe575cef248e917dfdf7566078ab5d0195ca1add95eae4863de3f652eb56db0a8669a67d5b5344e094d086f9dab5a08": {
+   "project": "eXts2L7r",
+   "slug": "placeholder-api",
+   "title": "Text Placeholder API",
+   "modId": "placeholder-api",
+   "modVersion": "2.8.2+1.21.10",
+   "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": ">=1.21.5-beta.3"
+   },
+   "versionId": "qxjzQ9xY",
+   "version": "2.8.2+1.21.10",
+   "filename": "placeholder-api-2.8.2+1.21.10.jar",
+   "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/qxjzQ9xY/placeholder-api-2.8.2%2B1.21.10.jar",
+   "size": 268662,
+   "license": "LGPL-3.0-only",
+   "authors": [
+    "Patbox"
+   ],
+   "source": {
+    "repo": "https://github.com/Patbox/TextPlaceholderAPI",
+    "ref": "2.8.2+1.21.10",
+    "kind": "tag"
+   }
+  },
+  "d329058aaa0f2b5021bb28fbf8abd9b4ae243570ad350aad6df8e0cad81cc1fc420073ebe9ef8581920e3534655bdccc5fe2d79f2651efae41b51a66dd6a8704": {
+   "project": "dWUOweyL",
+   "slug": "animated-mojang-logo",
+   "title": "Animated Mojang Logo",
+   "modId": "animated-mojang-logo",
+   "modVersion": "2.0",
+   "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": ">=1.21.6 <=1.21.10",
+    "java": ">=21",
+    "timelesslib": "*",
+    "yet_another_config_lib_v3": ">=3.8.2+1.21.6-fabric",
+    "fabric-api": "*",
+    "modmenu": "*"
+   },
+   "versionId": "seZ8Q7h1",
+   "version": "2.7",
+   "filename": "animated-mojang-logo-2.7.jar",
+   "url": "https://cdn.modrinth.com/data/dWUOweyL/versions/seZ8Q7h1/animated-mojang-logo-2.7.jar",
+   "size": 15080942,
+   "license": "GPL-3.0-or-later",
+   "authors": [
+    "BouncingElf10"
+   ],
+   "source": {
+    "repo": "https://github.com/BouncingElf10/Animated-Mojang-Logo",
+    "ref": "7c4477f440f69f2b002cf784f6cd54ba78b3768e",
+    "kind": "commit de la rama 1.21.6-fabric (por fecha)"
+   }
+  },
+  "5e64c53391dfd1c059777d671c52be17a4e27a29d9bd7340ea9e3f55ce7a770b38db0a15e0966e981ee8c1b9372fb89543a278521624689268acebb85bd5c6e9": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.138.4+1.21.10",
+   "depends": {
+    "fabricloader": ">=0.17.0",
+    "java": ">=21",
+    "minecraft": ">=1.21.10- <1.21.11-"
+   },
+   "versionId": "tV4Gc0Zo",
+   "version": "0.138.4+1.21.10",
+   "filename": "fabric-api-0.138.4+1.21.10.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/tV4Gc0Zo/fabric-api-0.138.4%2B1.21.10.jar",
+   "size": 2375888,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.138.4+1.21.10",
+    "kind": "tag"
+   }
+  },
+  "77dd4dbef6ab2d60863e1ac2f5c4e3eba16b3e6307fba5d9d70c20604e0f72863da20962c2aa99a8ef155debd5e60851c54937311b06e0dd4dbf4edb7a783b01": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.8.2+1.21.10-fabric",
+   "depends": {
+    "fabricloader": ">=0.17.0",
+    "minecraft": "~1.21.9",
+    "java": ">=17",
+    "fabric-api": ">=0.138.3+1.21.10"
+   },
+   "versionId": "skcT0J9K",
+   "version": "3.8.2+1.21.10-fabric",
+   "filename": "yet_another_config_lib_v3-3.8.2+1.21.10-fabric.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/skcT0J9K/yet_another_config_lib_v3-3.8.2%2B1.21.10-fabric.jar",
+   "size": 1127484,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "e0c9a70ff09ae14605f7d6ad3578cc3675ac9959",
+    "kind": "commit que declara esa versión"
+   }
+  },
+  "be01bb5a80a39fc51223ef142713ba3cbc2c23658f0c8bd36ceed7ecd163684b7dc808f2ef23dce7fb350bdfd010de9787f2177e115cae3ea91b96a83bd6ea16": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "16.0.1",
+   "depends": {
+    "fabric-resource-loader-v0": "*",
+    "fabric-screen-api-v1": "*",
+    "fabric-key-binding-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.17.2",
+    "minecraft": ">=1.21.9- <1.21.11"
+   },
+   "versionId": "pYbFlVtR",
+   "version": "16.0.1",
+   "filename": "modmenu-16.0.1.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/pYbFlVtR/modmenu-16.0.1.jar",
+   "size": 1083558,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "haykam821",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v16.0.1",
+    "kind": "tag"
+   }
+  },
+  "eb1a6b5fc9912c68409493f10f43c3b61adda1d789ede9c83b16d0a95a2eb96bd630472866e163960479eb1b4d1196d09ade5aadc9da62624e800640c706c4a9": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.136.1+1.21.8",
+   "depends": {
+    "fabricloader": ">=0.16.13",
+    "java": ">=21",
+    "minecraft": ">=1.21.8- <1.21.9-"
+   },
+   "versionId": "g58ofrov",
+   "version": "0.136.1+1.21.8",
+   "filename": "fabric-api-0.136.1+1.21.8.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/g58ofrov/fabric-api-0.136.1%2B1.21.8.jar",
+   "size": 2269700,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.136.1+1.21.8",
+    "kind": "tag"
+   }
+  },
+  "502a278d916580a23bf894bdf187f66b3fcdf541848c045bde581ae2df33c3e79a0d70fc4aacc54c6ed82f7c392c03a0cf2a5f13903f5c5d9b625b4334311080": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.8.2+1.21.6-fabric",
+   "depends": {
+    "fabricloader": ">=0.17.0",
+    "minecraft": "~1.21.6",
+    "java": ">=17",
+    "fabric-api": ">=0.127.0+1.21.6"
+   },
+   "versionId": "iPLhsWMM",
+   "version": "3.8.2+1.21.6-fabric",
+   "filename": "yet_another_config_lib_v3-3.8.2+1.21.6-fabric.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/iPLhsWMM/yet_another_config_lib_v3-3.8.2%2B1.21.6-fabric.jar",
+   "size": 1130373,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "e0c9a70ff09ae14605f7d6ad3578cc3675ac9959",
+    "kind": "commit que declara esa versión"
+   }
+  },
+  "e1c81227d64715ba0755a5752730983fa18cd2ee4b2b41a60545ecdf8b0845c977316e781d581e33eb86992b816a6b1fe92a2345edf72c161287a4fa3d40fec2": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "15.0.2",
+   "depends": {
+    "fabric-resource-loader-v0": "*",
+    "fabric-screen-api-v1": "*",
+    "fabric-key-binding-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.21.6"
+   },
+   "versionId": "ku5NivOP",
+   "version": "15.0.2",
+   "filename": "modmenu-15.0.2.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/ku5NivOP/modmenu-15.0.2.jar",
+   "size": 1087256,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "haykam821",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v15.0.2",
+    "kind": "tag"
+   }
+  },
+  "66c20678e8329b0129407ab045c171e3e22a5ca13544b1fbcf5adb95f70f6bb6cb9fb4d9a2231cac7b95e32b6b26ae732b616dc437f9c927325bb20c20a55ac1": {
+   "project": "eXts2L7r",
+   "slug": "placeholder-api",
+   "title": "Text Placeholder API",
+   "modId": "placeholder-api",
+   "modVersion": "2.7.2+1.21.8",
+   "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": ">=1.21.5-beta.3"
+   },
+   "versionId": "1S1kjZ9W",
+   "version": "2.7.2+1.21.8",
+   "filename": "placeholder-api-2.7.2+1.21.8.jar",
+   "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/1S1kjZ9W/placeholder-api-2.7.2%2B1.21.8.jar",
+   "size": 263060,
+   "license": "LGPL-3.0-only",
+   "authors": [
+    "Patbox"
+   ],
+   "source": {
+    "repo": "https://github.com/Patbox/TextPlaceholderAPI",
+    "ref": "2.7.2+1.21.8",
+    "kind": "tag"
+   }
+  },
+  "43bf6af145a6b450503a6d7e7ec9a34912bd1494969b5d8861067f0f846cf710805415fb0fbc93c9ae9f5164d45c7649342f84b4f34552b2abdd892fd3b9838e": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.129.0+1.21.7",
+   "depends": {
+    "fabricloader": ">=0.16.13",
+    "java": ">=21",
+    "minecraft": ">=1.21.7- <1.21.8-"
+   },
+   "versionId": "JntuF9Ul",
+   "version": "0.129.0+1.21.7",
+   "filename": "fabric-api-0.129.0+1.21.7.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/JntuF9Ul/fabric-api-0.129.0%2B1.21.7.jar",
+   "size": 2212353,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.129.0+1.21.7",
+    "kind": "tag"
+   }
+  },
+  "b6d0ec0aec40069cb1fa2159c126d027d7f95e3f6260a3e88ebe9c47f3cb716d1170af8e2e4ff3d4108ce5eeaea70002a889547578374d4d6dfa45755e99431e": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.128.2+1.21.6",
+   "depends": {
+    "fabricloader": ">=0.16.13",
+    "java": ">=21",
+    "minecraft": ">=1.21.6- <1.21.7-"
+   },
+   "versionId": "F5TVHWcE",
+   "version": "0.128.2+1.21.6",
+   "filename": "fabric-api-0.128.2+1.21.6.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/F5TVHWcE/fabric-api-0.128.2%2B1.21.6.jar",
+   "size": 2209737,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.128.2+1.21.6",
+    "kind": "tag"
+   }
+  },
+  "a8d634e548bb1146f72d46ae146dc9b7200fcd168bb8b6782c1d682d2403d3b6e7352420d33fc87ce40789a2a3cabad80fccfb7e909461724f09a8e98eff7901": {
+   "project": "dWUOweyL",
+   "slug": "animated-mojang-logo",
+   "title": "Animated Mojang Logo",
+   "modId": "animated-mojang-logo",
+   "modVersion": "2.0",
+   "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": "1.21.5",
+    "java": ">=21",
+    "timelesslib": "*",
+    "yet_another_config_lib_v3": ">=3.8.2+1.21.5-fabric",
+    "fabric-api": "*",
+    "modmenu": "*"
+   },
+   "versionId": "GexNEiuR",
+   "version": "2.7",
+   "filename": "animated-mojang-logo-2.7.jar",
+   "url": "https://cdn.modrinth.com/data/dWUOweyL/versions/GexNEiuR/animated-mojang-logo-2.7.jar",
+   "size": 15080914,
+   "license": "GPL-3.0-or-later",
+   "authors": [
+    "BouncingElf10"
+   ],
+   "source": {
+    "repo": "https://github.com/BouncingElf10/Animated-Mojang-Logo",
+    "ref": "f7eba587e5f895aebd5cf0a49742da5eaef8b32b",
+    "kind": "commit de la rama 1.21.5-fabric (por fecha)"
+   }
+  },
+  "0e42b72d1a63a45c1b64cdabafd15f4d236bbda5521964d687afa1f833d4022f96c7ffab5dd4471aba0190be588f092d156bf14a50b794895fb3286ec899bcf7": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.128.2+1.21.5",
+   "depends": {
+    "fabricloader": ">=0.16.10",
+    "java": ">=21",
+    "minecraft": ">=1.21.5- <1.21.6-"
+   },
+   "versionId": "kKEGlsne",
+   "version": "0.128.2+1.21.5",
+   "filename": "fabric-api-0.128.2+1.21.5.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/kKEGlsne/fabric-api-0.128.2%2B1.21.5.jar",
+   "size": 2248994,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.128.2+1.21.5",
+    "kind": "tag"
+   }
+  },
+  "9db844d1423734526ff6a723ef9950173d63ee3c15df995bac6b4f4c405bc4bc778a689cf8bc0875c1f22e7d3ef8dd8ac1005146e9b4005ad9d58a83382e083c": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.8.2+1.21.5-fabric",
+   "depends": {
+    "fabricloader": ">=0.17.0",
+    "minecraft": "~1.21.5",
+    "java": ">=17",
+    "fabric-api": ">=0.119.4+1.21.5"
+   },
+   "versionId": "oReM1Qvh",
+   "version": "3.8.2+1.21.5-fabric",
+   "filename": "yet_another_config_lib_v3-3.8.2+1.21.5-fabric.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/oReM1Qvh/yet_another_config_lib_v3-3.8.2%2B1.21.5-fabric.jar",
+   "size": 1130747,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "e0c9a70ff09ae14605f7d6ad3578cc3675ac9959",
+    "kind": "commit que declara esa versión"
+   }
+  },
+  "9dc0b7313325641c31f94ad89a8edf7dda6fb0a366271f03734d26c8245a98a788a6f0fe44c51793244abb75e84b8b0ae3320b6a799de6b98c089eb4ac65d4d8": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "14.0.2",
+   "depends": {
+    "fabric-resource-loader-v0": "*",
+    "fabric-screen-api-v1": "*",
+    "fabric-key-binding-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.16.10",
+    "minecraft": ">=1.21.5 <1.21.6"
+   },
+   "versionId": "2ZvBR7XI",
+   "version": "14.0.2",
+   "filename": "modmenu-14.0.2.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/2ZvBR7XI/modmenu-14.0.2.jar",
+   "size": 1069803,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "haykam821",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v14.0.2",
+    "kind": "tag"
+   }
+  },
+  "587e93144be63a7df97e66d745fbbe4597d06cf03b723fe8fb3cf3ee98ca8d1dd155a8ffc09e46b546f1c9eccbbd33473900c5908546405e458945171024b80b": {
+   "project": "eXts2L7r",
+   "slug": "placeholder-api",
+   "title": "Text Placeholder API",
+   "modId": "placeholder-api",
+   "modVersion": "2.6.4+1.21.5",
+   "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": ">=1.21.5-beta.3"
+   },
+   "versionId": "8x0q8gHM",
+   "version": "2.6.4+1.21.5",
+   "filename": "placeholder-api-2.6.4+1.21.5.jar",
+   "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/8x0q8gHM/placeholder-api-2.6.4%2B1.21.5.jar",
+   "size": 257878,
+   "license": "LGPL-3.0-only",
+   "authors": [
+    "Patbox"
+   ],
+   "source": {
+    "repo": "https://github.com/Patbox/TextPlaceholderAPI",
+    "ref": "2.6.4+1.21.5",
+    "kind": "tag"
+   }
+  },
+  "3a8adde4c35ab2d781422db870f58893740510cde907f987e085ff648b305aa87471aed10325f67f93046da485393819de7b42371f3e7ff9558fce89298cfe20": {
+   "project": "dWUOweyL",
+   "slug": "animated-mojang-logo",
+   "title": "Animated Mojang Logo",
+   "modId": "animated-mojang-logo",
+   "modVersion": "2.0",
+   "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": ">=1.21.2 <=1.21.4",
+    "java": ">=21",
+    "timelesslib": "*",
+    "yet_another_config_lib_v3": ">=3.8.2+1.21.3-fabric",
+    "fabric-api": "*",
+    "modmenu": "*"
+   },
+   "versionId": "wT3ZZ6St",
+   "version": "2.7",
+   "filename": "animated-mojang-logo-2.7.jar",
+   "url": "https://cdn.modrinth.com/data/dWUOweyL/versions/wT3ZZ6St/animated-mojang-logo-2.7.jar",
+   "size": 15081029,
+   "license": "GPL-3.0-or-later",
+   "authors": [
+    "BouncingElf10"
+   ],
+   "source": {
+    "repo": "https://github.com/BouncingElf10/Animated-Mojang-Logo",
+    "ref": "09289e75fc351e3666a65c70dedc28cadc2cbe89",
+    "kind": "commit de la rama 1.21.2-fabric (por fecha)"
+   }
+  },
+  "16b679f6a42549ca3b6bc147de710b2c8ba2d5e4661ed88df22782c05a4a5f6c1163d7b13867687ed91acde0fdfe5a5037d05662431c946865b58396284e7ee7": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.119.4+1.21.4",
+   "depends": {
+    "fabricloader": ">=0.16.9",
+    "java": ">=21",
+    "minecraft": ">=1.21.4- <1.21.5-"
+   },
+   "versionId": "p96k10UR",
+   "version": "0.119.4+1.21.4",
+   "filename": "fabric-api-0.119.4+1.21.4.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/p96k10UR/fabric-api-0.119.4%2B1.21.4.jar",
+   "size": 2149128,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.119.4+1.21.4",
+    "kind": "tag"
+   }
+  },
+  "4c44736033fe6a662155fb46c0e65e1e4d5011d397c671a2ba86ddb8d0cc3e196cd17d01c4270cec465e0d90664b56054f0d6f9cf743a4fa909c984355194df5": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.8.2+1.21.4-fabric",
+   "depends": {
+    "fabricloader": ">=0.17.0",
+    "minecraft": "1.21.4",
+    "java": ">=17",
+    "fabric-api": ">=0.111.0+1.21.4"
+   },
+   "versionId": "kcTd0BNZ",
+   "version": "3.8.2+1.21.4-fabric",
+   "filename": "yet_another_config_lib_v3-3.8.2+1.21.4-fabric.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/kcTd0BNZ/yet_another_config_lib_v3-3.8.2%2B1.21.4-fabric.jar",
+   "size": 1130824,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "e0c9a70ff09ae14605f7d6ad3578cc3675ac9959",
+    "kind": "commit que declara esa versión"
+   }
+  },
+  "863f7c367898e0fce283b11554d253f05acadf46057ab0d2c14a592582ce35bbd9cf4f4b8cf1e3658a6f7a4bb765f9e49a8a02127edbe017daeea8fb24b0ab4f": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "13.0.4",
+   "depends": {
+    "fabric-resource-loader-v0": "*",
+    "fabric-screen-api-v1": ">=1.0.4",
+    "fabric-key-binding-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.16.9",
+    "minecraft": ">=1.21.4-rc.3"
+   },
+   "versionId": "qEKKsTqd",
+   "version": "13.0.4",
+   "filename": "modmenu-13.0.4.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/qEKKsTqd/modmenu-13.0.4.jar",
+   "size": 1050885,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "haykam821",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v13.0.4",
+    "kind": "tag"
+   }
+  },
+  "06db18ada7973bd8cbe316faeebd25d89d79820da951208cc2ec69eb4058379d4e0c0233799d7043b5a19b62248f6a4d5f7031c110066fdf5d335e29385e3853": {
+   "project": "eXts2L7r",
+   "slug": "placeholder-api",
+   "title": "Text Placeholder API",
+   "modId": "placeholder-api",
+   "modVersion": "2.5.2+1.21.3",
+   "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": ">=1.21.2-alpha.24.33.a"
+   },
+   "versionId": "eeN3FuMY",
+   "version": "2.5.2+1.21.3",
+   "filename": "placeholder-api-2.5.2+1.21.3.jar",
+   "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/eeN3FuMY/placeholder-api-2.5.2%2B1.21.3.jar",
+   "size": 237288,
+   "license": "LGPL-3.0-only",
+   "authors": [
+    "Patbox"
+   ],
+   "source": {
+    "repo": "https://github.com/Patbox/TextPlaceholderAPI",
+    "ref": "2.5.2+1.21.3",
+    "kind": "tag"
+   }
+  },
+  "962e64e8418b074ce68809cd38835e99fea3da8dc1b2979a69f10fee047cd3404b2157a8106fa650795d17e0eebfa41a0d21af7ea5a4b9ee3992c57bc3c5d113": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.114.1+1.21.3",
+   "depends": {
+    "fabricloader": ">=0.16.8",
+    "java": ">=21",
+    "minecraft": ">=1.21.2- <1.21.4-"
+   },
+   "versionId": "wLq4rGsB",
+   "version": "0.114.1+1.21.3",
+   "filename": "fabric-api-0.114.1+1.21.3.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/wLq4rGsB/fabric-api-0.114.1%2B1.21.3.jar",
+   "size": 2380714,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.114.1+1.21.3",
+    "kind": "tag"
+   }
+  },
+  "bf83bc7ec27447edc1e6a18aa27c5e79b6c6ec3d3bb06917fc017e59cefbb2bbb36d8760c77901df30c2bab1d182a19a26cb13980c9be728e750b454222542c4": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.8.2+1.21.3-fabric",
+   "depends": {
+    "fabricloader": ">=0.17.0",
+    "minecraft": "~1.21.2 <1.21.4",
+    "java": ">=17",
+    "fabric-api": ">=0.114.0+1.21.3"
+   },
+   "versionId": "2lffyjXX",
+   "version": "3.8.2+1.21.3-fabric",
+   "filename": "yet_another_config_lib_v3-3.8.2+1.21.3-fabric.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/2lffyjXX/yet_another_config_lib_v3-3.8.2%2B1.21.3-fabric.jar",
+   "size": 1130833,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "e0c9a70ff09ae14605f7d6ad3578cc3675ac9959",
+    "kind": "commit que declara esa versión"
+   }
+  },
+  "25a8e1a190e8d69c376f43622fae18d1ff1f8e93547d1b19fb4f3b08bbc635c344308d789d260f2904d33daacf9172c6b1d8466887bfebe83ed92c6b6dff92af": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "12.0.1",
+   "depends": {
+    "fabric-resource-loader-v0": "*",
+    "fabric-screen-api-v1": ">=1.0.4",
+    "fabric-key-binding-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.15.10",
+    "minecraft": ">=1.21.2-"
+   },
+   "versionId": "fzwJOLlA",
+   "version": "12.0.1",
+   "filename": "modmenu-12.0.1.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/fzwJOLlA/modmenu-12.0.1.jar",
+   "size": 986251,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "haykam821",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v12.0.1",
+    "kind": "tag"
+   }
+  },
+  "3eb86b20263c50757980500500e3d8bd9e59eedf3998fd1b186b3ca934da83e6a75b61684950b4474bb5155483947d3ec3f944af51ac7f3517ff81ac67683798": {
+   "project": "dWUOweyL",
+   "slug": "animated-mojang-logo",
+   "title": "Animated Mojang Logo",
+   "modId": "animated-mojang-logo",
+   "modVersion": "2.0",
+   "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": ">=1.21 <=1.21.1",
+    "java": ">=21",
+    "timelesslib": "*",
+    "yet_another_config_lib_v3": ">=3.6.1+1.21-fabric",
+    "fabric-api": "*"
+   },
+   "versionId": "z72wma1V",
+   "version": "2.7",
+   "filename": "animated-mojang-logo-2.7.jar",
+   "url": "https://cdn.modrinth.com/data/dWUOweyL/versions/z72wma1V/animated-mojang-logo-2.7.jar",
+   "size": 15081491,
+   "license": "GPL-3.0-or-later",
+   "authors": [
+    "BouncingElf10"
+   ],
+   "source": {
+    "repo": "https://github.com/BouncingElf10/Animated-Mojang-Logo",
+    "ref": "38af74bb493196c3d08dd2b9accca1a9c5f78ba2",
+    "kind": "commit de la rama 1.21-fabric (por fecha)"
+   }
+  },
+  "9f721c253ae2e9823cb548e8ec132c9928f80a65184e9b8dcfc489a8d632df20cbfea1e65ff8a4333bdb295c41fbe2228b43e4d41c7355d42ed4637a785840a1": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.116.18+1.21.1",
+   "depends": {
+    "fabricloader": ">=0.15.11",
+    "java": ">=21",
+    "minecraft": ">=1.21- <1.21.2-"
+   },
+   "versionId": "5SwzqWUu",
+   "version": "0.116.18+1.21.1",
+   "filename": "fabric-api-0.116.18+1.21.1.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/5SwzqWUu/fabric-api-0.116.18%2B1.21.1.jar",
+   "size": 2453884,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.116.18+1.21.1",
+    "kind": "tag"
+   }
+  },
+  "353169f85fa63e73ce9bdd0d4ddce54e3cbc4d71153a93c982f74c68fd93325986663f94fc2f2b10f4427e8b15a0485c608c5587b3840d933204b50ea4cb6d4c": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.8.2+1.21.1-fabric",
+   "depends": {
+    "fabricloader": ">=0.17.0",
+    "minecraft": "~1.21 <1.21.2",
+    "java": ">=17",
+    "fabric-api": ">=0.104.0+1.21.1"
+   },
+   "versionId": "o3cDn8Vp",
+   "version": "3.8.2+1.21.1-fabric",
+   "filename": "yet_another_config_lib_v3-3.8.2+1.21.1-fabric.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/o3cDn8Vp/yet_another_config_lib_v3-3.8.2%2B1.21.1-fabric.jar",
+   "size": 1131265,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "e0c9a70ff09ae14605f7d6ad3578cc3675ac9959",
+    "kind": "commit que declara esa versión"
+   }
+  },
+  "92e8e96267ff18d320903090f2ad9b32408a218919f5a0d578e232ad774c89d49a34a8271806652be7d6283f24e98432bc4af7f95855e78b843f9100d68696c7": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "11.0.5",
+   "depends": {
+    "fabric-resource-loader-v0": "*",
+    "fabric-screen-api-v1": ">=1.0.4",
+    "fabric-key-binding-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.15.10",
+    "minecraft": ">=1.21-beta.2"
+   },
+   "versionId": "6lgOkclV",
+   "version": "11.0.5",
+   "filename": "modmenu-11.0.5.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/6lgOkclV/modmenu-11.0.5.jar",
+   "size": 975846,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "haykam821",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v11.0.5",
+    "kind": "tag"
+   }
+  },
+  "fc13d3a5c048dbaab86318edaf8b6c6b46ef9f1d367e8f063d19f5a9b0da66c5ae419d92c8c4608edc89a01eb44d91ffcf017fea73f39b222cbd85e82f70a233": {
+   "project": "eXts2L7r",
+   "slug": "placeholder-api",
+   "title": "Text Placeholder API",
+   "modId": "placeholder-api",
+   "modVersion": "2.4.2+1.21",
+   "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": ">=1.21-"
+   },
+   "versionId": "U5bhVym2",
+   "version": "2.4.2+1.21",
+   "filename": "placeholder-api-2.4.2+1.21.jar",
+   "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/U5bhVym2/placeholder-api-2.4.2%2B1.21.jar",
+   "size": 232325,
+   "license": "LGPL-3.0-only",
+   "authors": [
+    "Patbox"
+   ],
+   "source": {
+    "repo": "https://github.com/Patbox/TextPlaceholderAPI",
+    "ref": "2.4.2+1.21",
+    "kind": "tag"
+   }
+  },
+  "11732c4e36c3909360a24aa42a44da89048706cf10aaafa0404d7153cbc7395ff68a130f7b497828d6932740e004416b692650c3fbcc1f32babd7cb6eb9791d8": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.102.0+1.21",
+   "depends": {
+    "fabricloader": ">=0.15.11",
+    "java": ">=21",
+    "minecraft": ">=1.21- <1.21.1-"
+   },
+   "versionId": "oGwyXeEI",
+   "version": "0.102.0+1.21",
+   "filename": "fabric-api-0.102.0+1.21.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/oGwyXeEI/fabric-api-0.102.0%2B1.21.jar",
+   "size": 2285859,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.102.0+1.21",
+    "kind": "tag"
+   }
+  },
+  "0a52df2fd4126a994a2558d3c9464f886b0cb4bb7cb87cf36a12f87bd885e2525d562ff1d06625b4ff9911b89d31420e5d261ecd07f3b6ab47486543bdd017ad": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.6.2+1.21-fabric",
+   "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.21 <1.21.2",
+    "java": ">=17",
+    "fabric-resource-loader-v0": "*"
+   },
+   "versionId": "iu96ISLv",
+   "version": "3.6.2+1.21-fabric",
+   "filename": "YetAnotherConfigLib-3.6.2+1.21-fabric.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/iu96ISLv/YetAnotherConfigLib-3.6.2%2B1.21-fabric.jar",
+   "size": 1108730,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "3.6.2+1.21-fabric",
+    "kind": "tag"
+   }
+  },
+  "2eabc681bbd93c155615d30e4de55360a400b0f472c17ac53fb98ae2e024605f970b5a20c9c0178a766e6cbabbcb816d4819e64b11b7a6af933b7d04a2f5c39d": {
+   "project": "dWUOweyL",
+   "slug": "animated-mojang-logo",
+   "title": "Animated Mojang Logo",
+   "modId": "animated-mojang-logo",
+   "modVersion": "2.0",
+   "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": ">=1.20.5 <=1.20.6",
+    "java": ">=21",
+    "timelesslib": "*",
+    "yet_another_config_lib_v3": ">=3.2.2+1.20-fabric",
+    "fabric-api": "*"
+   },
+   "versionId": "9IMYxnkB",
+   "version": "2.7",
+   "filename": "animated-mojang-logo-2.7.jar",
+   "url": "https://cdn.modrinth.com/data/dWUOweyL/versions/9IMYxnkB/animated-mojang-logo-2.7.jar",
+   "size": 15081467,
+   "license": "GPL-3.0-or-later",
+   "authors": [
+    "BouncingElf10"
+   ],
+   "source": {
+    "repo": "https://github.com/BouncingElf10/Animated-Mojang-Logo",
+    "ref": "7a0544a00f4a12486d00510b5d7580d801d0407f",
+    "kind": "commit de la rama 1.20.5-fabric (por fecha)"
+   }
+  },
+  "414f19f903a093c39006e1919a81bea43c3b6728b88e358dc2611ab44b8087e25abc504c66926f245342fa2a245c07462ed62897f15d6c84006b7acf6214ca46": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.100.8+1.20.6",
+   "depends": {
+    "fabricloader": ">=0.15.6",
+    "java": ">=21",
+    "minecraft": ">=1.20.5- <1.20.7-"
+   },
+   "versionId": "ocg4hG3t",
+   "version": "0.100.8+1.20.6",
+   "filename": "fabric-api-0.100.8+1.20.6.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/ocg4hG3t/fabric-api-0.100.8%2B1.20.6.jar",
+   "size": 2249380,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.100.8+1.20.6",
+    "kind": "tag"
+   }
+  },
+  "8a0a3dd27ef3603472814e243c2f51c1a61e5bb907d07abf18582145a61536ef49119f25f844cd97d9dee93d9079a3f877d27ce80b5fed39f5343f2d41460879": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.6.6+1.20.6-fabric",
+   "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.20.5",
+    "java": ">=17",
+    "fabric-api": ">=0.100.0+1.20.6"
+   },
+   "versionId": "PCMRFynj",
+   "version": "3.6.6+1.20.6-fabric",
+   "filename": "yet_another_config_lib_v3-3.6.6+1.20.6-fabric.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/PCMRFynj/yet_another_config_lib_v3-3.6.6%2B1.20.6-fabric.jar",
+   "size": 1116184,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "ae66e4c77c13e4e153da5afb9271ed59a359589e",
+    "kind": "commit que declara esa versión"
+   }
+  },
+  "b18c56321c0dfd404607bd895ef3aa654d390cfb7b96cbf449ecaad4be4fce72d4b20e56bd4b914d9c162dfa9384f55ec238e855b4a1525b12bad3359c8d0534": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "10.0.0",
+   "depends": {
+    "fabric-resource-loader-v0": "*",
+    "fabric-screen-api-v1": ">=1.0.4",
+    "fabric-key-binding-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.12.23",
+    "minecraft": ">=1.20.5-"
+   },
+   "versionId": "HLa8flfl",
+   "version": "10.0.0",
+   "filename": "modmenu-10.0.0.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/HLa8flfl/modmenu-10.0.0.jar",
+   "size": 966865,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "haykam821",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v10.0.0",
+    "kind": "tag"
+   }
+  },
+  "f44dcd96c18659d9dea94936f6a46683692f564fe8f2c1d4bc84a74f64df726ad564a93596491c0ed2ff91fc7dd182a0732985a34f6e5c3f21f1b4417b7ebae3": {
+   "project": "eXts2L7r",
+   "slug": "placeholder-api",
+   "title": "Text Placeholder API",
+   "modId": "placeholder-api",
+   "modVersion": "2.4.0-pre.1+1.20.5",
+   "depends": {
+    "fabricloader": ">=0.13.4",
+    "minecraft": ">=1.19-beta.1"
+   },
+   "versionId": "3v1Xz4LB",
+   "version": "2.4.0-pre.1+1.20.5",
+   "filename": "placeholder-api-2.4.0-pre.1+1.20.5.jar",
+   "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/3v1Xz4LB/placeholder-api-2.4.0-pre.1%2B1.20.5.jar",
+   "size": 230131,
+   "license": "LGPL-3.0-only",
+   "authors": [
+    "Patbox"
+   ],
+   "source": {
+    "repo": "https://github.com/Patbox/TextPlaceholderAPI",
+    "ref": "2.4.0-pre.1+1.20.5",
+    "kind": "tag"
+   }
+  },
+  "4b52fe9bd5bfd50df610f236b6d2fa08985ab5dee51261397c83413cf42cf4bde05190ba851f5100bae3c43a7e2da9e8d0e708477ad8e30d2f00eb1e2af59cb3": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.97.8+1.20.5",
+   "depends": {
+    "fabricloader": ">=0.15.6",
+    "java": ">=21",
+    "minecraft": ">=1.20.5- <1.20.6-"
+   },
+   "versionId": "GCdY4I8I",
+   "version": "0.97.8+1.20.5",
+   "filename": "fabric-api-0.97.8+1.20.5.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/GCdY4I8I/fabric-api-0.97.8%2B1.20.5.jar",
+   "size": 2201975,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.97.8+1.20.5",
+    "kind": "tag"
+   }
+  },
+  "c1291965b77be877704f7049615a6df8f1e64fe01d590bd96f4ff7b69a28b833c470192db1ee1cb6c1b467a69a94f426d573775e600cbf1171d0ffe2a3217439": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.6.2+1.20.6-fabric",
+   "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.20.5",
+    "java": ">=17",
+    "fabric-resource-loader-v0": "*"
+   },
+   "versionId": "bMaDkSXq",
+   "version": "3.6.2+1.20.6-fabric",
+   "filename": "YetAnotherConfigLib-3.6.2+1.20.6-fabric.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/bMaDkSXq/YetAnotherConfigLib-3.6.2%2B1.20.6-fabric.jar",
+   "size": 1108764,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "3.6.2+1.20.6-fabric",
+    "kind": "tag"
+   }
+  },
+  "2c68b97ab3ed1cb20b93c7596cd3893d899b8cfc3bb7d14c34f7cc0005df754791c29d04d3baf40e7ba43a5bcd4167c22632f217ad7cd95728fadb74ffacbbd5": {
+   "project": "dWUOweyL",
+   "slug": "animated-mojang-logo",
+   "title": "Animated Mojang Logo",
+   "modId": "animated-mojang-logo",
+   "modVersion": "2.0",
+   "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": ">=1.20 <=1.20.4",
+    "java": ">=17",
+    "timelesslib": "*",
+    "yet_another_config_lib_v3": ">=3.2.2+1.20-fabric",
+    "fabric-api": "*"
+   },
+   "versionId": "TwjvZIdi",
+   "version": "2.7",
+   "filename": "animated-mojang-logo-2.7.jar",
+   "url": "https://cdn.modrinth.com/data/dWUOweyL/versions/TwjvZIdi/animated-mojang-logo-2.7.jar",
+   "size": 15081472,
+   "license": "GPL-3.0-or-later",
+   "authors": [
+    "BouncingElf10"
+   ],
+   "source": {
+    "repo": "https://github.com/BouncingElf10/Animated-Mojang-Logo",
+    "ref": "8e61b33ebb75717b5befc9bff280c9ea29ad006a",
+    "kind": "commit de la rama 1.20-fabric (por fecha)"
+   }
+  },
+  "ea1e47672a1e0fef7fa3fd7f7b396b5a8fb2c46e6ce33dbc4cc2b8d320bc7b775a0de42a478302419c8063c47fbc18bb2ad7551772f54af8059132ac2cb4f108": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.97.3+1.20.4",
+   "depends": {
+    "fabricloader": ">=0.15.1",
+    "java": ">=17",
+    "minecraft": ">=1.20.3- <1.20.5-"
+   },
+   "versionId": "BPX6fK06",
+   "version": "0.97.3+1.20.4",
+   "filename": "fabric-api-0.97.3+1.20.4.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/BPX6fK06/fabric-api-0.97.3%2B1.20.4.jar",
+   "size": 2187523,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.97.3+1.20.4",
+    "kind": "tag"
+   }
+  },
+  "e25445af531f0194c13786025fe27389991e9450b6201499da97270e41eecf934e7e2abaf4a81526476bc6f30396d9d234e1aadd94665a8f9098dba4115f587c": {
+   "project": "vKDSSPpv",
+   "slug": "timelesslib",
+   "title": "TimelessLib",
+   "modId": "timelesslib",
+   "modVersion": "2.0.1-fabric-1.19.3-1.20.4",
+   "depends": {
+    "fabricloader": ">=0.17.3",
+    "minecraft": ">=1.19.3 <=1.20.4",
+    "java": ">=17",
+    "fabric-api": "*"
+   },
+   "versionId": "kmKiPoq1",
+   "version": "2.0.1-fabric-1.19.3-1.20.4",
+   "filename": "timelesslib-2.0.1-fabric-1.19.3-1.20.4.jar",
+   "url": "https://cdn.modrinth.com/data/vKDSSPpv/versions/kmKiPoq1/timelesslib-2.0.1-fabric-1.19.3-1.20.4.jar",
+   "size": 114474,
+   "license": "Zlib",
+   "authors": [
+    "BouncingElf10"
+   ],
+   "source": {
+    "repo": "https://github.com/BouncingElf10/timelesslib",
+    "ref": "bdab901b28314612d60e111c21107d2ad85a7932",
+    "kind": "commit de la rama fabric-1.19.3-1.20.4 (por fecha)"
+   }
+  },
+  "ea5af6c6a95a2c62070b87822d87ad835daae655886f8886a20f71e5b838687c56f06df0d9ba6ab3f5c69c2c1699e1a2400bc8079a6d4d37442d2f4daa696eb1": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.6.6+1.20.4-fabric",
+   "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "1.20.4",
+    "java": ">=17",
+    "fabric-api": ">=0.96.11+1.20.4"
+   },
+   "versionId": "xBXboBnE",
+   "version": "3.6.6+1.20.4-fabric",
+   "filename": "yet_another_config_lib_v3-3.6.6+1.20.4-fabric.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/xBXboBnE/yet_another_config_lib_v3-3.6.6%2B1.20.4-fabric.jar",
+   "size": 1115393,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "ae66e4c77c13e4e153da5afb9271ed59a359589e",
+    "kind": "commit que declara esa versión"
+   }
+  },
+  "30e8075a4228ee11eb8b0e85d950a69c8d2df57e05b0da5268e6b0129eea5e69ac30e6eb1b4c93348bb8acfdc53c22b2866288d76f7446b51b79355f4eada87a": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "9.2.0",
+   "depends": {
+    "fabric-resource-loader-v0": "*",
+    "fabric-screen-api-v1": ">=1.0.4",
+    "fabric-key-binding-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.12.23",
+    "minecraft": ">=1.20.3"
+   },
+   "versionId": "FawTQg29",
+   "version": "9.2.0",
+   "filename": "modmenu-9.2.0.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/FawTQg29/modmenu-9.2.0.jar",
+   "size": 963019,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "haykam821",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v9.2.0",
+    "kind": "tag"
+   }
+  },
+  "d2044d957b8f07f08ef4bf154c720803a5cac3e9eac504fc127321ea6ca08ed9f06a6bb3e433814b292c8bb6152b513fd6275a81aa168e9185b7c9f167d6d3a5": {
+   "project": "eXts2L7r",
+   "slug": "placeholder-api",
+   "title": "Text Placeholder API",
+   "modId": "placeholder-api",
+   "modVersion": "2.4.0-pre.3+1.20.4",
+   "depends": {
+    "fabricloader": ">=0.13.4",
+    "minecraft": ">=1.19-beta.1"
+   },
+   "versionId": "VYMQNs7A",
+   "version": "2.4.0-pre.3+1.20.4",
+   "filename": "placeholder-api-2.4.0-pre.3+1.20.4.jar",
+   "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/VYMQNs7A/placeholder-api-2.4.0-pre.3%2B1.20.4.jar",
+   "size": 230444,
+   "license": "LGPL-3.0-only",
+   "authors": [
+    "Patbox"
+   ],
+   "source": {
+    "repo": "https://github.com/Patbox/TextPlaceholderAPI",
+    "ref": "2.4.0-pre.3+1.20.4",
+    "kind": "tag"
+   }
+  },
+  "03acb0086fcd89ba1b4f5f069a38318536e0e5aefff9722b0068b0fd09563123bf6493a16f4e6cac2816fccbdfe1c4bdacfe29de5f15603c3b5a15bcc8ef5b6a": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.91.1+1.20.3",
+   "depends": {
+    "fabricloader": ">=0.14.23",
+    "java": ">=17",
+    "minecraft": ">=1.20.3- <1.20.4-"
+   },
+   "versionId": "Yolngp3s",
+   "version": "0.91.1+1.20.3",
+   "filename": "fabric-api-0.91.1+1.20.3.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/Yolngp3s/fabric-api-0.91.1%2B1.20.3.jar",
+   "size": 2080725,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.91.1+1.20.3",
+    "kind": "tag"
+   }
+  },
+  "597073b3835ce1d4c0f9e4ba835bd565871fa49a8feee41b90213480a76d251e2a57a71729f132e4b908ef50a5602cff90c330da229db605014e26e856cfcbc8": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.3.2+1.20.4",
+   "depends": {
+    "fabricloader": ">=0.14.0",
+    "minecraft": [
+     "1.20.4",
+     "1.20.3"
+    ],
+    "java": ">=17",
+    "fabric-resource-loader-v0": "*"
+   },
+   "versionId": "StXMrAsz",
+   "version": "3.3.2+1.20.4-fabric",
+   "filename": "yet-another-config-lib-fabric-3.3.2+1.20.4.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/StXMrAsz/yet-another-config-lib-fabric-3.3.2%2B1.20.4.jar",
+   "size": 979275,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "3.3.2+1.20.4",
+    "kind": "tag"
+   }
+  },
+  "62ae3152d6dfd2745b95a6572f085bf8deb708d183a4234e6f72ae7b07f05a787454d4f289cee96d4e0f7efab026ed6073659d1aebb87530abeb7ddcfc0fe40b": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "9.0.0",
+   "depends": {
+    "fabric-resource-loader-v0": "*",
+    "fabric-screen-api-v1": ">=1.0.4",
+    "fabric-key-binding-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.12.23",
+    "minecraft": ">=1.20.3-"
+   },
+   "versionId": "sjtVVlsA",
+   "version": "9.0.0",
+   "filename": "modmenu-9.0.0.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/sjtVVlsA/modmenu-9.0.0.jar",
+   "size": 724484,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "haykam821",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v9.0.0",
+    "kind": "tag"
+   }
+  },
+  "bfa5c6f949cb782ce84de24ad3ef324690fa4f84dea57e4d2f311e1b30b9ed1dac2c17aee25f7a26d0312d808f2ed6a8ab81c79d38dda9774c87c324305cec67": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.91.6+1.20.2",
+   "depends": {
+    "fabricloader": ">=0.14.22",
+    "java": ">=17",
+    "minecraft": ">=1.20.2- <1.20.3-"
+   },
+   "versionId": "8GVp7wDk",
+   "version": "0.91.6+1.20.2",
+   "filename": "fabric-api-0.91.6+1.20.2.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/8GVp7wDk/fabric-api-0.91.6%2B1.20.2.jar",
+   "size": 2085618,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.91.6+1.20.2",
+    "kind": "tag"
+   }
+  },
+  "5830fcd3a750c722665c8a07b933682b31b06563e54530d8621fbbbe29d620f6b681c2af7359307b9741e755ea854f37b294d73c727e5e001e908e6d834db4b5": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.3.0-beta.1+1.20.2",
+   "depends": {
+    "fabricloader": ">=0.14.0",
+    "minecraft": "~1.20.2",
+    "java": ">=17",
+    "fabric-resource-loader-v0": "*"
+   },
+   "versionId": "vede4iWJ",
+   "version": "3.3.0-beta.1+1.20.2-fabric",
+   "filename": "yet-another-config-lib-fabric-3.3.0-beta.1+1.20.2.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/vede4iWJ/yet-another-config-lib-fabric-3.3.0-beta.1%2B1.20.2.jar",
+   "size": 971062,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "3.3.0-beta.1+1.20.2",
+    "kind": "tag"
+   }
+  },
+  "b2827f7bf82f2791812c1a1ebdac4a0d62451e040e08eedb6b5dbfc9f3e78711286fc82676f29fec7600fc7058ebd40a627267fc59763b7b21586da582dd8171": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "8.0.1",
+   "depends": {
+    "fabric-resource-loader-v0": "*",
+    "fabric-screen-api-v1": ">=1.0.4",
+    "fabric-key-binding-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.12.13",
+    "minecraft": ">=1.20.2-"
+   },
+   "versionId": "fCQyI9Zj",
+   "version": "8.0.1",
+   "filename": "modmenu-8.0.1.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/fCQyI9Zj/modmenu-8.0.1.jar",
+   "size": 727367,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "haykam821",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v8.0.1",
+    "kind": "tag"
+   }
+  },
+  "de9da2344043b3e9ef9fb7dbfff5f2577b06000c4f73f2a37959a80123141169084cece19133bd299b45feaaa4648bdaca2ea085684888cc8c55cc9134a477ca": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.92.12+1.20.1",
+   "depends": {
+    "fabricloader": ">=0.16.10",
+    "java": ">=17",
+    "minecraft": ">=1.20 <1.20.2-"
+   },
+   "versionId": "rvI2dfzR",
+   "version": "0.92.12+1.20.1",
+   "filename": "fabric-api-0.92.12+1.20.1.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/rvI2dfzR/fabric-api-0.92.12%2B1.20.1.jar",
+   "size": 2137232,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.92.12+1.20.1",
+    "kind": "tag"
+   }
+  },
+  "20f282b3cdaec7c83a96840edb756336677c5816ed943145022f1ce1eafac0c9aa7c621939e15abe6f4309626738bc56d3d1b8434f5175d22e7409108630b02b": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.6.6+1.20.1-fabric",
+   "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "1.20.1",
+    "java": ">=17",
+    "fabric-api": ">=0.92.0+1.20.1"
+   },
+   "versionId": "dvS5DjUA",
+   "version": "3.6.6+1.20.1-fabric",
+   "filename": "yet_another_config_lib_v3-3.6.6+1.20.1-fabric.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/dvS5DjUA/yet_another_config_lib_v3-3.6.6%2B1.20.1-fabric.jar",
+   "size": 1294234,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "ae66e4c77c13e4e153da5afb9271ed59a359589e",
+    "kind": "commit que declara esa versión"
+   }
+  },
+  "9a7837e04bb34376611b207a3b20e5fe1c82a4822b42929d5b410809ec4b88ff3cac8821c4568f880775bafa3c079dfc7800f8471356a4046248b12607e855eb": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "7.2.2",
+   "depends": {
+    "fabric-resource-loader-v0": "*",
+    "fabric-screen-api-v1": ">=1.0.4",
+    "fabric-key-binding-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.12.13",
+    "minecraft": ">=1.19.4-"
+   },
+   "versionId": "lEkperf6",
+   "version": "7.2.2",
+   "filename": "modmenu-7.2.2.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/lEkperf6/modmenu-7.2.2.jar",
+   "size": 721366,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "haykam821",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v7.2.2",
+    "kind": "tag"
+   }
+  },
+  "b121ee00b13804d6850cdf506f9b216348a76ee8c1998492062d1b3d09f7ee921c89153449fd9d8ad907d1b8efb660a9cf4c540c20dc0ae892e0f567ac6541fe": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.83.0+1.20",
+   "depends": {
+    "fabricloader": ">=0.14.21",
+    "java": ">=17",
+    "minecraft": ">=1.20- <1.20.1-"
+   },
+   "versionId": "n2c5lxAo",
+   "version": "0.83.0+1.20",
+   "filename": "fabric-api-0.83.0+1.20.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/n2c5lxAo/fabric-api-0.83.0%2B1.20.jar",
+   "size": 1974627,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.83.0+1.20",
+    "kind": "tag"
+   }
+  },
+  "dcfedeb671d5afb1b1816f7c42708544a211aa8bc71e0ec33e2e1157fc12f31a13181255ee2551257aba599c102951f74113cb931e440c87386b435753ca021d": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet_another_config_lib_v3",
+   "modVersion": "3.2.2+1.20",
+   "depends": {
+    "fabricloader": ">=0.14.0",
+    "minecraft": ">1.20-",
+    "java": ">=17",
+    "fabric-resource-loader-v0": "*"
+   },
+   "versionId": "DretS191",
+   "version": "3.2.2+1.20-fabric",
+   "filename": "yet-another-config-lib-fabric-3.2.2+1.20.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/DretS191/yet-another-config-lib-fabric-3.2.2%2B1.20.jar",
+   "size": 981831,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "3.2.2+1.20",
+    "kind": "tag"
+   }
+  },
+  "4573f699d177b28a05a5f3f208b264bf985d73042c796c9a08ad4123b78a5d4af7421ce939d0dfb21fee468000b4a6a8968094d44dac4146773b693447bfd055": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "7.0.1",
+   "depends": {
+    "fabric-resource-loader-v0": "*",
+    "fabric-screen-api-v1": ">=1.0.4",
+    "fabric-key-binding-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.12.13",
+    "minecraft": ">=1.19.4-"
+   },
+   "versionId": "RTFDnTKf",
+   "version": "7.0.1",
+   "filename": "modmenu-7.0.1.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/RTFDnTKf/modmenu-7.0.1.jar",
+   "size": 718157,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "haykam821",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v7.0.1",
+    "kind": "tag"
+   }
+  },
+  "bef58db4f592ff67004a126aae7d6a1c3b042ae983e8248c538d32c613deff8818d683b12c66aa5a9c9f451bfc888ef71a4b898a6fa42f14919eea9387b78d64": {
+   "project": "dWUOweyL",
+   "slug": "animated-mojang-logo",
+   "title": "Animated Mojang Logo",
+   "modId": "animated-mojang-logo",
+   "modVersion": "2.0",
+   "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": ">=1.19 <=1.19.2",
+    "java": ">=17",
+    "timelesslib": "*"
+   },
+   "versionId": "9KJijl2y",
+   "version": "2.7",
+   "filename": "animated-mojang-logo-2.7.jar",
+   "url": "https://cdn.modrinth.com/data/dWUOweyL/versions/9KJijl2y/animated-mojang-logo-2.7.jar",
+   "size": 15076132,
+   "license": "GPL-3.0-or-later",
+   "authors": [
+    "BouncingElf10"
+   ],
+   "source": {
+    "repo": "https://github.com/BouncingElf10/Animated-Mojang-Logo",
+    "ref": "053248494003affa378b75430467477cc2ba13c8",
+    "kind": "commit de la rama 1.19-fabric (por fecha)"
+   }
+  },
+  "1b8f180fe24a971b1a28758f1fa2cb4afa7f52d8bac6c9e68e6dcf0c4fc6cf2024becb1dabfa17e5a24b7c47aecd945af3531d1b3c72319d986011f1d0067338": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric-api",
+   "modVersion": "0.77.0+1.19.2",
+   "depends": {
+    "fabricloader": ">=0.14.9",
+    "java": ">=17",
+    "minecraft": "1.19.2"
+   },
+   "versionId": "6g95K303",
+   "version": "0.77.0+1.19.2",
+   "filename": "fabric-api-0.77.0+1.19.2.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/6g95K303/fabric-api-0.77.0%2B1.19.2.jar",
+   "size": 1892953,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.77.0+1.19.2",
+    "kind": "tag"
+   }
+  },
+  "ccad70ca5e754b74032050e9b4950269144c78e0b31191bfb1f98865d0102ba5d419572a3bf074808fff50d40688c23d2330fbcbb03f12ff5e8997c87e30f1a7": {
+   "project": "vKDSSPpv",
+   "slug": "timelesslib",
+   "title": "TimelessLib",
+   "modId": "timelesslib",
+   "modVersion": "2.0.1-fabric-1.19-1.19.2",
+   "depends": {
+    "fabricloader": ">=0.17.3",
+    "minecraft": ">=1.19 <=1.19.2",
+    "java": ">=17"
+   },
+   "versionId": "RdOA4Bcn",
+   "version": "2.0.1-fabric-1.19-1.19.2",
+   "filename": "timelesslib-2.0.1-fabric-1.19-1.19.2.jar",
+   "url": "https://cdn.modrinth.com/data/vKDSSPpv/versions/RdOA4Bcn/timelesslib-2.0.1-fabric-1.19-1.19.2.jar",
+   "size": 114460,
+   "license": "Zlib",
+   "authors": [
+    "BouncingElf10"
+   ],
+   "source": {
+    "repo": "https://github.com/BouncingElf10/timelesslib",
+    "ref": "2e596269e8b65ce8417836cb7676e7d517c6b562",
+    "kind": "commit de la rama fabric-1.19-1.19.2 (por fecha)"
+   }
+  },
+  "5f68dbbad8149ce4f18c1b10186b881a5149559c23127e16f9075e944e056dd8bf29a88b7f1a24e7e1e35fec4a6fb7084c57118a706d208ccc7d5f37de4424d8": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet-another-config-lib",
+   "modVersion": "2.2.0-for-1.19.2",
+   "depends": {
+    "fabricloader": ">=0.14.0",
+    "minecraft": "1.19.2",
+    "java": ">=17",
+    "fabric-resource-loader-v0": "*"
+   },
+   "versionId": "bIVYcRpm",
+   "version": "2.2.0-for-1.19.2",
+   "filename": "YetAnotherConfigLib-2.2.0-for-1.19.2.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/bIVYcRpm/YetAnotherConfigLib-2.2.0-for-1.19.2.jar",
+   "size": 202452,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "2.2.0-for-1.19.2",
+    "kind": "tag"
+   }
+  },
+  "90e5e427ad719a7c2c2e4e35a79c2d5233a6fa2895437f58db1b25ba645bf5ee6ec78b6c82eb52c49ab3125714ba49c096cf50af399265039a36c85ce3b9add7": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "4.1.2",
+   "depends": {
+    "fabric-resource-loader-v0": "*",
+    "fabric-screen-api-v1": ">=1.0.4",
+    "fabric-key-binding-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.12.6",
+    "minecraft": ">=1.19.1-"
+   },
+   "versionId": "V4hnfgRO",
+   "version": "4.1.2",
+   "filename": "modmenu-4.1.2.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/V4hnfgRO/modmenu-4.1.2.jar",
+   "size": 614103,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "jackassmc",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v4.1.2",
+    "kind": "tag"
+   }
+  },
+  "6916bc50c9bcd225142e4cf8a2d251f57dd89123baff4a8941c46365ba408b5a00484731ec3981935536817e63d2fcf1f916a2ac5975beffc831139cc3b62bd0": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric",
+   "modVersion": "0.58.5+1.19.1",
+   "depends": {
+    "fabricloader": ">=0.14.8",
+    "java": ">=17",
+    "minecraft": "~1.19.1-beta.2"
+   },
+   "versionId": "3fY6NddT",
+   "version": "0.58.5+1.19.1",
+   "filename": "fabric-api-0.58.5+1.19.1.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.58.5%2B1.19.1/fabric-api-0.58.5%2B1.19.1.jar",
+   "size": 1498297,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.58.5+1.19.1",
+    "kind": "tag"
+   }
+  },
+  "9c71c0b3b1ee8388f6a0fc3f1e07a5bf5fb63ce12c37248385c43a7cc29b8a540f75c25d3e64765f333812f37d47918a68e42b830391dca1e52f6f5f1c7540b4": {
+   "project": "1eAoo2KR",
+   "slug": "yacl",
+   "title": "YetAnotherConfigLib (YACL)",
+   "modId": "yet-another-config-lib",
+   "modVersion": "1.7.1",
+   "depends": {
+    "fabricloader": ">=0.14.0",
+    "minecraft": "1.19.x",
+    "java": ">=17"
+   },
+   "versionId": "mW3CVg5N",
+   "version": "1.7.1",
+   "filename": "YetAnotherConfigLib-1.7.1.jar",
+   "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/mW3CVg5N/YetAnotherConfigLib-1.7.1.jar",
+   "size": 146278,
+   "license": "LGPL-3.0-or-later",
+   "authors": [
+    "isXander"
+   ],
+   "source": {
+    "repo": "https://github.com/isXander/YetAnotherConfigLib",
+    "ref": "1.7.1",
+    "kind": "tag"
+   }
+  },
+  "71e7b0f80de56be992b4ed7b33f4b5035f7a9de62ea94a979e0ec2ceb599f15c8ac6f72050d0734cf840f0fbd6f6ef6ca30d3aaacb7e9d489dc58c4a416ff2b4": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "4.0.5",
+   "depends": {
+    "fabric-resource-loader-v0": "*",
+    "fabric-screen-api-v1": ">=1.0.4",
+    "fabric-key-binding-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.12.6",
+    "minecraft": ">=1.19.1-"
+   },
+   "versionId": "2Ys0a7JE",
+   "version": "4.0.5",
+   "filename": "modmenu-4.0.5.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/4.0.5/modmenu-4.0.5.jar",
+   "size": 445959,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "jackassmc",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v4.0.5",
+    "kind": "tag"
+   }
+  },
+  "9c948488852e3bcf7a84fef26465bf0bcfbba17fb03e6b56ae11cf82d1ae6abbfb4c569bf3f1d088c6c3c5219d37c2699afc9013926f588263210a19f8d6e235": {
+   "project": "P7dR8mSH",
+   "slug": "fabric-api",
+   "title": "Fabric API",
+   "modId": "fabric",
+   "modVersion": "0.58.0+1.19",
+   "depends": {
+    "fabricloader": ">=0.14.6",
+    "java": ">=17",
+    "minecraft": "~1.19-alpha.22.18.a"
+   },
+   "versionId": "3KmOcp6b",
+   "version": "0.58.0+1.19",
+   "filename": "fabric-api-0.58.0+1.19.jar",
+   "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.58.0%2B1.19/fabric-api-0.58.0%2B1.19.jar",
+   "size": 1496048,
+   "license": "Apache-2.0",
+   "authors": [
+    "FabricMC"
+   ],
+   "source": {
+    "repo": "https://github.com/FabricMC/fabric-api",
+    "ref": "0.58.0+1.19",
+    "kind": "tag"
+   }
+  },
+  "ec0a3ec44a148c0fed89318ddc3d90121441b1b581affebc92855df81328e0182fd6778d5f52ca96ce8cc0f99a73ed0761abff98facdd74cc96cb1321b886d4f": {
+   "project": "mOgUt4GM",
+   "slug": "modmenu",
+   "title": "Mod Menu",
+   "modId": "modmenu",
+   "modVersion": "4.0.4",
+   "depends": {
+    "fabric-resource-loader-v0": "*",
+    "fabric-screen-api-v1": ">=1.0.4",
+    "fabric-key-binding-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*",
+    "fabricloader": ">=0.12.6",
+    "minecraft": ">=1.19-"
+   },
+   "versionId": "oU5qfeR6",
+   "version": "4.0.4",
+   "filename": "modmenu-4.0.4.jar",
+   "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/4.0.4/modmenu-4.0.4.jar",
+   "size": 444139,
+   "license": "MIT",
+   "authors": [
+    "Prospector",
+    "jackassmc",
+    "TerraformersMC"
+   ],
+   "source": {
+    "repo": "https://github.com/TerraformersMC/ModMenu",
+    "ref": "v4.0.4",
+    "kind": "tag"
+   }
+  }
+ }
+}

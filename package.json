@@ -10,11 +10,14 @@
   "scripts": {
     "start": "electron .",
     "test": "node --test test/*.test.js",
+    "fetch:logo": "node scripts/fetch-animated-logo.js",
+    "fetch:sources": "node scripts/fetch-animated-logo.js --sources",
     "dist": "electron-builder --linux AppImage",
     "dist:win": "electron-builder --win nsis",
     "dist:all": "electron-builder --linux AppImage --win nsis"
   },
   "dependencies": {
+    "adm-zip": "^0.4.16",
     "minecraft-launcher-core": "^3.18.2",
     "msmc": "^5.0.5"
   },
@@ -29,11 +32,19 @@
       "output": "dist",
       "buildResources": "build"
     },
+    "beforePack": "scripts/fetch-animated-logo.js",
+    "extraResources": [
+      { "from": "build-resources/animated-logo", "to": "animated-logo" },
+      { "from": "LICENSES", "to": "licenses/LICENSES" },
+      { "from": "THIRD_PARTY_NOTICES.md", "to": "licenses/THIRD_PARTY_NOTICES.md" },
+      { "from": "renderer/img/horizon-LICENSE.txt", "to": "licenses/horizon-LICENSE.txt" }
+    ],
     "files": [
       "main.js",
       "preload.js",
       "main/**/*",
       "renderer/**/*",
+      "animated-logo.lock.json",
       "build/icon.png",
       "package.json"
     ],
