@@ -3,13 +3,14 @@ const fs = require('fs');
 const path = require('path');
 const { INSTANCES } = require('./paths');
 const store = require('./store');
+const { MC_VERSION: HORIZON_VERSION } = require('./horizon-core');
 
 const ICONS = ['tree', 'pickaxe', 'sword', 'castle', 'flame', 'gem', 'moon', 'flask', 'rocket', 'flower', 'ghost', 'cube'];
 // instancias creadas con la versión anterior guardaban emojis: se traducen a los iconos nuevos
 const LEGACY_ICONS = { '🌲': 'tree', '⛏️': 'pickaxe', '🗡️': 'sword', '🏰': 'castle', '🐉': 'cube', '💎': 'gem', '🔥': 'flame', '🌙': 'moon', '🧪': 'flask', '🚀': 'rocket', '🌸': 'flower', '👾': 'ghost' };
 const normIcon = i => (ICONS.includes(i) ? i : LEGACY_ICONS[i] || ICONS[0]);
-const LOADER_LABEL = { vanilla: 'Vanilla', fabric: 'Fabric', quilt: 'Quilt' };
-const LOADERS = ['vanilla', 'fabric', 'quilt'];
+const LOADER_LABEL = { vanilla: 'Vanilla', fabric: 'Fabric', quilt: 'Quilt', horizon: 'Horizon' };
+const LOADERS = ['vanilla', 'fabric', 'quilt', 'horizon'];
 
 const safeName = s => String(s || '').replace(/[\\/:*?"<>|\x00-\x1f]/g, '').replace(/^\.+/, '').trim().slice(0, 60);
 
@@ -45,6 +46,7 @@ function uniqueFolder(name) {
 function validate(d) {
   if (!d.version) throw new Error('Elige una versión de Minecraft.');
   if (!LOADERS.includes(d.loader)) throw new Error('Loader no soportado.');
+  if (d.loader === 'horizon' && String(d.version) !== HORIZON_VERSION) throw new Error(`Horizon solo funciona con la versión ${HORIZON_VERSION}.`);
   const typed = String(d.name ?? '').trim();
   let name = safeName(typed);
   // sin nombre → uno por defecto (ej: "1.21.1 Fabric"); si escribió solo caracteres prohibidos, sí es un error

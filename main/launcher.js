@@ -8,12 +8,13 @@ const { ensureJava } = require('./java');
 const { status, log, send } = require('./bus');
 const accounts = require('./accounts');
 const instances = require('./instances');
+const horizon = require('./horizon');
 const store = require('./store');
 
 let busy = false;
 let proc = null;
 let running = null; // instancia que se está preparando o jugando
-const isBusy = () => busy;
+const isBusy = () => busy || horizon.isInstalling();
 const runningId = () => (busy ? running : null);
 
 let manifestCache = null;
@@ -55,6 +56,7 @@ async function launch({ instanceId, accountId }) {
   running = instanceId;
   try {
     const inst = instances.get(instanceId);
+    if (inst.loader === 'horizon') return await launchHorizon(inst, accountId);
     status('Comprobando cuenta…');
     const authorization = await accounts.getAuth(accountId);
     store.config.selectedInstance = instanceId;
@@ -115,6 +117,28 @@ async function launch({ instanceId, accountId }) {
   }
 }
 
-function stop() { if (proc) proc.kill(); }
+// Horizon es un programa propio: no usa MCLC ni Java para jugar. Su carpeta de datos es la de la instancia.
+async function launchHorizon(inst, accountId) {
+  status('Comprobando cuenta…');
+  store.config.selectedInstance = inst.id;
+  store.config.selectedAccount = accountId;
+  store.saveConfig();
+  proc = await horizon.start({
+    home: instances.dirOf(inst.id),
+    accountId,
+    onProgress: status,
+    onClose: code => {
+      busy = false; proc = null;
+      send('game-closed', code);
+      status('Listo', null);
+    }
+  });
+  if (busy) status('¡Minecraft abierto!', 1);
+  return true;
+}
 
-module.exports = { launch, stop, isBusy, runningId, versions };
+function stop() { if (proc) proc.kill(); }
+// al cerrar el launcher: se detiene también la preparación de Horizon
+function shutdown() { stop(); horizon.abort(); }
+
+module.exports = { launch, stop, shutdown, isBusy, runningId, versions };

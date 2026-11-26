@@ -14,6 +14,7 @@ const kindOk = k => { if (!FOLDER[k]) throw new Error('Tipo inválido'); return 
 
 // Mods en loader Vanilla no funcionan: se avisa claro en vez de instalar a ciegas
 function checkInstance(inst, kind) {
+  if (inst.loader === 'horizon') return 'Horizon no admite mods, shaders ni resource packs de Modrinth o CurseForge.';
   if (kind === 'mod' && inst.loader === 'vanilla') return 'Es una instancia Vanilla: no admite mods (usa Fabric o Quilt).';
   if (kind === 'shader' && inst.loader === 'vanilla') return 'Los shaders necesitan el mod Iris: usa una instancia Fabric o Quilt.';
   return null;

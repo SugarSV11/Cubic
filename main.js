@@ -37,9 +37,9 @@ function createWindow() {
     const r = dialog.showMessageBoxSync(win, {
       type: 'warning', buttons: ['Cancelar', 'Cerrar todo'], defaultId: 0, cancelId: 0,
       title: 'Cubic', message: 'Minecraft sigue abierto o descargando.',
-      detail: 'Si cierras el launcher, también se cerrará el juego.'
+      detail: 'Si cierras el launcher, también se cerrará el juego o se detendrá la instalación.'
     });
-    if (r === 0) e.preventDefault(); else launcher.stop();
+    if (r === 0) e.preventDefault(); else launcher.shutdown();
   });
   win.on('maximize', () => bus.send('maximized', true));
   win.on('unmaximize', () => bus.send('maximized', false));

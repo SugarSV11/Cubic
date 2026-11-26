@@ -5,7 +5,7 @@ const { contextBridge, ipcRenderer } = require('electron');
 const clean = e => new Error(String(e?.message || e).replace(/^Error invoking remote method '[^']+': (Error: )?/, ''));
 const call = (ch, ...a) => ipcRenderer.invoke(ch, ...a).catch(e => { throw clean(e); });
 
-const EVENTS = new Set(['status', 'log', 'game-closed', 'maximized', 'install-progress']);
+const EVENTS = new Set(['status', 'log', 'game-closed', 'maximized', 'install-progress', 'horizon']);
 
 contextBridge.exposeInMainWorld('api', {
   win: action => ipcRenderer.send('win', action),
@@ -35,6 +35,10 @@ contextBridge.exposeInMainWorld('api', {
   game: {
     launch: d => call('game:launch', d),
     stop: () => call('game:stop')
+  },
+  horizon: {
+    state: () => call('horizon:state'),
+    install: d => call('horizon:install', d)
   },
   mods: {
     categories: (source, kind) => call('mods:categories', source, kind),

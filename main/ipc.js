@@ -9,6 +9,7 @@ const P = require('./paths');
 const accounts = require('./accounts');
 const instances = require('./instances');
 const launcher = require('./launcher');
+const horizon = require('./horizon');
 
 const handle = (ch, fn) => ipcMain.handle(ch, (_e, ...args) => fn(...args));
 
@@ -53,8 +54,13 @@ function register() {
 
   // ----- instancias -----
   handle('instances:list', () => instances.list());
-  handle('instances:create', d => instances.create(d));
-  handle('instances:update', (id, d) => instances.update(id, d));
+  // al crear (o convertir) una instancia Horizon se instala todo en segundo plano
+  const prepareIfHorizon = inst => {
+    if (inst.loader === 'horizon') horizon.ensureInstalled().catch(() => { /* el error queda en el estado */ });
+    return inst;
+  };
+  handle('instances:create', d => prepareIfHorizon(instances.create(d)));
+  handle('instances:update', (id, d) => prepareIfHorizon(instances.update(id, d)));
   handle('instances:duplicate', id => instances.duplicate(id));
   handle('instances:remove', id => {
     if (launcher.runningId() === id) throw new Error('No puedes borrar la instancia mientras Minecraft está abierto.');
@@ -69,6 +75,10 @@ function register() {
     const err = await shell.openPath(dir);
     if (err) throw new Error(err);
   });
+
+  // ----- Horizon -----
+  handle('horizon:state', () => horizon.getState());
+  handle('horizon:install', d => { horizon.ensureInstalled({ download: !!d?.download }).catch(() => {}); return horizon.getState(); });
 
   // ----- jugar -----
   handle('game:launch', d => launcher.launch(d));
