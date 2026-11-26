@@ -1,0 +1,61 @@
+{
+  "name": "cubic",
+  "productName": "Cubic",
+  "version": "1.0.0",
+  "description": "Launcher de Minecraft Java simple, sobrio y rápido",
+  "main": "main.js",
+  "author": "SugarSV",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --linux AppImage",
+    "dist:win": "electron-builder --win nsis",
+    "dist:all": "electron-builder --linux AppImage --win nsis"
+  },
+  "dependencies": {
+    "minecraft-launcher-core": "^3.18.2",
+    "msmc": "^5.0.5"
+  },
+  "devDependencies": {
+    "electron": "^45.3.4",
+    "electron-builder": "^26.18.1"
+  },
+  "build": {
+    "appId": "com.sugarsv.cubic",
+    "productName": "Cubic",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "main/**/*",
+      "renderer/**/*",
+      "build/icon.png",
+      "package.json"
+    ],
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Game",
+      "icon": "build/icon.png",
+      "artifactName": "Cubic-${version}.${ext}",
+      "syncDesktopName": true
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "build/icon.png",
+      "artifactName": "Cubic-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "desktopName": "cubic.desktop"
+}
