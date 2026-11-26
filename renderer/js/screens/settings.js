@@ -12,7 +12,7 @@ export function render(root) {
   const fill = el => el.style.setProperty('--p', `${((el.value - el.min) / Math.max(1, el.max - el.min)) * 100}%`);
   const ram = h('input', { type: 'range', class: 'range', min: 2, max: maxRam, step: 1, value: cur, ...(maxRam <= 2 ? { disabled: true } : {}), 'aria-label': 'RAM por defecto',
     oninput: e => { ramVal.textContent = `${e.target.value} GB`; fill(e.target); },
-    onchange: async e => { state.settings = await api.setSettings({ ram: +e.target.value }); } });
+    onchange: async e => { try { state.settings = await api.setSettings({ ram: +e.target.value }); } catch (err) { toastError(err); } } });
   fill(ram);
 
   const cfBox = h('div');
@@ -31,7 +31,7 @@ export function render(root) {
       h('section', { class: 'card card-pad stagger', style: { '--i': 1 } },
         h('h3', {}, 'Versiones'),
         h('p', { class: 'muted' }, 'Por defecto solo se muestran versiones estables (releases).'),
-        switchEl(!!state.settings.showSnapshots, async v => { state.settings = await api.setSettings({ showSnapshots: v }); }, 'Mostrar snapshots al crear instancias')),
+        switchEl(!!state.settings.showSnapshots, async v => { try { state.settings = await api.setSettings({ showSnapshots: v }); } catch (e) { toastError(e); } }, 'Mostrar snapshots al crear instancias')),
       h('section', { class: 'card card-pad wide stagger', style: { '--i': 2 } },
         h('h3', {}, 'Intro animada'),
         h('p', { class: 'muted' }, 'Cambia la pantalla de carga de Minecraft por una animada (mod Animated Mojang Logo). En instancias Vanilla se juega con Fabric Loader mientras esté activada. No se aplica a Horizon. Cada instancia puede tener su propio ajuste.'),

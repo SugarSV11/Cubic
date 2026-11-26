@@ -47,7 +47,7 @@ export function render(root) {
     }
 
     const select = h('select', { class: 'select', 'aria-label': 'Instancia', ...(state.busy ? { disabled: true } : {}),
-      onchange: async e => { state.settings = await api.setSettings({ selectedInstance: e.target.value }); paint(); } },
+      onchange: async e => { try { state.settings = await api.setSettings({ selectedInstance: e.target.value }); } catch (err) { toastError(err); } paint(); } },
       state.instances.map(i => h('option', { value: i.id, ...(i.id === inst.id ? { selected: true } : {}) }, i.name)));
 
     const loading = state.busy && !state.playing;

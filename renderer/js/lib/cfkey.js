@@ -35,7 +35,8 @@ export function cfKeyForm({ onSaved, error = '', compact = false } = {}) {
   input.addEventListener('keydown', e => { if (e.key === 'Enter') saveBtn.click(); });
 
   const removeBtn = state.settings.hasCurseforgeKey ? h('button', { class: 'btn ghost', type: 'button', onclick: async () => {
-    state.settings = await api.setSettings({ curseforgeKey: '' }); toast('API key eliminada', 'info'); onSaved?.(true);
+    try { state.settings = await api.setSettings({ curseforgeKey: '' }); toast('API key eliminada', 'info'); onSaved?.(true); }
+    catch (e) { toastError(e); }
   } }, 'Quitar') : null;
 
   return h('div', { class: 'cf-key' },
