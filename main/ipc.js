@@ -14,6 +14,12 @@ const logo = require('./animated-logo');
 
 const handle = (ch, fn) => ipcMain.handle(ch, (_e, ...args) => fn(...args));
 
+// abre una carpeta con el explorador del sistema
+async function openFolder(dir) {
+  const err = await shell.openPath(dir);
+  if (err) throw new Error(err);
+}
+
 function register() {
   ipcMain.on('win', (_e, action) => {
     const win = bus.getWindow();
@@ -91,11 +97,10 @@ function register() {
   // tocar un mod a mano se respeta: la sincronización toma nota enseguida
   handle('instances:toggle', async (id, kind, file) => { instances.toggle(id, kind, file); if (kind === 'mods') await syncIntro(id); });
   handle('instances:removeFile', async (id, kind, file) => { instances.removeFile(id, kind, file); if (kind === 'mods') await syncIntro(id); });
-  handle('instances:open', async (id, sub) => {
+  handle('instances:open', (id, sub) => {
     const dir = sub ? instances.kindDir(id, sub) : instances.dirOf(id);
     fs.mkdirSync(dir, { recursive: true });
-    const err = await shell.openPath(dir);
-    if (err) throw new Error(err);
+    return openFolder(dir);
   });
 
   // ----- Horizon -----
@@ -112,10 +117,7 @@ function register() {
     return shell.openExternal(url);
   });
 
-  handle('licenses:open', async () => {
-    const err = await shell.openPath(logo.licensesDir());
-    if (err) throw new Error(err);
-  });
+  handle('licenses:open', () => openFolder(logo.licensesDir()));
 
   require('./mods-ipc').register(handle);
 }

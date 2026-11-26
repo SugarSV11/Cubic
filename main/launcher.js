@@ -51,6 +51,13 @@ async function prepareProfile(kind, mc) {
   return profile.id;
 }
 
+// el juego terminó: se libera el botón Jugar y se avisa a la interfaz
+function finishGame(code) {
+  busy = false; proc = null;
+  send('game-closed', code);
+  status('Listo', null);
+}
+
 async function launch({ instanceId, accountId }) {
   if (busy) throw new Error('El juego ya está abierto o descargándose');
   busy = true;
@@ -108,11 +115,7 @@ async function launch({ instanceId, accountId }) {
       log(d);
       if (/Setting user|LWJGL/.test(String(d))) status('¡Minecraft abierto!', 1);
     });
-    launcher.on('close', code => {
-      busy = false; proc = null;
-      send('game-closed', code);
-      status('Listo', null);
-    });
+    launcher.on('close', finishGame);
 
     status('Lanzando Minecraft…');
     proc = await launcher.launch(opts);
@@ -137,11 +140,7 @@ async function launchHorizon(inst, accountId) {
     home: instances.dirOf(inst.id),
     accountId,
     onProgress: status,
-    onClose: code => {
-      busy = false; proc = null;
-      send('game-closed', code);
-      status('Listo', null);
-    }
+    onClose: finishGame
   });
   if (busy) status('¡Minecraft abierto!', 1);
   return true;
