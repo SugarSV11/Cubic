@@ -51,6 +51,25 @@ async function prepareProfile(kind, mc) {
   return profile.id;
 }
 
+// Con qué se arranca: el loader de la instancia, o Fabric si es Vanilla con la intro animada
+async function chooseProfile(inst) {
+  // la intro animada nunca impide jugar: si algo falla, se arranca sin ella
+  status('Preparando la intro animada…');
+  const intro = await logo.trySync(inst.id, { download: true });
+
+  if (inst.loader !== 'vanilla') {
+    status(`Preparando ${PROFILES[inst.loader].name}…`);
+    return { loader: inst.loader, custom: await prepareProfile(inst.loader, inst.version) };
+  }
+  if (intro.active) {
+    // la instancia sigue siendo vanilla; solo este arranque usa Fabric Loader
+    status('Preparando Fabric para la intro animada…');
+    try { return { loader: 'fabric', custom: await prepareProfile('fabric', inst.version) }; }
+    catch (e) { log(`[Cubic] Sin intro animada: no se pudo preparar Fabric (${e.message}). Se juega en Vanilla.`); }
+  }
+  return { loader: 'vanilla' };
+}
+
 // el juego terminó: se libera el botón Jugar y se avisa a la interfaz
 function finishGame(code) {
   busy = false; proc = null;
@@ -78,20 +97,7 @@ async function launch({ instanceId, accountId }) {
     const vjson = await getJSON(entry.url);
     const javaPath = await ensureJava(vjson.javaVersion?.majorVersion || 8);
 
-    // la intro animada nunca impide jugar: si algo falla, se arranca sin ella
-    status('Preparando la intro animada…');
-    const intro = await logo.trySync(instanceId, { download: true });
-
-    let custom, loader = inst.loader;
-    if (loader !== 'vanilla') {
-      status(`Preparando ${PROFILES[loader].name}…`);
-      custom = await prepareProfile(loader, inst.version);
-    } else if (intro.active) {
-      // la instancia sigue siendo vanilla; solo este arranque usa Fabric Loader
-      status('Preparando Fabric para la intro animada…');
-      try { custom = await prepareProfile('fabric', inst.version); loader = 'fabric'; }
-      catch (e) { log(`[Cubic] Sin intro animada: no se pudo preparar Fabric (${e.message}). Se juega en Vanilla.`); }
-    }
+    const { loader, custom } = await chooseProfile(inst);
 
     const dir = instances.dirOf(instanceId);
     const launcher = new Client();
