@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const zlib = require('zlib');
 const AdmZip = require('adm-zip');
 
 const MOD_ID = 'animated-mojang-logo';
@@ -22,11 +23,48 @@ function filesFor(lock, mc) {
   return ids ? ids.map(id => ({ ...lock.files[id], sha512: id })) : null;
 }
 
+// Contenido de un archivo dentro de un zip leyendo solo el índice y esa entrada, no el jar entero.
+// Devuelve null si no está, o undefined si el zip tiene algo poco habitual (zip64, datos delante…).
+function readEntry(file, name) {
+  const fd = fs.openSync(file, 'r');
+  try {
+    const size = fs.fstatSync(fd).size;
+    const read = (offset, length) => {
+      const buf = Buffer.alloc(length);
+      return fs.readSync(fd, buf, 0, length, offset) === length ? buf : null;
+    };
+    // el registro final está en los últimos 64 KB (puede llevar un comentario detrás)
+    const tail = read(size - Math.min(size, 65557), Math.min(size, 65557));
+    const end = tail ? tail.lastIndexOf('PK\x05\x06', undefined, 'latin1') : -1;
+    if (end < 0 || end + 22 > tail.length) return undefined;
+    const count = tail.readUInt16LE(end + 10), dirSize = tail.readUInt32LE(end + 12), dirAt = tail.readUInt32LE(end + 16);
+    if (count === 0xffff || dirAt === 0xffffffff || dirAt + dirSize > size) return undefined;
+    const dir = read(dirAt, dirSize);
+    if (!dir) return undefined;
+    const wantedName = Buffer.from(name);
+    for (let at = 0, i = 0; i < count; i++) {
+      if (at + 46 > dir.length || dir.readUInt32LE(at) !== 0x02014b50) return undefined;
+      const method = dir.readUInt16LE(at + 10), packed = dir.readUInt32LE(at + 20), local = dir.readUInt32LE(at + 42);
+      const nameLen = dir.readUInt16LE(at + 28), skip = nameLen + dir.readUInt16LE(at + 30) + dir.readUInt16LE(at + 32);
+      if (nameLen === wantedName.length && dir.subarray(at + 46, at + 46 + nameLen).equals(wantedName)) {
+        const head = read(local, 30);
+        if (!head || head.readUInt32LE(0) !== 0x04034b50 || (method !== 0 && method !== 8)) return undefined;
+        const data = read(local + 30 + head.readUInt16LE(26) + head.readUInt16LE(28), packed);
+        if (!data) return undefined;
+        return method === 8 ? zlib.inflateRawSync(data) : data;
+      }
+      at += 46 + skip;
+    }
+    return null;
+  } finally { fs.closeSync(fd); }
+}
+
 function modIdOf(jar) {
   try {
-    const entry = new AdmZip(jar).getEntry('fabric.mod.json');
+    let data = readEntry(jar, 'fabric.mod.json');
+    if (data === undefined) data = new AdmZip(jar).getEntry('fabric.mod.json')?.getData() ?? null; // caso raro: lectura completa
     // algunos mods dejan saltos de línea sueltos dentro de las cadenas del JSON
-    return entry ? JSON.parse(entry.getData().toString('utf8').replace(/[\r\n\t]+/g, ' ')).id : null;
+    return data ? JSON.parse(data.toString('utf8').replace(/[\r\n\t]+/g, ' ')).id : null;
   } catch { return null; }
 }
 
