@@ -67,14 +67,16 @@ function download(url, dest, { onProgress, sha1, sha256, sha512, headers = {} } 
   });
 }
 
-// caché en memoria con caducidad (para no repetir peticiones iguales)
-const memo = new Map();
-async function cached(key, ttlMs, fn) {
+// caché en memoria con caducidad (para no repetir peticiones iguales, ni siquiera simultáneas)
+const memo = new Map(); // clave -> { v: promesa, t: cuándo llegó, o null si sigue en camino }
+function cached(key, ttlMs, fn) {
   const hit = memo.get(key);
-  if (hit && Date.now() - hit.t < ttlMs) return hit.v;
-  const v = await fn();
-  memo.set(key, { t: Date.now(), v });
-  return v;
+  if (hit && (hit.t === null || Date.now() - hit.t < ttlMs)) return hit.v;
+  const entry = { t: null };
+  entry.v = (async () => fn())();
+  memo.set(key, entry);
+  entry.v.then(() => { entry.t = Date.now(); }, () => memo.delete(key)); // los errores no se guardan
+  return entry.v;
 }
 
 module.exports = { getJSON, download, cached, UA };

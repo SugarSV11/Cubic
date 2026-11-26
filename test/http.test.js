@@ -78,3 +78,13 @@ test('caché: reutiliza, caduca y no guarda errores', async t => {
   await assert.rejects(http.cached('e', 100, async () => { throw new Error('x'); }), /x/);
   assert.strictEqual(await http.cached('e', 100, fn), 3);
 });
+
+test('caché: dos peticiones simultáneas comparten una sola', async () => {
+  let n = 0;
+  const slow = () => new Promise(r => setTimeout(() => r(++n), 10));
+  assert.deepStrictEqual(await Promise.all([http.cached('s', 100, slow), http.cached('s', 100, slow)]), [1, 1]);
+  const fail = async () => { n++; throw new Error('x'); };
+  const both = await Promise.allSettled([http.cached('s2', 100, fail), http.cached('s2', 100, fail)]);
+  assert.deepStrictEqual(both.map(r => r.status), ['rejected', 'rejected']);
+  assert.strictEqual(n, 2);
+});
