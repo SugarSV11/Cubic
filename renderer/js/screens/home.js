@@ -70,7 +70,8 @@ export function render(root) {
           avatar(acc, 32),
           h('div', {}, h('small', {}, 'Jugando como'), h('b', {}, acc ? acc.name : 'Sin cuenta')),
           h('span', { class: 'ic chev', html: icons.chevron }))),
-      inst.loader === 'horizon' && !state.busy ? horizonPanel() : null,
+      // append() del DOM escribiría «null» como texto: no se le pasa nada si no hay panel
+      ...(inst.loader === 'horizon' && !state.busy ? [horizonPanel()] : []),
       h('div', { class: 'hero-play' },
         playBtn,
         state.playing ? h('button', { class: 'btn danger lg', onclick: () => api.game.stop() }, ic('stop'), 'Detener') : null),
