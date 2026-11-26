@@ -9,6 +9,7 @@ const { status, log, send } = require('./bus');
 const accounts = require('./accounts');
 const instances = require('./instances');
 const horizon = require('./horizon');
+const logo = require('./animated-logo');
 const store = require('./store');
 
 let busy = false;
@@ -70,10 +71,19 @@ async function launch({ instanceId, accountId }) {
     const vjson = await getJSON(entry.url);
     const javaPath = await ensureJava(vjson.javaVersion?.majorVersion || 8);
 
-    let custom;
-    if (inst.loader !== 'vanilla') {
-      status(`Preparando ${PROFILES[inst.loader].name}…`);
-      custom = await prepareProfile(inst.loader, inst.version);
+    // la intro animada nunca impide jugar: si algo falla, se arranca sin ella
+    status('Preparando la intro animada…');
+    const intro = await logo.trySync(instanceId, { download: true });
+
+    let custom, loader = inst.loader;
+    if (loader !== 'vanilla') {
+      status(`Preparando ${PROFILES[loader].name}…`);
+      custom = await prepareProfile(loader, inst.version);
+    } else if (intro.active) {
+      // la instancia sigue siendo vanilla; solo este arranque usa Fabric Loader
+      status('Preparando Fabric para la intro animada…');
+      try { custom = await prepareProfile('fabric', inst.version); loader = 'fabric'; }
+      catch (e) { log(`[Cubic] Sin intro animada: no se pudo preparar Fabric (${e.message}). Se juega en Vanilla.`); }
     }
 
     const dir = instances.dirOf(instanceId);
@@ -89,7 +99,7 @@ async function launch({ instanceId, accountId }) {
 
     const names = {
       assets: 'Descargando assets', natives: 'Descargando natives', classes: 'Descargando librerías',
-      'classes-custom': `Descargando librerías de ${PROFILES[inst.loader]?.name || ''}`,
+      'classes-custom': `Descargando librerías de ${PROFILES[loader]?.name || ''}`,
       'classes-maven-custom': 'Descargando librerías', 'version-jar': 'Descargando Minecraft'
     };
     launcher.on('progress', p => status(`${names[p.type] || 'Descargando'}…`, p.total ? p.task / p.total : null));

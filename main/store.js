@@ -17,6 +17,7 @@ const DEFAULTS = {
   ram: 4,                 // RAM por defecto para instancias nuevas
   showSnapshots: false,
   curseforgeKey: '',
+  animatedLogo: true,     // intro animada (mod incluido); cada instancia puede cambiarlo
   selectedInstance: null,
   selectedAccount: null
 };

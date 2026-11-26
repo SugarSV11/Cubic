@@ -30,8 +30,10 @@ contextBridge.exposeInMainWorld('api', {
     files: (id, kind) => call('instances:files', id, kind),
     toggle: (id, kind, file) => call('instances:toggle', id, kind, file),
     removeFile: (id, kind, file) => call('instances:removeFile', id, kind, file),
-    open: (id, sub) => call('instances:open', id, sub)
+    open: (id, sub) => call('instances:open', id, sub),
+    intro: (id, value) => call('instances:intro', id, value)
   },
+  openLicenses: () => call('licenses:open'),
   game: {
     launch: d => call('game:launch', d),
     stop: () => call('game:stop')

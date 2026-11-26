@@ -72,6 +72,11 @@ function update(id, d) {
   return get(id);
 }
 
+// guarda campos internos (p. ej. el estado de la intro animada) sin pasar por la validación del editor
+function patch(id, fields) {
+  store.writeJSON(metaFile(id), { ...get(id), ...fields, id: undefined });
+}
+
 function duplicate(id) {
   const old = get(id);
   const nid = uniqueFolder(safeName(`${old.name} (copia)`));
@@ -101,6 +106,7 @@ function files(id, kind = 'mods') {
   const dir = kindDir(id, kind);
   fs.mkdirSync(dir, { recursive: true });
   const meta = readInstalled(id);
+  const included = new Set((get(id).logoState?.files || []).map(f => f.name));
   const byFile = new Map(Object.entries(meta).map(([k, v]) => [v.file, { key: k, ...v }]));
   return fs.readdirSync(dir, { withFileTypes: true })
     .filter(f => !f.name.endsWith('.part'))
@@ -109,7 +115,8 @@ function files(id, kind = 'mods') {
       const real = enabled ? f.name : f.name.slice(0, -'.disabled'.length);
       const st = fs.statSync(path.join(dir, f.name));
       const m = byFile.get(real);
-      return { file: f.name, name: m?.title || real.replace(/\.(jar|zip)$/i, ''), enabled, size: st.size, isDir: f.isDirectory(), source: m?.source || null, projectKey: m?.key || null };
+      const bundled = kind === 'mods' && !m && included.has(real);
+      return { bundled, file: f.name, name: m?.title || real.replace(/\.(jar|zip)$/i, ''), enabled, size: st.size, isDir: f.isDirectory(), source: m?.source || null, projectKey: m?.key || null };
     })
     .sort((a, b) => a.name.localeCompare(b.name));
 }
@@ -141,4 +148,4 @@ function markInstalled(id, key, entry) {
   store.writeJSON(installedFile(id), all);
 }
 
-module.exports = { ICONS, LOADERS, dirOf, get, list, create, update, duplicate, remove, files, toggle, removeFile, kindDir, readInstalled, markInstalled };
+module.exports = { ICONS, LOADERS, dirOf, get, list, create, update, patch, duplicate, remove, files, toggle, removeFile, kindDir, readInstalled, markInstalled };

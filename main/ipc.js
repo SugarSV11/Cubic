@@ -10,6 +10,7 @@ const accounts = require('./accounts');
 const instances = require('./instances');
 const launcher = require('./launcher');
 const horizon = require('./horizon');
+const logo = require('./animated-logo');
 
 const handle = (ch, fn) => ipcMain.handle(ch, (_e, ...args) => fn(...args));
 
@@ -22,9 +23,18 @@ function register() {
     else if (action === 'close') win.close();
   });
 
-  handle('init', () => ({
+  // cada instancia viaja con el estado de su intro animada
+  const view = i => ({ ...i, intro: logo.describe(i) });
+  const listInstances = () => instances.list().map(view);
+  // los jars de una instancia abierta no se tocan; se ajustará en el siguiente arranque
+  const syncIntro = (id, opts) => (launcher.runningId() === id ? Promise.resolve() : logo.trySync(id, opts));
+  // migración suave de las instancias que ya existían (sin red)
+  const migrated = logo.syncAll();
+
+  handle('init', async () => ({
     accounts: accounts.list(),
-    instances: instances.list(),
+    instances: (await migrated, listInstances()),
+    intro: logo.info(),
     settings: publicSettings(),
     totalRam: Math.floor(os.totalmem() / 1024 ** 3),
     icons: instances.ICONS,
@@ -35,10 +45,12 @@ function register() {
   }));
 
   // ----- ajustes -----
-  handle('settings:set', s => {
+  handle('settings:set', async s => {
     for (const k of ['ram', 'showSnapshots', 'curseforgeKey', 'selectedInstance']) if (k in s) store.config[k] = s[k];
+    if ('animatedLogo' in s) store.config.animatedLogo = s.animatedLogo === true;
     if ('curseforgeKey' in s) store.config.curseforgeKey = require('./curseforge').normalizeKey(s.curseforgeKey);
     store.saveConfig();
+    if ('animatedLogo' in s) await logo.syncAll(launcher.runningId());
     return publicSettings();
   });
 
@@ -53,22 +65,32 @@ function register() {
   handle('versions', snapshots => launcher.versions(snapshots));
 
   // ----- instancias -----
-  handle('instances:list', () => instances.list());
+  handle('instances:list', () => listInstances());
   // al crear (o convertir) una instancia Horizon se instala todo en segundo plano
-  const prepareIfHorizon = inst => {
+  // y en las demás se copia la intro animada compatible
+  const prepare = async inst => {
     if (inst.loader === 'horizon') horizon.ensureInstalled().catch(() => { /* el error queda en el estado */ });
-    return inst;
+    await syncIntro(inst.id);
+    syncIntro(inst.id, { download: true }); // versiones no incluidas: se bajan en segundo plano
+    return view(instances.get(inst.id));
   };
-  handle('instances:create', d => prepareIfHorizon(instances.create(d)));
-  handle('instances:update', (id, d) => prepareIfHorizon(instances.update(id, d)));
+  handle('instances:create', d => prepare(instances.create(d)));
+  handle('instances:update', (id, d) => prepare(instances.update(id, d)));
+  handle('instances:intro', async (id, value) => {
+    if (launcher.runningId() === id) throw new Error('No se puede cambiar mientras Minecraft está abierto.');
+    logo.setOverride(id, value);
+    await logo.sync(id, { download: true });
+    return view(instances.get(id));
+  });
   handle('instances:duplicate', id => instances.duplicate(id));
   handle('instances:remove', id => {
     if (launcher.runningId() === id) throw new Error('No puedes borrar la instancia mientras Minecraft está abierto.');
     return instances.remove(id);
   });
   handle('instances:files', (id, kind) => instances.files(id, kind));
-  handle('instances:toggle', (id, kind, file) => instances.toggle(id, kind, file));
-  handle('instances:removeFile', (id, kind, file) => instances.removeFile(id, kind, file));
+  // tocar un mod a mano se respeta: la sincronización toma nota enseguida
+  handle('instances:toggle', async (id, kind, file) => { instances.toggle(id, kind, file); if (kind === 'mods') await syncIntro(id); });
+  handle('instances:removeFile', async (id, kind, file) => { instances.removeFile(id, kind, file); if (kind === 'mods') await syncIntro(id); });
   handle('instances:open', async (id, sub) => {
     const dir = sub ? instances.kindDir(id, sub) : instances.dirOf(id);
     fs.mkdirSync(dir, { recursive: true });
@@ -90,12 +112,17 @@ function register() {
     return shell.openExternal(url);
   });
 
+  handle('licenses:open', async () => {
+    const err = await shell.openPath(logo.licensesDir());
+    if (err) throw new Error(err);
+  });
+
   require('./mods-ipc').register(handle);
 }
 
 const publicSettings = () => {
-  const { ram, showSnapshots, curseforgeKey, selectedInstance } = store.config;
-  return { ram, showSnapshots, hasCurseforgeKey: !!curseforgeKey, selectedInstance };
+  const { ram, showSnapshots, curseforgeKey, selectedInstance, animatedLogo } = store.config;
+  return { animatedLogo, ram, showSnapshots, hasCurseforgeKey: !!curseforgeKey, selectedInstance };
 };
 
 module.exports = { register };
