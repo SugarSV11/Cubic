@@ -71,6 +71,7 @@ h3 { font-size: 18px; letter-spacing: -.01em; margin: 26px 0 8px; }
 .swap img.on { opacity: 1; transform: none; }
 
 .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.note { margin: 24px auto 0; max-width: 640px; text-align: center; font-size: 14px; opacity: .75; }
 .card { position: relative; overflow: hidden; padding: 42px 40px; border: 1px solid var(--border); border-radius: 18px; background: var(--surface); }
 .card h3 { margin-top: 0; }
 .card::after { content: ""; position: absolute; inset: 0 0 auto; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .5s var(--ease); }
