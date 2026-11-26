@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cubic — Launcher de Minecraft Java para Linux</title>
+<meta name="description" content="Crea tus instancias, instala mods con un clic y juega. Launcher de Minecraft Java para Linux.">
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="backdrop" aria-hidden="true"><div class="grid"></div></div>
+
+<header class="nav">
+  <a class="brand" href="#inicio"><img src="assets/icon.png" alt="" width="24" height="24">Cubic</a>
+  <nav>
+    <a href="#instancias">Instancias</a>
+    <a href="#mods">Mods</a>
+    <a href="#funciones">Funciones</a>
+    <a href="https://github.com/SugarSV11/Cubic" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+  <a class="btn primary small" href="#descargar">Descargar</a>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <canvas id="cube" aria-hidden="true"></canvas>
+    <p class="eyebrow reveal">Launcher de Minecraft Java para Linux</p>
+    <h1 class="reveal">Instala mods y juega,<br><em>sin complicarte.</em></h1>
+    <p class="lead reveal">Cubic ordena cada partida en su propia instancia, descarga los mods con sus dependencias y consigue el Java correcto por ti.</p>
+    <div class="actions reveal">
+      <a class="btn primary" href="https://github.com/SugarSV11/Cubic/releases/latest/download/Cubic-1.0.0.AppImage">Descargar para Linux</a>
+      <a class="btn" href="https://github.com/SugarSV11/Cubic" target="_blank" rel="noopener">Ver el código</a>
+    </div>
+    <p class="meta reveal">Versión 1.0.0 · AppImage · 121 MB</p>
+  </section>
+
+  <div class="stage" id="stage">
+    <figure class="shot hero-shot"><img src="assets/inicio.png" alt="Pantalla de inicio de Cubic con el botón Jugar" width="2360" height="1480"></figure>
+  </div>
+
+  <ul class="works reveal">
+    <li>Modrinth</li><li>CurseForge</li><li>Fabric</li><li>Quilt</li><li>Vanilla</li><li>Adoptium</li>
+  </ul>
+
+  <section class="feature" id="instancias">
+    <header class="head reveal">
+      <p class="eyebrow">Instancias</p>
+      <h2>Cada partida en su sitio</h2>
+      <p>Una instancia para sobrevivir con amigos, otra llena de mods y otra para la versión clásica. Cada una guarda sus propios mundos, mods y ajustes, así que nada se rompe entre sí.</p>
+    </header>
+    <figure class="shot reveal"><img loading="lazy" src="assets/instancias.png" alt="Lista de instancias" width="2360" height="1480"></figure>
+    <div class="duo">
+      <div class="reveal">
+        <figure class="shot"><img loading="lazy" src="assets/nueva.png" alt="Ventana para crear una instancia" width="2360" height="1480"></figure>
+        <h3>Créala en segundos</h3>
+        <p>Nombre, icono, versión, loader y memoria. Una sola ventana.</p>
+      </div>
+      <div class="reveal">
+        <figure class="shot"><img loading="lazy" src="assets/detalle.png" alt="Mods instalados en una instancia" width="2360" height="1480"></figure>
+        <h3>Controla lo instalado</h3>
+        <p>Activa, desactiva o elimina cada mod sin tocar carpetas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature" id="mods">
+    <header class="head reveal">
+      <p class="eyebrow">Mods</p>
+      <h2>Busca, pulsa instalar y ya</h2>
+      <p>Mods, resource packs y shaders de Modrinth y CurseForge dentro del launcher. Cubic elige el archivo que corresponde a tu versión y añade lo que haga falta.</p>
+    </header>
+    <div class="tabs reveal" role="tablist">
+      <span class="tab-ind"></span>
+      <button type="button" role="tab" aria-selected="true">Explorar</button>
+      <button type="button" role="tab" aria-selected="false">Detalles</button>
+      <button type="button" role="tab" aria-selected="false">Shaders</button>
+    </div>
+    <figure class="shot swap reveal">
+      <img class="on" src="assets/mods.png" alt="Navegador de mods" width="2360" height="1480">
+      <img loading="lazy" src="assets/mod.png" alt="Página de un mod" width="2360" height="1480">
+      <img loading="lazy" src="assets/shaders.png" alt="Lista de shaders" width="2360" height="1480">
+    </figure>
+  </section>
+
+  <section id="funciones">
+    <header class="head reveal"><p class="eyebrow">Y además</p><h2>Lo que no tienes que hacer tú</h2></header>
+    <div class="cards">
+      <article class="card reveal"><h3>Java automático</h3><p>Se descarga la versión que pide cada Minecraft. No instalas nada.</p></article>
+      <article class="card reveal"><h3>Cuentas guardadas</h3><p>Entra con Microsoft una vez y cambia de cuenta cuando quieras.</p></article>
+      <article class="card reveal"><h3>Menos espacio</h3><p>Las librerías y versiones se comparten entre todas las instancias.</p></article>
+      <article class="card reveal"><h3>Tu .minecraft intacto</h3><p>Cubic trabaja en su propia carpeta y no toca la del launcher oficial.</p></article>
+    </div>
+  </section>
+
+  <section class="final reveal" id="descargar">
+    <img src="assets/icon.png" alt="" width="72" height="72">
+    <h2>Descarga Cubic</h2>
+    <p>Dale permiso de ejecución y ábrelo. Necesitas Minecraft Java comprado.</p>
+    <a class="btn primary" href="https://github.com/SugarSV11/Cubic/releases/latest/download/Cubic-1.0.0.AppImage">Descargar para Linux</a>
+    <button class="code" type="button" data-copy="chmod +x Cubic-1.0.0.AppImage && ./Cubic-1.0.0.AppImage"><code>chmod +x Cubic-1.0.0.AppImage && ./Cubic-1.0.0.AppImage</code><span>Copiar</span></button>
+  </section>
+</main>
+
+<footer>Cubic no está afiliado a Mojang ni a Microsoft. Las capturas usan datos de ejemplo.</footer>
+
+<dialog id="zoom" aria-label="Captura ampliada"><img alt=""></dialog>
+<script src="main.js"></script>
+</body>
+</html>
