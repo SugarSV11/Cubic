@@ -15,7 +15,6 @@ contextBridge.exposeInMainWorld('api', {
   openExternal: url => call('openExternal', url),
 
   accounts: {
-    list: () => call('accounts:list'),
     addMicrosoft: () => call('accounts:addMicrosoft'),
     addOffline: name => call('accounts:addOffline', name),
     remove: id => call('accounts:remove', id),

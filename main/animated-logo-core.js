@@ -2,17 +2,11 @@
 // Cubic solo copia o renombra jars; nunca los modifica.
 const fs = require('fs');
 const path = require('path');
-const crypto = require('crypto');
 const zlib = require('zlib');
 const AdmZip = require('adm-zip');
 
 const MOD_ID = 'animated-mojang-logo';
 const OFF = '.disabled';
-
-const sha512File = file => new Promise((resolve, reject) => {
-  const h = crypto.createHash('sha512');
-  fs.createReadStream(file).on('data', c => h.update(c)).on('error', reject).on('end', () => resolve(h.digest('hex')));
-});
 
 // nombre con el que se guarda un jar fuera de las instancias (varias builds comparten nombre de archivo)
 const storeName = sha512 => `${sha512.slice(0, 32)}.jar`;
@@ -192,4 +186,4 @@ async function sync({ dir, inst, lock, globalOn, userFiles = new Set(), locate }
   return done({ active: true });
 }
 
-module.exports = { MOD_ID, sha512File, storeName, filesFor, modIdOf, applicability, wanted, describe, sync };
+module.exports = { MOD_ID, storeName, filesFor, modIdOf, applicability, wanted, describe, sync };

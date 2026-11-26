@@ -61,7 +61,6 @@ function register() {
   });
 
   // ----- cuentas -----
-  handle('accounts:list', () => accounts.list());
   handle('accounts:addMicrosoft', () => accounts.addMicrosoft());
   handle('accounts:addOffline', name => accounts.addOffline(name));
   handle('accounts:remove', id => accounts.remove(id));
