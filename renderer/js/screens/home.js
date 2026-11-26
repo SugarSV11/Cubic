@@ -2,7 +2,7 @@ import { h, clear } from '../lib/dom.js';
 import { icons } from '../lib/icons.js';
 import { toastError } from '../lib/toast.js';
 import { avatar, ic, instTile, tileOf, go } from '../lib/ui.js';
-import { state, on, emit, selectedInstance, selectedAccount, LOADER_NAMES } from '../state.js';
+import { state, on, emit, selectedInstance, selectedAccount, applyAccounts, LOADER_NAMES } from '../state.js';
 import { openInstanceEditor } from './instances.js';
 import { horizonPanel } from '../lib/horizon.js';
 
@@ -100,6 +100,8 @@ export function render(root) {
       await api.game.launch({ instanceId: inst.id, accountId: acc.id });
       if (state.busy) state.playing = true; // si ya se cerró, no marcarlo como jugando
     } catch (e) { state.busy = false; toastError(e); }
+    // al jugar, una sesión puede quedar marcada como caducada (o dejar de estarlo): se refresca la interfaz
+    try { applyAccounts(await api.accounts.list()); } catch (e) { toastError(e); }
     emit('game-state'); // repinta la pantalla de Inicio que esté visible ahora
   }
 
