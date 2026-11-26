@@ -12,7 +12,8 @@ export function cfKeyForm({ onSaved, error = '', compact = false } = {}) {
   eye.innerHTML = icons.eye;
   const result = h('div', { class: 'cf-result' });
   const say = (ok, msg) => { result.className = `cf-result ${ok ? 'ok' : 'err'}`; result.replaceChildren(h('span', { class: 'ic', html: ok ? icons.ok : icons.warn }), h('span', {}, msg)); };
-  const busy = (btn, on, label) => { btn.disabled = on; btn.dataset.label ||= btn.textContent; btn.textContent = on ? label : btn.dataset.label; };
+  // mientras trabaja se cambia el contenido, y después se devuelve tal cual (con su icono)
+  const busy = (btn, on, label) => { btn.disabled = on; btn.original ||= [...btn.childNodes]; btn.replaceChildren(...(on ? [label] : btn.original)); };
 
   const testBtn = h('button', { class: 'btn', type: 'button', onclick: async () => {
     busy(testBtn, true, 'Probando…'); result.className = 'cf-result'; result.replaceChildren();
