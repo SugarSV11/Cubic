@@ -26,6 +26,7 @@
 | **Cuentas** | Microsoft (con refresco automático) y offline |
 | **Instancias** | Cada una con su versión, loader, RAM, icono, mods, configuración y mundos |
 | **Loaders** | Vanilla, Fabric y Quilt |
+| **Horizon** | Minecraft Java 26.3 reescrito en Rust (proyecto no oficial). [Detalles](#horizon) |
 | **Contenido** | Mods, resource packs y shaders desde Modrinth y CurseForge, con sus dependencias |
 | **Java** | Se descarga solo desde Adoptium, según la versión del juego |
 | **Espacio** | Librerías, assets y versiones compartidas entre instancias |
@@ -93,6 +94,17 @@ Si venías de «Sugar Launcher», al abrir Cubic por primera vez se migran solos
 
 > Forge y NeoForge no están incluidos.
 
+## Horizon
+
+Al crear una instancia con el loader **Horizon** (solo 26.3), Cubic descarga la build oficial de [horizon-rust/horizon](https://github.com/horizon-rust/horizon), prepara texturas y sonidos a partir de tu Minecraft (usa un JDK 25 que también descarga solo) y la comparten todas las instancias Horizon. Cada instancia guarda aparte sus mundos y ajustes.
+
+- Horizon es un proyecto no oficial, no está afiliado a Mojang ni a Microsoft y requiere tu propia copia de Minecraft Java 26.3.
+- Hace falta una cuenta de Microsoft con el juego en Cubic. Si no encuentra tu cliente 26.3, Cubic ofrece descargarlo.
+- No admite mods de Fabric ni NeoForge; Cubic tampoco instala en él shaders ni resource packs.
+- **Estado (26 nov 2026):** el repositorio oficial de Horizon responde 404, así que ahora mismo no se puede descargar y esta función no se ha probado con el juego real. Cubic no usa forks ni espejos. El AppImage v1.0.0 publicado todavía no incluye Horizon.
+
+El logotipo de Horizon es del proyecto Horizon (ver `renderer/img/horizon-LICENSE.txt`).
+
 ## Desarrollo
 
 <details>
@@ -115,6 +127,7 @@ distrobox enter sugarlauncher -- sudo dnf install -y nodejs npm nss nspr atk at-
 # Dependencias, ejecutar y empaquetar
 distrobox enter sugarlauncher -- npm install
 distrobox enter sugarlauncher -- npm start
+distrobox enter sugarlauncher -- npm test
 distrobox enter sugarlauncher -- npm run dist    # → dist/Cubic-1.0.0.AppImage
 ```
 
@@ -129,7 +142,7 @@ Existe `npm run dist:win` para generar un instalador de Windows, pero todavía n
 ```
 main.js            punto de entrada (ventana sin marco, seguridad)
 preload.js         puente seguro entre la interfaz y el sistema
-main/              cuentas, instancias, lanzador, Java, Modrinth, CurseForge, instalador
+main/              cuentas, instancias, lanzador, Java, Horizon, Modrinth, CurseForge, instalador
 renderer/          interfaz en HTML, CSS y JavaScript puro
   js/screens/      una pantalla por archivo
   js/lib/          utilidades (DOM, iconos, avisos, modales, Markdown seguro)
