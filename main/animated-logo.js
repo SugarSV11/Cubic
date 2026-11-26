@@ -40,7 +40,10 @@ function sync(id, { download: allowDownload = false } = {}) {
       locate: f => locate(f, allowDownload)
     });
     if (r.reason === 'no-build') log(`[Cubic] Sin intro animada para Minecraft ${inst.version}.`);
-    instances.patch(id, { logo: r.logo, logoState: r.logoState });
+    // solo se escribe si cambió: al arrancar pasan por aquí todas las instancias
+    if (JSON.stringify([inst.logo, inst.logoState]) !== JSON.stringify([r.logo, r.logoState])) {
+      instances.patch(id, { logo: r.logo, logoState: r.logoState });
+    }
     return r;
   };
   const p = queue.then(run);
