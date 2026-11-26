@@ -2,12 +2,11 @@ import { h, clear } from '../lib/dom.js';
 import { icons, instIcon } from '../lib/icons.js';
 import { toast, toastError } from '../lib/toast.js';
 import { openModal, confirmDialog } from '../lib/modal.js';
-import { pageHeader, emptyState, switchEl, fmtSize, skeletons, ic, tileOf } from '../lib/ui.js';
+import { pageHeader, emptyState, switchEl, fmtSize, skeletons, ic, tileOf, go } from '../lib/ui.js';
 import { state, refreshInstances, LOADER_NAMES } from '../state.js';
 import { introCard } from '../lib/intro.js';
 import { horizonPanel, HORIZON_VERSION, HORIZON_NOTE, HORIZON_NO_MODS } from '../lib/horizon.js';
 
-const go = (id, params) => window.dispatchEvent(new CustomEvent('sugar:go', { detail: { id, params } }));
 const BAD_CHARS = /[\\/:*?"<>|\x00-\x1f]/;
 
 // ---------- crear / editar ----------

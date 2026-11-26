@@ -1,12 +1,10 @@
 import { h, clear } from '../lib/dom.js';
 import { icons } from '../lib/icons.js';
 import { toastError } from '../lib/toast.js';
-import { avatar, ic, instTile, tileOf } from '../lib/ui.js';
+import { avatar, ic, instTile, tileOf, go } from '../lib/ui.js';
 import { state, on, emit, selectedInstance, selectedAccount, LOADER_NAMES } from '../state.js';
 import { openInstanceEditor } from './instances.js';
 import { horizonPanel } from '../lib/horizon.js';
-
-const go = (id, params) => window.dispatchEvent(new CustomEvent('sugar:go', { detail: { id, params } }));
 
 export function render(root) {
   const offs = [];

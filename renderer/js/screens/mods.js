@@ -2,14 +2,13 @@ import { h, clear } from '../lib/dom.js';
 import { icons } from '../lib/icons.js';
 import { toast, toastError } from '../lib/toast.js';
 import { openModal } from '../lib/modal.js';
-import { pageHeader, emptyState, skeletons, fmtNum, ic } from '../lib/ui.js';
+import { pageHeader, emptyState, skeletons, fmtNum, ic, go } from '../lib/ui.js';
 import { cfKeyForm } from '../lib/cfkey.js';
 import { tileOf } from '../lib/ui.js';
 import { renderBody } from '../lib/md.js';
 import { state, LOADER_NAMES } from '../state.js';
 
 const REJECTED = 'CurseForge rechazó';
-const go = (id, params) => window.dispatchEvent(new CustomEvent('sugar:go', { detail: { id, params } }));
 const KINDS = [['mod', 'Mods'], ['resourcepack', 'Resource packs'], ['shader', 'Shaders']];
 const FOLDER_TO_KIND = { mods: 'mod', resourcepacks: 'resourcepack', shaderpacks: 'shader' };
 const SORTS = [['relevance', 'Relevancia'], ['downloads', 'Más descargados'], ['newest', 'Más recientes'], ['updated', 'Recién actualizados']];

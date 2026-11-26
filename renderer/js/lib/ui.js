@@ -28,6 +28,9 @@ export function pageHeader(title, subtitle, ...actions) {
     h('div', { class: 'row gap' }, actions));
 }
 
+// pide a app.js que cambie de pantalla
+export const go = (id, params) => window.dispatchEvent(new CustomEvent('sugar:go', { detail: { id, params } }));
+
 // icon: nombre de un icono de icons.js
 export function emptyState(icon, title, text, ...actions) {
   return h('div', { class: 'empty' }, h('div', { class: 'empty-ic', html: icons[icon] || icons.box }), h('h3', {}, title), h('p', { class: 'muted' }, text), h('div', { class: 'row gap center' }, actions));
