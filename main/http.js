@@ -79,4 +79,7 @@ function cached(key, ttlMs, fn) {
   return entry.v;
 }
 
-module.exports = { getJSON, download, cached, UA };
+// parámetros de URL, sin los vacíos
+const query = o => new URLSearchParams(Object.entries(o).filter(([, v]) => v !== undefined && v !== '' && v !== null)).toString();
+
+module.exports = { getJSON, download, cached, query, UA };

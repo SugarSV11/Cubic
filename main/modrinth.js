@@ -1,7 +1,6 @@
 // Modrinth — API oficial v2 (no necesita key)
-const { getJSON, cached } = require('./http');
+const { getJSON, cached, query: q } = require('./http');
 const BASE = 'https://api.modrinth.com/v2';
-const q = o => new URLSearchParams(Object.entries(o).filter(([, v]) => v !== undefined && v !== '' && v !== null)).toString();
 const api = (p, ttl = 60000) => cached(`mr:${p}`, ttl, () => getJSON(`${BASE}${p}`));
 
 const NAMES = { adventure: 'Aventura', cursed: 'Maldito', decoration: 'Decoración', economy: 'Economía', equipment: 'Equipamiento', food: 'Comida', 'game-mechanics': 'Mecánicas', library: 'Librería', magic: 'Magia', management: 'Gestión', minigame: 'Minijuego', mobs: 'Mobs', optimization: 'Optimización', social: 'Social', storage: 'Almacenamiento', technology: 'Tecnología', transportation: 'Transporte', utility: 'Utilidad', worldgen: 'Generación de mundo',

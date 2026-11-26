@@ -1,12 +1,11 @@
 // CurseForge — API oficial v1 (necesita API key: console.curseforge.com)
-const { getJSON, cached } = require('./http');
+const { getJSON, cached, query: q } = require('./http');
 const store = require('./store');
 const BASE = 'https://api.curseforge.com/v1';
 const GAME = 432; // Minecraft
 const CLASS = { mod: 6, resourcepack: 12, shader: 6552 };
 const LOADER = { fabric: 4, quilt: 5 };
 const SORT = { relevance: 2, downloads: 6, newest: 11, updated: 3 };
-const q = o => new URLSearchParams(Object.entries(o).filter(([, v]) => v !== undefined && v !== '' && v !== null)).toString();
 
 // Limpia lo que suele colarse al copiar/pegar: espacios, saltos de línea, comillas, "x-api-key:".
 // Las keys de CurseForge empiezan por "$2a$10$": el "$" se trata como un carácter normal (no hay plantillas ni replace con ella).

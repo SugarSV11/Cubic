@@ -62,3 +62,9 @@ test('mensajes de CurseForge y limpieza de la key', async () => {
   assert.strictEqual(curseforge.normalizeKey(' x-api-key: "$2a$10$ab\ncd" '), '$2a$10$abcd');
   assert.strictEqual((await curseforge.testKey('')).ok, false);
 });
+
+test('las consultas a Modrinth y CurseForge omiten los parámetros vacíos', async () => {
+  const seen = [];
+  http.getJSON = async url => { seen.push(url); return url.includes('curseforge') ? { data: [], pagination: { totalCount: 0 } } : { hits: [], total_hits: 0 }; };
+  assert.strictEqual(http.query({ a: 1, b: '', c: null, d: undefined, e: 0 }), 'a=1&e=0');
+});
