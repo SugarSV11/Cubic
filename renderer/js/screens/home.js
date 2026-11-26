@@ -1,9 +1,10 @@
 import { h, clear } from '../lib/dom.js';
 import { icons } from '../lib/icons.js';
 import { toastError } from '../lib/toast.js';
-import { avatar, ic, instTile } from '../lib/ui.js';
+import { avatar, ic, instTile, tileOf } from '../lib/ui.js';
 import { state, on, emit, selectedInstance, selectedAccount, LOADER_NAMES } from '../state.js';
 import { openInstanceEditor } from './instances.js';
+import { horizonPanel } from '../lib/horizon.js';
 
 const go = (id, params) => window.dispatchEvent(new CustomEvent('sugar:go', { detail: { id, params } }));
 
@@ -52,18 +53,19 @@ export function render(root) {
     hero.append(
       h('div', { class: 'hero-top' },
         h('div', { class: 'hero-inst' },
-          instTile(inst.icon, true),
+          tileOf(inst, true),
           h('div', {},
             h('small', { class: 'muted' }, 'Instancia'),
             select,
             h('div', { class: 'chips' },
               h('span', { class: 'chip' }, `Minecraft ${inst.version}`),
               h('span', { class: 'chip' }, LOADER_NAMES[inst.loader]),
-              h('span', { class: 'chip' }, `${inst.ram} GB RAM`)))),
+              inst.loader === 'horizon' ? null : h('span', { class: 'chip' }, `${inst.ram} GB RAM`)))),
         h('button', { class: 'acc-chip', onclick: () => go('accounts'), title: 'Cambiar de cuenta' },
           avatar(acc, 32),
           h('div', {}, h('small', {}, 'Jugando como'), h('b', {}, acc ? acc.name : 'Sin cuenta')),
           h('span', { class: 'ic chev', html: icons.chevron }))),
+      inst.loader === 'horizon' && !state.busy ? horizonPanel() : null,
       h('div', { class: 'hero-play' },
         playBtn,
         state.playing ? h('button', { class: 'btn danger lg', onclick: () => api.game.stop() }, ic('stop'), 'Detener') : null),
@@ -72,7 +74,7 @@ export function render(root) {
         h('div', { class: 'prog-bar' }, progressFill)),
       h('div', { class: 'hero-actions' },
         h('button', { class: 'btn ghost', onclick: () => api.instances.open(inst.id).catch(toastError) }, ic('folder'), 'Carpeta de la instancia'),
-        h('button', { class: 'btn ghost', onclick: () => api.instances.open(inst.id, 'mods').catch(toastError) }, ic('puzzle'), 'Carpeta de mods'),
+        inst.loader === 'horizon' ? null : h('button', { class: 'btn ghost', onclick: () => api.instances.open(inst.id, 'mods').catch(toastError) }, ic('puzzle'), 'Carpeta de mods'),
         h('button', { class: 'btn ghost', onclick: toggleLogs }, ic('terminal'), logsOpen ? 'Ocultar logs' : 'Ver logs')));
     paintProgress();
   }

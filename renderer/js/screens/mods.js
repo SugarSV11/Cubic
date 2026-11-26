@@ -4,7 +4,7 @@ import { toast, toastError } from '../lib/toast.js';
 import { openModal } from '../lib/modal.js';
 import { pageHeader, emptyState, skeletons, fmtNum, ic } from '../lib/ui.js';
 import { cfKeyForm } from '../lib/cfkey.js';
-import { instTile } from '../lib/ui.js';
+import { tileOf } from '../lib/ui.js';
 import { renderBody } from '../lib/md.js';
 import { state, LOADER_NAMES } from '../state.js';
 
@@ -16,7 +16,8 @@ const SORTS = [['relevance', 'Relevancia'], ['downloads', 'Más descargados'], [
 const keyOf = it => `${it.source}:${it.id}`;
 
 export function render(root, params = {}) {
-  const inst0 = state.instances.find(i => i.id === (params.instanceId || state.settings.selectedInstance)) || state.instances[0] || null;
+  const modable = state.instances.filter(i => i.loader !== 'horizon'); // Horizon no admite este contenido
+  const inst0 = modable.find(i => i.id === (params.instanceId || state.settings.selectedInstance)) || modable[0] || null;
   const S = {
     source: 'modrinth', kind: FOLDER_TO_KIND[params.kind] || 'mod', instanceId: inst0?.id || '',
     version: inst0?.version || '', loader: inst0 && inst0.loader !== 'vanilla' ? inst0.loader : '',
@@ -53,7 +54,7 @@ export function render(root, params = {}) {
       if (i) { S.version = i.version; S.loader = i.loader === 'vanilla' ? '' : i.loader; }
       paintFilters(); newSearch();
     } }, state.instances.length
-      ? state.instances.map(i => h('option', { value: i.id, ...(i.id === S.instanceId ? { selected: true } : {}) }, i.name))
+      ? [S.instanceId ? null : h('option', { value: '', selected: true, disabled: true }, 'Ninguna instancia admite mods'), ...state.instances.map(i => h('option', { value: i.id, ...(i.id === S.instanceId ? { selected: true } : {}), ...(i.loader === 'horizon' ? { disabled: true } : {}) }, i.loader === 'horizon' ? `${i.name} (Horizon: sin mods)` : i.name))]
       : [h('option', { value: '' }, 'Sin instancias')]);
     const search = h('input', { class: 'input search', type: 'search', placeholder: `Buscar ${KINDS.find(k => k[0] === S.kind)[1].toLowerCase()}…`, value: S.query, 'aria-label': 'Buscar',
       oninput: e => { S.query = e.target.value; clearTimeout(searchTimer); searchTimer = setTimeout(newSearch, 380); } });
@@ -217,7 +218,7 @@ export function render(root, params = {}) {
         const disabled = !c.ok || c.installed;
         const row = h('button', { type: 'button', class: `pick-row${disabled ? ' disabled' : ''}${chosen === i.id ? ' sel' : ''}`, ...(disabled ? { disabled: true } : {}),
           onclick: () => { chosen = i.id; rows.forEach(r => r.classList.toggle('sel', r === row)); } },
-          instTile(i.icon),
+          tileOf(i),
           h('div', { class: 'grow' }, h('b', {}, i.name), h('small', { class: 'muted' }, `Minecraft ${i.version} · ${LOADER_NAMES[i.loader]}`)),
           c.installed ? h('span', { class: 'chip ok' }, ic('check'), 'Ya instalado') : !c.ok ? h('small', { class: 'why' }, c.reason) : h('span', { class: 'chip' }, c.blocked ? 'Descarga manual' : 'Compatible'));
         return row;

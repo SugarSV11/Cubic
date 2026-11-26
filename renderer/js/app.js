@@ -78,6 +78,7 @@ document.querySelector('.titlebar').addEventListener('dblclick', e => { if (!e.t
 api.on('maximized', m => document.body.classList.toggle('maximized', m));
 
 // ---------- eventos del proceso principal ----------
+api.on('horizon', s => { state.horizon = s; emit('horizon', s); });
 api.on('status', s => { state.progress = s; emit('status', s); });
 api.on('log', t => {
   for (const line of String(t).split('\n')) if (line.trim()) state.logs.push(line);
@@ -100,6 +101,7 @@ on('accounts', renderSideAccount);
     Object.assign(state, { instances: d.instances, settings: d.settings, totalRam: d.totalRam, icons: d.icons, platform: d.platform, version: d.version, dataDir: d.dataDir, appName: d.appName });
     document.getElementById('brand-name').textContent = d.appName || 'Cubic';
     applyAccounts(d.accounts);
+    state.horizon = await api.horizon.state();
   } catch (e) { toastError(e); }
   renderSideAccount();
   go('home');

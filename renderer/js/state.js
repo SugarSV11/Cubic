@@ -6,7 +6,8 @@ export const state = {
   busy: false,      // preparando / descargando
   playing: false,   // Minecraft abierto
   progress: { text: 'Listo', progress: null },
-  logs: []
+  logs: [],
+  horizon: null     // estado de la instalación de Horizon
 };
 
 const subs = new Map();
@@ -20,4 +21,4 @@ export async function refreshInstances() { state.instances = await window.api.in
 export function applyAccounts(r) { state.accounts = r.accounts; state.selectedAccount = r.selected; emit('accounts'); }
 export const hasMicrosoft = () => state.accounts.some(a => a.type === 'microsoft');
 
-export const LOADER_NAMES = { vanilla: 'Vanilla', fabric: 'Fabric', quilt: 'Quilt' };
+export const LOADER_NAMES = { vanilla: 'Vanilla', fabric: 'Fabric', quilt: 'Quilt', horizon: 'Horizon' };

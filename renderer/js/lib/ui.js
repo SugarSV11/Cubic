@@ -4,6 +4,11 @@ import { icons, instIcon } from './icons.js';
 export const ic = (name, cls = '') => h('span', { class: `ic ${cls}`.trim(), html: icons[name] || '' });
 export const instTile = (key, big = false) => h('div', { class: `inst-icon${big ? ' big' : ''}`, html: instIcon(key) });
 
+// icono de una instancia: las Horizon llevan siempre su logotipo
+export const tileOf = (inst, big = false) => (inst.loader === 'horizon'
+  ? h('div', { class: `inst-icon logo${big ? ' big' : ''}` }, h('img', { src: 'img/horizon.svg', alt: 'Horizon' }))
+  : instTile(inst.icon, big));
+
 // Cabeza de la skin (mc-heads.net). En cuentas offline, la de Steve.
 export function avatar(acc, size = 40) {
   const key = !acc || acc.type === 'offline' ? 'MHF_Steve' : acc.uuid;
