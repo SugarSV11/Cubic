@@ -84,6 +84,8 @@ h3 { font-size: 18px; letter-spacing: -.01em; margin: 26px 0 8px; }
 .code code { font: 13px/1.6 ui-monospace, monospace; overflow-wrap: anywhere; }
 .code span { font: 600 12px Inter, system-ui, sans-serif; color: var(--accent-hi); }
 footer { width: min(1120px, 100% - 2 * var(--side-space)); margin: var(--gap-section) auto 0; padding: 40px 0 48px; border-top: 1px solid var(--border); font-size: 13px; color: var(--faint); text-align: center; }
+footer p { max-width: 720px; margin: 0 auto 12px; }
+footer a { color: inherit; text-decoration: underline; }
 
 dialog { margin: auto; padding: 0; border: 1px solid var(--border-hi); border-radius: 14px; overflow: hidden; background: var(--surface); max-width: 94vw; max-height: 92vh; cursor: zoom-out; }
 dialog img { max-width: 94vw; max-height: 92vh; width: auto; }
