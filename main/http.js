@@ -43,20 +43,21 @@ const getJSON = (url, headers = {}) => httpGet(url, headers, (res, resolve, reje
   res.on('error', reject);
 });
 
-// Descarga a un archivo temporal y lo mueve al final. Si pasas sha1, lo verifica.
-function download(url, dest, { onProgress, sha1, headers = {} } = {}) {
+// Descarga a un archivo temporal y lo mueve al final. Si pasas sha1 o sha256, lo verifica.
+function download(url, dest, { onProgress, sha1, sha256, headers = {} } = {}) {
   const tmp = `${dest}.part`;
   return httpGet(url, headers, (res, resolve, reject) => {
     const total = parseInt(res.headers['content-length'] || '0', 10);
     let got = 0;
-    const hash = crypto.createHash('sha1');
+    const expected = sha256 || sha1;
+    const hash = crypto.createHash(sha256 ? 'sha256' : 'sha1');
     const out = fs.createWriteStream(tmp);
     res.on('data', c => { got += c.length; hash.update(c); if (total && onProgress) onProgress(got / total); });
     res.on('error', e => { out.destroy(); fs.rmSync(tmp, { force: true }); reject(e); });
     res.pipe(out);
     out.on('error', e => { fs.rmSync(tmp, { force: true }); reject(e); });
     out.on('finish', () => out.close(() => {
-      if (sha1 && hash.digest('hex') !== sha1.toLowerCase()) {
+      if (expected && hash.digest('hex') !== expected.toLowerCase()) {
         fs.rmSync(tmp, { force: true });
         return reject(new Error('El archivo descargado está corrupto (el hash no coincide)'));
       }

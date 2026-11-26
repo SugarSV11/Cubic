@@ -22,11 +22,11 @@ function javaBin(dir) {
   return null;
 }
 
-function extract(archive, dest) {
+function extract(archive, dest, failMsg = 'No se pudo extraer Java') {
   return new Promise((resolve, reject) => {
     // tar viene en Linux, macOS y Windows 10+ (y en Windows también abre .zip)
     const t = spawn('tar', ['-xf', archive, '-C', dest]);
-    t.on('close', code => (code === 0 ? resolve() : reject(new Error('No se pudo extraer Java'))));
+    t.on('close', code => (code === 0 ? resolve() : reject(new Error(failMsg))));
     t.on('error', reject);
   });
 }
@@ -34,22 +34,24 @@ function extract(archive, dest) {
 // Adoptium ya no publica Java 16 (lo pide Minecraft 1.17): con Java 17 funciona
 const REPLACEMENT = { 16: 17 };
 
-async function ensureJava(wanted) {
+// image: 'jre' (para jugar) o 'jdk' (lo necesita el preparador de Horizon)
+async function ensureJava(wanted, { image = 'jre', report = status } = {}) {
   const major = REPLACEMENT[wanted] || wanted;
-  const dir = path.join(JAVA, String(major));
+  const suffix = image === 'jre' ? '' : `-${image}`;
+  const dir = path.join(JAVA, `${major}${suffix}`);
   const existing = fs.existsSync(dir) && javaBin(dir);
   if (existing) return existing;
 
   fs.mkdirSync(JAVA, { recursive: true });
   const osName = { win32: 'windows', darwin: 'mac', linux: 'linux' }[process.platform];
   const arch = { x64: 'x64', arm64: 'aarch64' }[process.arch] || 'x64';
-  const archive = path.join(JAVA, `java${major}${process.platform === 'win32' ? '.zip' : '.tar.gz'}`);
-  const url = `https://api.adoptium.net/v3/binary/latest/${major}/ga/${osName}/${arch}/jre/hotspot/normal/eclipse`;
+  const archive = path.join(JAVA, `java${major}${suffix}${process.platform === 'win32' ? '.zip' : '.tar.gz'}`);
+  const url = `https://api.adoptium.net/v3/binary/latest/${major}/ga/${osName}/${arch}/${image}/hotspot/normal/eclipse`;
 
-  status(`Descargando Java ${major}…`, 0);
-  await download(url, archive, { onProgress: p => status(`Descargando Java ${major}…`, p) });
+  report(`Descargando Java ${major}…`, 0);
+  await download(url, archive, { onProgress: p => report(`Descargando Java ${major}…`, p) });
 
-  status(`Instalando Java ${major}…`, null);
+  report(`Instalando Java ${major}…`, null);
   // se extrae a una carpeta temporal y luego se renombra: nunca queda un Java a medias
   const part = `${dir}.part`;
   fs.rmSync(part, { recursive: true, force: true });
@@ -64,4 +66,4 @@ async function ensureJava(wanted) {
   return bin;
 }
 
-module.exports = { ensureJava };
+module.exports = { ensureJava, extract };
