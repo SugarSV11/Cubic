@@ -31,28 +31,38 @@ const irisFor = inst => modrinth.resolve({ id: 'iris', kind: 'mod', version: ins
 const norm = t => String(t || '').toLowerCase().replace(/\(.*?\)|\[.*?\]|[^a-z0-9]/g, '');
 const sameTitle = (map, folder, title) => Object.values(map).some(v => v.kind === folder && norm(v.title) === norm(title));
 
+// como map(), pero con un máximo de tareas a la vez; los resultados conservan el orden
+async function mapLimit(items, limit, fn) {
+  const out = new Array(items.length);
+  let next = 0;
+  const worker = async () => { while (next < items.length) { const i = next++; out[i] = await fn(items[i]); } };
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+  return out;
+}
+
+// ¿se puede instalar este contenido en esa instancia?
+async function compatFor(S, source, id, kind, inst) {
+  const map = instances.readInstalled(inst.id);
+  let installed = !!map[`${source}:${id}`];
+  const why = checkInstance(inst, kind);
+  if (why) return { id: inst.id, ok: false, reason: why, installed };
+  try {
+    const r = await S.resolve({ id, kind, version: inst.version, loader: inst.loader });
+    if (r?.title) installed = installed || sameTitle(map, FOLDER[kind], r.title);
+    if (r && kind === 'shader' && !hasIris(inst.id) && !(await irisFor(inst))) {
+      return { id: inst.id, ok: false, installed, reason: `Iris (necesario para shaders) todavía no existe para Minecraft ${inst.version}.` };
+    }
+    return r
+      ? { id: inst.id, ok: true, installed, blocked: !!r.blocked }
+      : { id: inst.id, ok: false, installed, reason: `No hay versión para Minecraft ${inst.version}${kind === 'mod' ? ` con ${inst.loader}` : ''}.` };
+  } catch (e) { return { id: inst.id, ok: false, installed, reason: e.message }; }
+}
+
 async function compat(source, id, kind) {
   kindOk(kind);
   const S = src(source);
-  const out = [];
-  for (const inst of instances.list()) {
-    const map = instances.readInstalled(inst.id);
-    let installed = !!map[`${source}:${id}`];
-    const why = checkInstance(inst, kind);
-    if (why) { out.push({ id: inst.id, ok: false, reason: why, installed }); continue; }
-    try {
-      const r = await S.resolve({ id, kind, version: inst.version, loader: inst.loader });
-      if (r?.title) installed = installed || sameTitle(map, FOLDER[kind], r.title);
-      if (r && kind === 'shader' && !hasIris(inst.id) && !(await irisFor(inst))) {
-        out.push({ id: inst.id, ok: false, installed, reason: `Iris (necesario para shaders) todavía no existe para Minecraft ${inst.version}.` });
-        continue;
-      }
-      out.push(r
-        ? { id: inst.id, ok: true, installed, blocked: !!r.blocked }
-        : { id: inst.id, ok: false, installed, reason: `No hay versión para Minecraft ${inst.version}${kind === 'mod' ? ` con ${inst.loader}` : ''}.` });
-    } catch (e) { out.push({ id: inst.id, ok: false, installed, reason: e.message }); }
-  }
-  return out;
+  // hasta 4 consultas a la vez: antes se hacía una instancia detrás de otra
+  return mapLimit(instances.list(), 4, inst => compatFor(S, source, id, kind, inst));
 }
 
 async function install({ source, id, kind, instanceId }) {
