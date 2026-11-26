@@ -27,6 +27,7 @@ export function cfKeyForm({ onSaved, error = '', compact = false } = {}) {
     try {
       state.settings = await api.setSettings({ curseforgeKey: input.value });
       input.value = ''; input.placeholder = 'Key guardada · pega otra para cambiarla';
+      removeBtn.hidden = false; // ya hay una key que se puede quitar, valide o no
       const r = await api.curseforge.test(''); // prueba la key ya guardada
       say(r.ok, r.ok ? 'Key guardada y válida.' : `Key guardada, pero no se pudo validar. ${r.message}`);
       if (r.ok) { toast('API key de CurseForge guardada'); onSaved?.(); }
@@ -35,10 +36,10 @@ export function cfKeyForm({ onSaved, error = '', compact = false } = {}) {
   } }, 'Guardar');
   input.addEventListener('keydown', e => { if (e.key === 'Enter') saveBtn.click(); });
 
-  const removeBtn = state.settings.hasCurseforgeKey ? h('button', { class: 'btn ghost', type: 'button', onclick: async () => {
+  const removeBtn = h('button', { class: 'btn ghost', type: 'button', ...(state.settings.hasCurseforgeKey ? {} : { hidden: true }), onclick: async () => {
     try { state.settings = await api.setSettings({ curseforgeKey: '' }); toast('API key eliminada', 'info'); onSaved?.(true); }
     catch (e) { toastError(e); }
-  } }, 'Quitar') : null;
+  } }, 'Quitar');
 
   return h('div', { class: 'cf-key' },
     error ? h('div', { class: 'cf-result err' }, h('span', { class: 'ic', html: icons.warn }), h('span', {}, error)) : null,
