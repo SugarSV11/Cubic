@@ -2,7 +2,7 @@ const https = require('https');
 const fs = require('fs');
 const crypto = require('crypto');
 
-const UA = 'Cubic/1.0.0';
+const UA = 'Cubic/1.1.0';
 
 function httpGet(url, headers, cb, redirects = 0) {
   return new Promise((resolve, reject) => {

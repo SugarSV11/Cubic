@@ -11,7 +11,7 @@
 ![Linux](https://img.shields.io/badge/Linux-AppImage-8B5CF6?style=flat-square&logo=linux&logoColor=white)
 ![Electron](https://img.shields.io/badge/Electron-45-8B5CF6?style=flat-square&logo=electron&logoColor=white)
 
-### [⬇ Descargar para Linux](https://github.com/SugarSV11/Cubic/releases/latest/download/Cubic-1.0.0.AppImage)
+### [⬇ Descargar para Linux](https://github.com/SugarSV11/Cubic/releases/latest/download/Cubic-1.1.0.AppImage)
 
 <br>
 
@@ -50,8 +50,8 @@
 Descarga el AppImage desde [Releases](https://github.com/SugarSV11/Cubic/releases/latest) y ejecútalo:
 
 ```bash
-chmod +x Cubic-1.0.0.AppImage
-./Cubic-1.0.0.AppImage
+chmod +x Cubic-1.1.0.AppImage
+./Cubic-1.1.0.AppImage
 ```
 
 ## Primeros pasos
@@ -102,7 +102,7 @@ Al crear una instancia con el loader **Horizon** (solo 26.3), Cubic descarga la 
 - Horizon es un proyecto no oficial, no está afiliado a Mojang ni a Microsoft y requiere tu propia copia de Minecraft Java 26.3.
 - Hace falta una cuenta de Microsoft con el juego en Cubic. Si no encuentra tu cliente 26.3, Cubic ofrece descargarlo.
 - No admite mods de Fabric ni NeoForge; Cubic tampoco instala en él shaders ni resource packs.
-- **Estado (26 nov 2026):** el repositorio oficial de Horizon responde 404, así que ahora mismo no se puede descargar y esta función no se ha probado con el juego real. Cubic no usa forks ni espejos. El AppImage v1.0.0 publicado todavía no incluye Horizon ni la intro animada.
+- **Estado (26 nov 2026):** el repositorio oficial de Horizon responde 404, así que ahora mismo no se puede descargar y esta función no se ha probado con el juego real. Cubic no usa forks ni espejos. La versión 1.1.0 incluye este soporte y la intro animada.
 
 El logotipo de Horizon es del proyecto Horizon (ver `renderer/img/horizon-LICENSE.txt`).
 
@@ -159,7 +159,7 @@ distrobox enter sugarlauncher -- sudo dnf install -y nodejs npm nss nspr atk at-
 distrobox enter sugarlauncher -- npm install
 distrobox enter sugarlauncher -- npm start
 distrobox enter sugarlauncher -- npm test
-distrobox enter sugarlauncher -- npm run dist    # → dist/Cubic-1.0.0.AppImage
+distrobox enter sugarlauncher -- npm run dist    # → dist/Cubic-1.1.0.AppImage
 ```
 
 Al empaquetar se descargan y verifican los jars de la intro animada (hace falta conexión); no están en el repositorio.

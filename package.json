@@ -1,7 +1,7 @@
 {
   "name": "cubic",
   "productName": "Cubic",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Launcher de Minecraft Java simple, sobrio y rápido",
   "main": "main.js",
   "author": "SugarSV",
