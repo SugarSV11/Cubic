@@ -10,6 +10,9 @@
 [![Descargas](https://img.shields.io/github/downloads/SugarSV11/Cubic/total?label=descargas&color=8B5CF6&style=flat-square)](https://github.com/SugarSV11/Cubic/releases)
 ![Linux](https://img.shields.io/badge/Linux-AppImage-8B5CF6?style=flat-square&logo=linux&logoColor=white)
 ![Electron](https://img.shields.io/badge/Electron-45-8B5CF6?style=flat-square&logo=electron&logoColor=white)
+![Licencia](https://img.shields.io/badge/licencia-GPL--3.0--or--later-8B5CF6?style=flat-square)
+
+🇪🇸 Español · [🇬🇧 English](README.en.md)
 
 ### [⬇ Descargar para Linux](https://github.com/SugarSV11/Cubic/releases/latest/download/Cubic-1.1.0.AppImage)
 
@@ -44,6 +47,12 @@
 </tr>
 </table>
 </div>
+
+## Requisitos
+
+- Linux x86_64 (el AppImage no necesita instalación).
+- Conexión a internet para descargar Java, Minecraft y el contenido.
+- Una cuenta de Microsoft con Minecraft Java comprado para jugar online (las cuentas offline se crean después).
 
 ## Instalación
 
@@ -172,6 +181,22 @@ Existe `npm run dist:win` para generar un instalador de Windows, pero todavía n
 </details>
 
 <details>
+<summary><b>Compilar en cualquier distro</b></summary>
+<br>
+
+Con Node.js 22 y npm:
+
+```bash
+npm ci
+npm test
+npx electron-builder --linux AppImage --publish never   # → dist/Cubic-<versión>.AppImage
+```
+
+Cada tag `v*` compila y publica el AppImage automáticamente ([`.github/workflows/release.yml`](.github/workflows/release.yml)).
+
+</details>
+
+<details>
 <summary><b>Estructura del proyecto</b></summary>
 <br>
 
@@ -186,8 +211,10 @@ renderer/          interfaz en HTML, CSS y JavaScript puro
 build/icon.png     icono
 scripts/           descarga y actualización de la intro animada
 LICENSES/          textos de las licencias de terceros
-docs/              capturas
+docs/              capturas y ARCHITECTURE.md
 ```
+
+Cómo encajan los módulos y cómo fluyen los datos: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 </details>
 
@@ -202,6 +229,16 @@ docs/              capturas
 - Las descargas verifican el hash SHA-1 cuando el sitio lo proporciona.
 
 </details>
+
+## Estado del proyecto
+
+Versión estable **1.1.0** para Linux, en desarrollo activo. Probado en juego con Vanilla, Fabric y Quilt. Pendiente: el instalador de Windows no se ha probado, Forge y NeoForge no están soportados, y Horizon y la intro animada aún no se han probado con el juego real. Historial en [CHANGELOG.md](CHANGELOG.md).
+
+## Licencia
+
+Copyright © 2026 SugarSV11.
+
+Cubic es software libre bajo la **GNU General Public License v3.0 o posterior** ([`LICENSE`](LICENSE)). Las versiones 1.0.0 y 1.1.0 se publicaron bajo licencia MIT y siguen bajo esa licencia; el cambio a GPL-3.0 se aplica desde la siguiente versión. Los componentes de terceros mantienen sus propias licencias (ver arriba y [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)).
 
 ---
 

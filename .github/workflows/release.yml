@@ -1,0 +1,50 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Dependencias
+        run: npm ci --no-audit --no-fund
+
+      - name: Pruebas
+        run: npm test
+
+      - name: AppImage
+        run: npx electron-builder --linux AppImage --publish never
+
+      - name: Código fuente de terceros incluido
+        run: |
+          npm run fetch:sources
+          tar -czf dist/Cubic-third-party-sources.tar.gz dist-sources
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cubic-linux
+          path: |
+            dist/*.AppImage
+            dist/Cubic-third-party-sources.tar.gz
+
+      - name: Publicar release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/*.AppImage
+            dist/Cubic-third-party-sources.tar.gz
+          generate_release_notes: true
